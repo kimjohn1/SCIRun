@@ -46,7 +46,6 @@
 #include <string>
 #include <vector>
 #include <algorithm>
-#include <boost/shared_array.hpp>
 
 using namespace SCIRun;
 using namespace SCIRun::Core::Geometry;
@@ -115,8 +114,8 @@ private:
 
   std::vector<bool> success_;
 
-  boost::shared_array<index_type> rows_;
-  boost::shared_array<index_type> allcols_;
+  std::vector<index_type> rows_;
+  std::vector<index_type> allcols_;
   std::vector<index_type> colidx_;
 
   index_type domain_dimension;
@@ -670,7 +669,7 @@ FEMBuilder<T>::setup()
     success_[0] = false;
   }
   LOG_DEBUG("Allocating buffer for nonzero row indices of size: {}", global_dimension+1);
-  rows_.reset(new index_type[global_dimension+1]);
+  rows_.assign(global_dimension+1, 0);
 
   colidx_.resize(numprocessors_+1);
   return true;
@@ -821,7 +820,7 @@ FEMBuilder<T>::parallel(int proc_num)
   index_type st = 0;
 
   if (proc_num == 0)
-    allcols_.reset();
+    allcols_.clear();
 
   try
   {
@@ -835,14 +834,14 @@ FEMBuilder<T>::parallel(int proc_num)
       }
 
       colidx_[numprocessors_] = st;
-      allcols_.reset(new index_type[st]);
+      allcols_.assign(st, 0);
     }
     success_[proc_num] = true;
   }
   catch (...)
   {
     if (proc_num == 0)
-      allcols_.reset();
+      allcols_.clear();
 
     algo_->error("Could not allocate enough memory");
     success_[proc_num] = false;
@@ -895,9 +894,9 @@ FEMBuilder<T>::parallel(int proc_num)
     {
       rows_[global_dimension] = st;
       algo_->remark("Creating fematrix on main thread.");
-      fematrix_ = makeShared<matrix_type<T>>(global_dimension, global_dimension, rows_.get(), allcols_.get(), st);
-      rows_.reset();
-      allcols_.reset();
+      fematrix_ = makeShared<matrix_type<T>>(global_dimension, global_dimension, &rows_[0], &allcols_[0], st);
+      rows_.clear();
+      allcols_.clear();
     }
     success_[proc_num] = true;
   }
