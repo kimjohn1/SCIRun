@@ -26,27 +26,29 @@
 */
 
 
-#include <Interface/Modules/Factory/ModuleDialogFactory.h>
-#include <Interface/Modules/BrainStimulator/SetConductivitiesToTetMeshDialog.h>
-#include <Interface/Modules/BrainStimulator/ElectrodeCoilSetupDialog.h>
-#include <Interface/Modules/BrainStimulator/GenerateROIStatisticsDialog.h>
-#include <Interface/Modules/BrainStimulator/SetupRHSforTDCSandTMSDialog.h>
-#include <Interface/Modules/Visualization/GenerateStreamLinesDialog.h>
-#include <Interface/Modules/Visualization/GeometryBufferDialog.h>
-#include <boost/assign.hpp>
+#ifndef INTERFACE_MODULES_GEOMETRYBUFFERDIALOG_H
+#define INTERFACE_MODULES_GEOMETRYBUFFERDIALOG_H
 
-using namespace SCIRun::Gui;
-using namespace SCIRun::Dataflow::Networks;
-using namespace boost::assign;
+#include "Interface/Modules/Visualization/ui_GeometryBuffer.h"
+#include <Interface/Modules/Base/ModuleDialogGeneric.h>
+#include <Interface/Modules/Visualization/share.h>
 
-void ModuleDialogFactory::addDialogsToMakerMap2()
+namespace SCIRun {
+namespace Gui {
+
+class SCISHARE GeometryBufferDialog : public ModuleDialogGeneric,
+  public Ui::GeometryBuffer
 {
-  insert(dialogMakerMap_)
-    ADD_MODULE_DIALOG(ElectrodeCoilSetup, ElectrodeCoilSetupDialog)
-    ADD_MODULE_DIALOG(SetConductivitiesToMesh, SetConductivitiesToTetMeshDialog)
-    ADD_MODULE_DIALOG(GenerateROIStatistics, GenerateROIStatisticsDialog)
-    ADD_MODULE_DIALOG(SetupTDCS, SetupRHSforTDCSandTMSDialog)
-    ADD_MODULE_DIALOG(GenerateStreamLines, GenerateStreamLinesDialog)
-    ADD_MODULE_DIALOG(GeometryBuffer, GeometryBufferDialog)
-  ;
-}
+	Q_OBJECT
+
+  public:
+    GeometryBufferDialog(const std::string& name,
+      SCIRun::Dataflow::Networks::ModuleStateHandle state,
+      QWidget* parent = nullptr);
+  public Q_SLOTS:
+    void sendAllGeometries();
+  };
+
+}}
+
+#endif
