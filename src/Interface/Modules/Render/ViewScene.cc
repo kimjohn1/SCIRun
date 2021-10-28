@@ -232,6 +232,8 @@ namespace Gui {
 
           std::unique_ptr<VisibleItemManager> visibleItems_;
 
+          Mutex* stateMutex_ {nullptr};
+
           static const int DIMENSIONS_ = 3;
           static const int QUATERNION_SIZE_ = 4;
 
@@ -427,7 +429,11 @@ ViewSceneDialog::ViewSceneDialog(const std::string& name, ModuleStateHandle stat
     spire->setClippingPlaneManager(impl_->clippingPlaneManager_);
   }
 
-  state->connectSpecificStateChanged(Parameters::GeomData,[this](){Q_EMIT newGeometryValueForwarder();});
+  state->connectSpecificStateChanged(Parameters::GeomData,[this]()
+  {
+    qDebug() << "state change lambda for newGeometryValueForwarder";
+    Q_EMIT newGeometryValueForwarder();
+  });
   connect(this, SIGNAL(newGeometryValueForwarder()), this, SLOT(updateModifiedGeometriesAndSendScreenShot()));
 
   state->connectSpecificStateChanged(Parameters::CameraRotation,[this](){Q_EMIT cameraRotationChangeForwarder();});
@@ -442,6 +448,9 @@ ViewSceneDialog::ViewSceneDialog(const std::string& name, ModuleStateHandle stat
   state->connectSpecificStateChanged(Parameters::VSMutex, [this](){Q_EMIT lockMutexForwarder();});
   connect(this, SIGNAL(lockMutexForwarder()), this, SLOT(lockMutex()));
   lockMutex();
+
+  auto generalMutex = state_->getTransientValue(Parameters::VSMutex2);
+  impl_->stateMutex_ = transient_value_cast<Mutex*>(generalMutex);
 
   const std::string filesystemRoot = Application::Instance().executablePath().string();
   std::string sep;
@@ -1125,9 +1134,9 @@ void ViewSceneDialog::updateModifiedGeometriesAndSendScreenShot()
 void ViewSceneDialog::newGeometryValue(bool forceAllObjectsToUpdate, bool clippingPlanesUpdated)
 {
   DEBUG_LOG_LINE_INFO
-  LOG_DEBUG("ViewSceneDialog::newGeometryValue {} before locking", windowTitle().toStdString());
+  logCritical("ViewSceneDialog::newGeometryValue {} before locking", windowTitle().toStdString());
   RENDERER_LOG_FUNCTION_SCOPE;
-  Guard lock(Modules::Render::ViewScene::mutex_.get());
+
 
   auto spire = impl_->mSpire.lock();
   if (!spire)
@@ -1144,16 +1153,19 @@ void ViewSceneDialog::newGeometryValue(bool forceAllObjectsToUpdate, bool clippi
   std::vector<GeometryBaseHandle> allGeoms;
 
   // Grab the geomData transient value.
-  auto geomDataTransient = state_->getTransientValue(Parameters::GeomData);
-  if (geomDataTransient && !geomDataTransient->empty())
   {
-    auto portGeometries = transient_value_cast<Modules::Render::ViewScene::GeomListPtr>(geomDataTransient);
-    if (!portGeometries)
+    DebugGuard<std::mutex> lock(impl_->stateMutex_->get(), "newGeom 1139");
+    auto geomDataTransient = state_->getTransientValue(Parameters::GeomData);
+    if (geomDataTransient && !geomDataTransient->empty())
     {
-      LOG_DEBUG("Logical error: ViewSceneDialog received an empty list.");
-      return;
+      auto portGeometries = transient_value_cast<Modules::Render::ViewScene::GeomListPtr>(geomDataTransient);
+      if (!portGeometries)
+      {
+        logCritical("Logical error: ViewSceneDialog received an empty list.");
+        return;
+      }
+      std::copy(portGeometries->begin(), portGeometries->end(), std::back_inserter(allGeoms));
     }
-    std::copy(portGeometries->begin(), portGeometries->end(), std::back_inserter(allGeoms));
   }
 
   if (impl_->scaleBarGeom_ && impl_->scaleBar_.visible)
@@ -1825,7 +1837,7 @@ ViewScene::GeomListPtr ViewSceneDialog::getGeomData()
     auto geomData = transient_value_cast<Modules::Render::ViewScene::GeomListPtr>(geomDataTransient);
     if (!geomData)
     {
-      LOG_DEBUG("Logical error: ViewSceneDialog received an empty list.");
+      logCritical("Logical error: ViewSceneDialog received an empty list.");
       return nullptr;
     }
     return geomData;
@@ -1838,7 +1850,7 @@ void ViewSceneDialog::selectObject(const int x, const int y, MouseButton button)
   auto geomDataPresent = false;
   {
     LOG_DEBUG("ViewSceneDialog::asyncExecute before locking");
-    Guard lock(Modules::Render::ViewScene::mutex_.get());
+    DebugGuard<std::mutex> lock(impl_->stateMutex_->get(), "selectObject 1850");
     LOG_DEBUG("ViewSceneDialog::asyncExecute after locking");
 
     auto spire = impl_->mSpire.lock();
@@ -1914,7 +1926,7 @@ void ViewSceneDialog::restoreObjColor()
 {
   LOG_DEBUG("ViewSceneDialog::restoreObjColor before locking");
 
-  Guard lock(Modules::Render::ViewScene::mutex_.get());
+  DebugGuard<std::mutex> lock(impl_->stateMutex_->get(), "restoreObjColor 1926");
 
   LOG_DEBUG("ViewSceneDialog::restoreObjColor after locking");
 

@@ -47,6 +47,7 @@ namespace SCIRun
         // these are transient state keys for right now
         ALGORITHM_PARAMETER_DECL(GeomData);
         ALGORITHM_PARAMETER_DECL(VSMutex);
+        ALGORITHM_PARAMETER_DECL(VSMutex2);
         ALGORITHM_PARAMETER_DECL(GeometryFeedbackInfo);
         ALGORITHM_PARAMETER_DECL(ScreenshotData);
 
@@ -179,7 +180,7 @@ namespace Render {
 
     MODULE_TRAITS_AND_INFO(ModuleFlags::ModuleHasUI)
 
-    static Core::Thread::Mutex mutex_;
+    Core::Thread::Mutex globalPublicViewSceneMutex_WHYOHWHY_ {"stateChangeMutex"};
     Core::Thread::Mutex screenShotMutex_ {"ViewSceneScreenShotMutex"};
 
     typedef SharedPointer<Core::Datatypes::GeomList> GeomListPtr;

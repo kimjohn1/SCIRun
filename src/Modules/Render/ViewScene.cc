@@ -53,7 +53,7 @@ using namespace SCIRun::Core::Logging;
 
 MODULE_INFO_DEF(ViewScene, Render, SCIRun)
 
-Mutex ViewScene::mutex_("ViewScene");
+//Mutex ViewScene::globalPublicViewSceneMutex_WHYOHWHY_("ViewScene");
 
 ViewScene::ScopedExecutionReporter::ScopedExecutionReporter(ModuleStateHandle state)
   : state_(state)
@@ -68,6 +68,7 @@ ViewScene::ScopedExecutionReporter::~ScopedExecutionReporter()
 
 ALGORITHM_PARAMETER_DEF(Render, GeomData);
 ALGORITHM_PARAMETER_DEF(Render, VSMutex);
+ALGORITHM_PARAMETER_DEF(Render, VSMutex2);
 ALGORITHM_PARAMETER_DEF(Render, GeometryFeedbackInfo);
 ALGORITHM_PARAMETER_DEF(Render, ScreenshotData);
 ALGORITHM_PARAMETER_DEF(Render, MeshComponentSelection);
@@ -150,6 +151,7 @@ ViewScene::ViewScene() : ModuleWithAsyncDynamicPorts(staticInfo_, true)
   INITIALIZE_PORT(ScreenshotDataGreen)
   INITIALIZE_PORT(ScreenshotDataBlue)
 
+  get_state()->setTransientValue(Parameters::VSMutex2, &globalPublicViewSceneMutex_WHYOHWHY_, false);
   get_state()->setTransientValue(Parameters::VSMutex, &screenShotMutex_, true);
 }
 
@@ -250,7 +252,7 @@ void ViewScene::portRemovedSlotImpl(const PortId& pid)
 {
   //lock for state modification
   {
-    Guard lock(mutex_.get());
+    DebugGuard<std::mutex> lock(globalPublicViewSceneMutex_WHYOHWHY_.get(), "portRemoved 255");
     auto loc = activeGeoms_.find(pid);
     if (loc != activeGeoms_.end())
       activeGeoms_.erase(loc);
@@ -276,7 +278,7 @@ void ViewScene::updateTransientList()
   {
     auto geom = geomPair.second;
     geom->addToList(geom, *geoms);
-    LOG_DEBUG("updateTransientList added geom to state list: {}", geomPair.first.toString());
+    logCritical("updateTransientList added geom to state list: {}", geomPair.first.toString());
   }
 
   // Grab geometry inputs and pass them along in a transient value to the GUI
@@ -293,19 +295,25 @@ void ViewScene::updateTransientList()
   // know where it will be destroyed. For now, it will have have stale pointer
   // data lying around in it... yuck.
   get_state()->setTransientValue(Parameters::GeomData, geoms, false);
+
+  if (id() == ModuleId("ViewScene:1"))
+  {
+    fireTransientStateChangeSignalForGeomData();
+  }
 }
 
 void ViewScene::asyncExecute(const PortId& pid, DatatypeHandle data)
 {
+  logCritical("asyncExecute");
   if (!data) return;
   //lock for state modification
   {
-    LOG_DEBUG("ViewScene::asyncExecute {} before locking", id().id_);
-    Guard lock(mutex_.get());
-
-    get_state()->setTransientValue(Parameters::ScreenshotData, boost::any(), false);
-
-    LOG_DEBUG("ViewScene::asyncExecute {} after locking", id().id_);
+    logCritical("ViewScene::asyncExecute {} before locking", id().id_);
+    {
+      DebugGuard<std::mutex> lock(globalPublicViewSceneMutex_WHYOHWHY_.get(), "asyncExe 312");
+      get_state()->setTransientValue(Parameters::ScreenshotData, boost::any(), false);
+    }
+    logCritical("ViewScene::asyncExecute {} after locking", id().id_);
 
     const auto geom = std::dynamic_pointer_cast<GeometryObject>(data);
     if (!geom)
@@ -325,7 +333,7 @@ void ViewScene::asyncExecute(const PortId& pid, DatatypeHandle data)
     }
 
     activeGeoms_[pid] = geom;
-    LOG_DEBUG("asyncExecute added active geom to map: {}", pid.toString());
+    logCritical("asyncExecute added active geom to map: {}", pid.toString());
     updateTransientList();
   }
 }
