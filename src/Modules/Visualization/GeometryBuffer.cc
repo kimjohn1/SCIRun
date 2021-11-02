@@ -39,7 +39,7 @@ using namespace Core::Algorithms::Visualization;
 using namespace Core::Geometry;
 using namespace Graphics::Datatypes;
 
-ALGORITHM_PARAMETER_DEF(Visualization, BufferSize);
+ALGORITHM_PARAMETER_DEF(Visualization, MaxBufferSize);
 ALGORITHM_PARAMETER_DEF(Visualization, FrameDelay);
 ALGORITHM_PARAMETER_DEF(Visualization, SendFlag);
 
@@ -50,7 +50,7 @@ namespace SCIRun::Modules::Visualization
   class GeometryBufferImpl
   {
   public:
-    std::vector<GeometryBaseHandle> buffer_;
+    std::map<std::string, std::vector<GeometryBaseHandle>> buffer_;
   };
 }
 
@@ -58,7 +58,14 @@ GeometryBuffer::GeometryBuffer() : ModuleWithAsyncDynamicPorts(staticInfo_, true
   impl_(new GeometryBufferImpl)
 {
   INITIALIZE_PORT(GeometryInput);
-  INITIALIZE_PORT(GeometryOutputSeries);
+  INITIALIZE_PORT(GeometryOutputSeries0);
+  INITIALIZE_PORT(GeometryOutputSeries1);
+  INITIALIZE_PORT(GeometryOutputSeries2);
+  INITIALIZE_PORT(GeometryOutputSeries3);
+  INITIALIZE_PORT(GeometryOutputSeries4);
+  INITIALIZE_PORT(GeometryOutputSeries5);
+  INITIALIZE_PORT(GeometryOutputSeries6);
+  INITIALIZE_PORT(GeometryOutputSeries7);
 }
 
 GeometryBuffer::~GeometryBuffer() = default;
@@ -66,7 +73,7 @@ GeometryBuffer::~GeometryBuffer() = default;
 void GeometryBuffer::setStateDefaults()
 {
   auto state = get_state();
-  state->setValue(Parameters::BufferSize, 50);
+  state->setValue(Parameters::MaxBufferSize, 50);
   state->setValue(Parameters::FrameDelay, 1.0);
   state->setValue(Parameters::SendFlag, false);
   state->connectSpecificStateChanged(Parameters::SendFlag, [this]()
@@ -89,31 +96,32 @@ void GeometryBuffer::sendAllGeometries()
     logCritical("Send all geoms module {}", true);
 
     int i = 0;
-    for (auto& geom : impl_->buffer_)
+    //TODO: need to transpose this loop
+    for (const auto& geomsByPort : impl_->buffer_)
     {
-      logCritical("Outputting geom number {}", i);
-      sendOutput(GeometryOutputSeries, geom);
+
+      for (const auto& geom : geomsByPort.second)
+      {
+        logCritical("Outputting geom on port number {}", i);
+        sendOutput(get_output_port(i), geom);
+      }
       std::this_thread::sleep_for(10ms);
       i++;
     }
-    //impl_->buffer_.clear();
-
   }
   state->setValue(Parameters::SendFlag, false);
 }
 
 void GeometryBuffer::asyncExecute(const PortId& pid, DatatypeHandle data)
 {
-  (void)pid;
-  (void)data;
   logCritical("Received object!");
 
   const auto geom = std::dynamic_pointer_cast<GeometryObject>(data);
-  impl_->buffer_.push_back(geom);
+  impl_->buffer_[pid.toString()].push_back(geom);
   logCritical("Buffer is size {}", impl_->buffer_.size());
 }
 
 void GeometryBuffer::portRemovedSlotImpl(const PortId& pid)
 {
-  (void)pid;
+  impl_->buffer_.remove(pid.toString());
 }
