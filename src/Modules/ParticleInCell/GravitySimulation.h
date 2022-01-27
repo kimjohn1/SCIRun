@@ -33,7 +33,8 @@
 
 namespace SCIRun  {
 namespace Modules {
-namespace ParticleInCell    {
+namespace ParticleInCell {
+//namespace Math    {
 
     class SCISHARE GravitySimulation : public SCIRun::Dataflow::Networks::Module,
         public HasNoInputPorts,
