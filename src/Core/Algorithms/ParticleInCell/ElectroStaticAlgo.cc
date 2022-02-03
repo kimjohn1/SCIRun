@@ -34,6 +34,9 @@ using namespace SCIRun::Core::Datatypes;
 using namespace SCIRun::Core::Algorithms;
 using namespace SCIRun::Core::Algorithms::ParticleInCell;
 
+
+ALGORITHM_PARAMETER_DEF(ParticleInCell, NumTimeSteps);
+
 const AlgorithmOutputName ElectroStaticAlgo::x_coordinates("x_coordinates");
 const AlgorithmOutputName ElectroStaticAlgo::y_coordinates("y_coordinates");
 const AlgorithmOutputName ElectroStaticAlgo::z_coordinates("z_coordinates");
@@ -41,6 +44,7 @@ const AlgorithmOutputName ElectroStaticAlgo::z_coordinates("z_coordinates");
 ElectroStaticAlgo::ElectroStaticAlgo()
     {
     addParameter(Variables::Method,0);
+    addParameter(Parameter::NumTimeSteps,1000);
     }
 
 AlgorithmOutput ElectroStaticAlgo::run(const AlgorithmInput&) const
@@ -55,7 +59,7 @@ using namespace std;
 
     int num_particles       = 10000;                  //should be set by User Interface input - currently set for electrons only
     double delta_t          = 2e-10;                  //should be set by User Interface input
-    int iterations          = 1000;                    //should be set by User Interface input
+    int iterations          = get(Parameters::NumTimeSteps).toInt()                   //should be set by User Interface input
     const int sample_size_p = 1000;                                        //should be set by User Interface input
     const int sample_size_i = 100;                    //should be set by User Interface input
     int output_count        = 0;

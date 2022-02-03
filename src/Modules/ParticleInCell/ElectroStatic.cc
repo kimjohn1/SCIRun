@@ -48,6 +48,7 @@ ElectroStatic::ElectroStatic() : Module(staticInfo_)
 void ElectroStatic::setStateDefaults()
     {
     setStateIntFromAlgo(Variables::Method);
+    setStateIntFromAlgo(Parameter::NumTimeStep);
     }
 
 void ElectroStatic::execute()
@@ -55,6 +56,7 @@ void ElectroStatic::execute()
     if(needToExecute())
         {
         setAlgoIntFromState(Variables::Method);
+        setStateIntFromAlgo(Parameter::NumTimeStep);
         AlgorithmInput input;
         auto output=algo().run(input);
 
