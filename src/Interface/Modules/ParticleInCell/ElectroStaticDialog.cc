@@ -32,6 +32,7 @@
 using namespace SCIRun::Gui;
 using namespace SCIRun::Dataflow::Networks;
 using namespace SCIRun::Core::Algorithms;
+using namespace SCIRun::Core::Algorithms::ParticleInCell;
 
 ElectroStaticDialog::ElectroStaticDialog(const std::string& name, ModuleStateHandle state,
   QWidget* parent /* = nullptr */)
@@ -40,5 +41,6 @@ ElectroStaticDialog::ElectroStaticDialog(const std::string& name, ModuleStateHan
     setupUi(this);
     setWindowTitle(QString::fromStdString(name));
     fixSize();
-    addRadioButtonGroupManager({dontprinttimesButton_ ,printtimesButton_}, Variables::Method);
+    addCheckBoxManager(printTimesButton_, Variables::Method);
+    addSpinBoxManager(numStepSpinBox_, Parameters::NumTimeSteps);
     }
