@@ -30,12 +30,15 @@
 #include <Core/Datatypes/Matrix.h>
 #include <Dataflow/Network/Module.h>
 #include <Core/Algorithms/ParticleInCell/ElectroStaticAlgo.h>
+#include <Core/Algorithms/Base/AlgorithmBase.h>
+
 
 using namespace SCIRun::Modules::ParticleInCell;
 using namespace SCIRun::Dataflow::Networks;
 using namespace SCIRun::Core::Algorithms;
 using namespace SCIRun::Core::Datatypes;
 using namespace SCIRun::Core::Algorithms::ParticleInCell;
+
 
 MODULE_INFO_DEF(ElectroStatic,ParticleInCell,SCIRun);
 
@@ -49,8 +52,7 @@ ElectroStatic::ElectroStatic() : Module(staticInfo_)
 void ElectroStatic::setStateDefaults()
     {
     setStateIntFromAlgo(Variables::Method);
-
-    setStateIntFromAlgo(Parameters::NumTimeStep);
+    setStateIntFromAlgo(Parameters::NumTimeSteps);                                    //here 1
     }
 
 void ElectroStatic::execute()
@@ -58,7 +60,7 @@ void ElectroStatic::execute()
     if(needToExecute())
         {
         setAlgoIntFromState(Variables::Method);
-        setStateIntFromAlgo(Parameters::NumTimeStep);
+        setStateIntFromAlgo(Parameters::NumTimeSteps);                                //here 2
         AlgorithmInput input;
         auto output=algo().run(input);
 
