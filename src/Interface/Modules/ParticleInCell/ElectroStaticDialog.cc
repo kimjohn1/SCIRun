@@ -28,6 +28,7 @@
 
 #include <Interface/Modules/ParticleInCell/ElectroStaticDialog.h>
 #include <Core/Algorithms/Base/AlgorithmVariableNames.h>
+#include<Core/Algorithms/ParticleInCell/ElectroStaticAlgo.h>
 
 using namespace SCIRun::Gui;
 using namespace SCIRun::Dataflow::Networks;

@@ -46,6 +46,7 @@ TARGET_LINK_LIBRARIES(Modules_ParticleInCell
   Dataflow_Network
   Core_Datatypes
   Algorithms_Base
+  Algorithms_ParticleInCell
 )
 
 IF(BUILD_SHARED_LIBS)

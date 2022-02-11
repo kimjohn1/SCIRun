@@ -35,12 +35,7 @@ using namespace SCIRun::Core::Datatypes;
 using namespace SCIRun::Core::Algorithms;
 using namespace SCIRun::Core::Algorithms::ParticleInCell;
 
-<<<<<<< HEAD
-
-ALGORITHM_PARAMETER_DEF(ParticleInCell, NumTimeSteps);
-=======
 ALGORITHM_PARAMETER_DEF(ParticleInCell, NumTimeSteps);                                        //here 1
->>>>>>> kimjohn1/ElectroStatic
 
 const AlgorithmOutputName ElectroStaticAlgo::x_coordinates("x_coordinates");
 const AlgorithmOutputName ElectroStaticAlgo::y_coordinates("y_coordinates");
@@ -48,13 +43,10 @@ const AlgorithmOutputName ElectroStaticAlgo::z_coordinates("z_coordinates");
 
 ElectroStaticAlgo::ElectroStaticAlgo()
     {
-<<<<<<< HEAD
-    addParameter(Variables::Method,0);
-    addParameter(Parameters::NumTimeSteps,1000);
-=======
+
     addParameter(Variables::Method,0);;
     addParameter(Parameters::NumTimeSteps,10000);                                     //here 2
->>>>>>> kimjohn1/ElectroStatic
+
     }
 
 AlgorithmOutput ElectroStaticAlgo::run(const AlgorithmInput&) const
@@ -69,30 +61,21 @@ using namespace std;
 
     int num_particles       = 10000;                  //should be set by User Interface input
     double delta_t          = 2e-10;                  //should be set by User Interface input
-    int iterations          = get(Parameters::NumTimeSteps).toInt()
-//    int iterations          = 100;                    //should be set by User Interface input
-<<<<<<< HEAD
-//    int iterations          = 10000;
-=======
-
     int iterations          = get(Parameters::NumTimeSteps).toInt();                  //here 3
 //    int iterations          = 10000;                  //To be set by the input variable NumTimeSteps (see above)
 //    int iterations          = 5000;
 
->>>>>>> kimjohn1/ElectroStatic
+
 //    const int sample_size_p = 1000;                                        //should be set by User Interface input
     const int sample_size_p = 100;                    //Using 100 for sample_size_p, 10,000 for num_particles, 5,000 iterations and 5 for sample_size_i, takes 108 seconds to run
 
 //    const int sample_size_i = 100;                    //should be set by User Interface input
-<<<<<<< HEAD
-    const int sample_size_i = 5;
-=======
+
 
 //      const int sample_size_i = 5;                    //Using 5 for sample_size_i, 5,000 iterations, 10,000 for num_particles and 100 for sample_size_p, takes 53 seconds
       const int sample_size_i = 10;                   //Using 10 for sample_size_i, 5,000 iterations, 10,000 for num_particles and 100 for sample_size_p, takes 53 seconds
 //      const int sample_size_i = 50;                   //Using 50 for sample_size_i, 5,000 iterations, 10,000 for num_particles and 100 for sample_size_p, takes ?? seconds
-    
->>>>>>> kimjohn1/ElectroStatic
+
 
     int output_count        = 0;
     int buffer_index        = 0;

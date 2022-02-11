@@ -54,6 +54,7 @@ using int3 = vec3<int>;
 
 template <typename T>
 class Field_
+// TODO: Needs serious refactoring
 {
 public:
 	
@@ -88,8 +89,10 @@ public:
 			other.data = nullptr;	//invalidate
 	}
 
-	//move assignment operator
-	Field_& operator = (Field_ &&f) {return *this;}
+//	//move assignment operator
+//    TODO: this is not the right way to do it
+//	Field_& operator = (Field_ &&f) {return *this;}
+    Field_& operator = (Field_ &&) {return *this;}
 
 	//destructor: release memory
 	~Field_() {

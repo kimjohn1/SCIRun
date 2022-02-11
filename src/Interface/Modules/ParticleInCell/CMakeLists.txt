@@ -53,10 +53,11 @@ SCIRUN_ADD_LIBRARY(Interface_Modules_ParticleInCell
 )
 
 TARGET_LINK_LIBRARIES(Interface_Modules_ParticleInCell
+  Algorithms_ParticleInCell
   Modules_ParticleInCell
   Modules_Basic
   Interface_Modules_Base
-  Modules_Legacy_Bundle
+  #Modules_Legacy_Bundle
   ${SCI_BOOST_LIBRARY}
   ${QT_LIBRARIES}
 )
