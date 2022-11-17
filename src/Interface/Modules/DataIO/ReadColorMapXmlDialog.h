@@ -26,32 +26,35 @@
 */
 
 
-#ifndef MODULES_FIELDS_CalculateInsideWhichField_H
-#define MODULES_FIELDS_CalculateInsideWhichField_H
-#include <Dataflow/Network/Module.h>
-#include <Modules/Fields/share.h>
+#ifndef INTERFACE_MODULES_READ_COLORMAPXML_H
+#define INTERFACE_MODULES_READ_COLORMAPXML_H
+
+#include "Interface/Modules/DataIO/ui_ReadColorMapXml.h"
+#include <Interface/Modules/Base/ModuleDialogGeneric.h>
+#include <Interface/Modules/Base/RemembersFileDialogDirectory.h>
+#include <Interface/Modules/DataIO/share.h>
 
 namespace SCIRun {
-namespace Modules {
-namespace Fields {
+namespace Gui {
 
-  class SCISHARE CalculateInsideWhichField : public SCIRun::Dataflow::Networks::Module,
-    public Has2InputPorts<FieldPortTag, DynamicPortTag <FieldPortTag>>,
-    public Has1OutputPort<FieldPortTag>
-  {
-  public:
-    CalculateInsideWhichField();
-    void execute() override;
-    void setStateDefaults() override;
+class SCISHARE ReadColorMapXmlDialog : public ModuleDialogGeneric,
+  public Ui::ReadColorMapXmlDialog, public RemembersFileDialogDirectory
+{
+	Q_OBJECT
 
+public:
+  ReadColorMapXmlDialog(const std::string& name,
+    SCIRun::Dataflow::Networks::ModuleStateHandle state,
+    QWidget* parent = nullptr);
+protected:
+  void pullSpecial() override;
 
-    INPUT_PORT(0, InputField, Field);
-    HAS_DYNAMIC_PORTS
-    INPUT_PORT_DYNAMIC(1, InputFields, Field);
-    OUTPUT_PORT(0, OutputField, Field);
+private Q_SLOTS:
+  void pushFileNameToState();
+  void openFile();
+};
 
-    MODULE_TRAITS_AND_INFO(ModuleHasUIAndAlgorithm);
-  };
-}}}
+}
+}
 
 #endif
