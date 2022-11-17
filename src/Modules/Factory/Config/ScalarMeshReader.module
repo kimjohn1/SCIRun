@@ -1,0 +1,23 @@
+{
+"module":
+    {
+    "name": "ScalarMeshReader",
+    "namespace": "ParticleInCell",
+    "status": "new module",
+    "description": "PIConGPU openPMD Scalar Mesh Reader module",
+    "header": "Modules/ParticleInCell/ScalarMeshReader.h"
+     },
+
+"algorithm":
+    {
+    "name": "ScalarMeshReaderAlgo",
+    "namespace": "ParticleInCell",
+    "header": "Core/Algorithms/ParticleInCell/ScalarMeshReaderAlgo.h"
+    },
+
+"UI":
+    {
+    "name": "ScalarMeshReaderDialog",
+    "header": "Interface/Modules/ParticleInCell/ScalarMeshReaderDialog.h"
+    }
+}

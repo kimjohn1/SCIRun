@@ -25,6 +25,7 @@
 #  DEALINGS IN THE SOFTWARE.
 #
 
+find_package(openPMD REQUIRED)
 
 SET(Algorithms_ParticleInCell_SRCS
   GravitySimulationAlgo.cc
@@ -33,7 +34,11 @@ SET(Algorithms_ParticleInCell_SRCS
   PotentialSolver.cpp
   Species.cpp
   World.cpp
-  PIConGPUAlgo.cpp
+  PIConGPUAlgo.cc
+  ScalarMeshReaderAlgo.cc
+  VectorMeshReaderAlgo.cc
+  ParticleReaderAlgo.cc
+  PIConGPUReaderAlgo.cc
 )
 
 SET(Algorithms_ParticleInCell_HEADERS
@@ -44,6 +49,10 @@ SET(Algorithms_ParticleInCell_HEADERS
   Species.h
   World.h
   PIConGPUAlgo.h
+  ScalarMeshReaderAlgo.h
+  VectorMeshReaderAlgo.h
+  ParticleReaderAlgo.h
+  PIConGPUReaderAlgo.h
 )
 
 SCIRUN_ADD_LIBRARY(Algorithms_ParticleInCell
@@ -56,7 +65,9 @@ TARGET_LINK_LIBRARIES(Algorithms_ParticleInCell
   Core_Thread
   Algorithms_Base
   Core_Parser
+  openPMD::openPMD
   ${SCI_BOOST_LIBRARY}
+
 )
 
 IF(BUILD_SHARED_LIBS)

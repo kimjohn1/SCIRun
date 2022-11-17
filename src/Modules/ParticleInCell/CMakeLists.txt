@@ -25,17 +25,27 @@
 #  DEALINGS IN THE SOFTWARE.
 #
 
+find_package(openPMD REQUIRED)
 
 SET(Modules_ParticleInCell_SRCS
   ElectroStatic.cc
   GravitySimulation.cc
   PIConGPU.cc
+  ScalarMeshReader.cc
+  VectorMeshReader.cc
+  ParticleReader.cc
+  PIConGPUReader.cc
 )
 
 SET(Modules_ParticleInCell_HEADERS
   share.h
   ElectroStatic.h
   GravitySimulation.h
+  PIConGPU.h
+  ScalarMeshReader.h
+  VectorMeshReader.h
+  ParticleReader.h
+  PIConGPUReader.h
 )
 
 SCIRUN_ADD_LIBRARY(Modules_ParticleInCell
@@ -46,8 +56,11 @@ SCIRUN_ADD_LIBRARY(Modules_ParticleInCell
 TARGET_LINK_LIBRARIES(Modules_ParticleInCell
   Dataflow_Network
   Core_Datatypes
+  Core_Thread
   Algorithms_Base
-
+  Core_Parser
+  openPMD::openPMD
+  ${SCI_BOOST_LIBRARY}
 )
 
 IF(BUILD_SHARED_LIBS)

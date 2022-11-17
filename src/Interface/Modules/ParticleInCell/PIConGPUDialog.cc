@@ -25,15 +25,13 @@
    DEALINGS IN THE SOFTWARE.
 */
 
-
 #include <Interface/Modules/ParticleInCell/PIConGPUDialog.h>
-#include <Core/Algorithms/Base/AlgorithmVariableNames.h>
 #include <Core/Algorithms/ParticleInCell/PIConGPUAlgo.h>
+#include <Core/Algorithms/Base/AlgorithmVariableNames.h>
 
 using namespace SCIRun::Gui;
 using namespace SCIRun::Dataflow::Networks;
 using namespace SCIRun::Core::Algorithms;
-using namespace SCIRun::Core::Algorithms::ParticleInCell;
 
 PIConGPUDialog::PIConGPUDialog(const std::string& name, ModuleStateHandle state,
   QWidget* parent /* = nullptr */)
@@ -42,6 +40,11 @@ PIConGPUDialog::PIConGPUDialog(const std::string& name, ModuleStateHandle state,
     setupUi(this);
     setWindowTitle(QString::fromStdString(name));
     fixSize();
-    addRadioButtonGroupManager({dontsavedataButton_ ,savedataButton_}, Variables::Method);
-//    addSpinBoxManager({NumTimeStepsSpinBox_}, Parameters::NumTimeSteps);
+
+    addLineEditManager({inputClone_},      Variables::CloneDir);
+    addLineEditManager({outputData_},      Variables::OutputDir);
+    addLineEditManager({inputConfig_},     Variables::ConfigFile);
+    addLineEditManager({inputSimulation_}, Variables::SimulationFile);
+
+    addRadioButtonGroupManager({reRunButton_}, Variables::Method);
     }
