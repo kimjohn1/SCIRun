@@ -73,39 +73,39 @@ bool PIConGPUAlgo::StartPIConGPU(const std::string sim_input, const std::string 
 
                                   //Assemble the script that creates the Test_compile_run script
 
-    text_file = "printf '#!/usr/bin bash\n\nsource $HOME/picongpu.profile && pic-create "
+    text_file = "printf '#!/usr/bin bash\n\nsource /home/kj/Project/picongpu.profile && pic-create "
                         +sim_input+" "+sim_clone+"\ncd "+sim_clone+" && pic-build && tbg -s bash -c "
-                        +cfg_input+" -t etc/picongpu/bash/mpiexec.tpl "+sim_output+" &' > $HOME/Sim_run";
+                        +cfg_input+" -t etc/picongpu/bash/mpiexec.tpl "+sim_output+" &' > /home/kj/Project/Sim_run";
 
     if(cfg_input.compare("$PIC_CFG/sst.cfg")==0)
         {
-        text_file = "printf '#!/usr/bin bash\n\nsource $HOME/picongpu.profile && pic-create "
+        text_file = "printf '#!/usr/bin bash\n\nsource /home/kj/Project/picongpu.profile && pic-create "
                   +sim_input+" "+sim_clone+"\ncd "+sim_clone+" && pic-build && tbg -s bash -c "
-                  +cfg_input+" -t etc/picongpu/bash/mpiexec.tpl $HOME/scratch/runs/SST &' > $HOME/Sim_run";
+                  +cfg_input+" -t etc/picongpu/bash/mpiexec.tpl /home/kj/Project/scratch/runs/SST &' > /home/kj/Project/Sim_run";
         }
 
     if(reRun==0)
         {
         if(cfg_input.compare("$PIC_CFG/sst.cfg")==0)
             {
-            text_file = "printf '#!/usr/bin bash\n\nsource $HOME/picongpu_reRun.profile && rm -rf $HOME/scratch/runs/SST && cd "+sim_clone+" && tbg -s bash -c "
-                      +cfg_input+" -t etc/picongpu/bash/mpiexec.tpl $HOME/scratch/runs/SST &' > $HOME/Sim_run";
+            text_file = "printf '#!/usr/bin bash\n\nsource /home/kj/Project/picongpu_reRun.profile && rm -rf /home/kj/Project/scratch/runs/SST && cd "+sim_clone+" && tbg -s bash -c "
+                      +cfg_input+" -t etc/picongpu/bash/mpiexec.tpl /home/kj/Project/scratch/runs/SST &' > /home/kj/Project/Sim_run";
             }
         else
             {
-            text_file = "printf '#!/usr/bin bash\n\nsource $HOME/picongpu_reRun.profile && rm -rf "+sim_output+" && cd "+sim_clone+" && tbg -s bash -c "
-                      +cfg_input+" -t etc/picongpu/bash/mpiexec.tpl "+sim_output+" &' > $HOME/Sim_run";
+            text_file = "printf '#!/usr/bin bash\n\nsource /home/kj/Project/picongpu_reRun.profile && rm -rf "+sim_output+" && cd "+sim_clone+" && tbg -s bash -c "
+                      +cfg_input+" -t etc/picongpu/bash/mpiexec.tpl "+sim_output+" &' > /home/kj/Project/Sim_run";
             }
         }
 
-                                  //Run the script that creates the Test_compile_run script
+                                  //Run the script that creates the Sim_run script
 
     const char *command=text_file.c_str();
     system(command);
 
-                                  //Run the Test1.py program that runs the Test_compile_run script
+                                  //Run the Sim.py program that runs the Test_compile_run script
 
-    string str_py="cd $HOME && python3 Sim.py";
+    string str_py="cd /home/kj/Project && python3 Sim.py";
     const char *command_py=str_py.c_str();
     system(command_py);
 
