@@ -37,10 +37,11 @@ To Do:
     Implement all of the above as config settings
     Figure out why including PSypy in the output (TBG Plugins option in the .cfg file) causes an execution crash
 
-The current known to be functional implementation is the LaserWakefield simulation using any of the following config files 1.cfg, 2.cfg and sst.cfg
+The current known to be functional implementation is the LaserWakefield simulation using any of the following config files 1.cfg, 2.cfg, sst.cfg and sst_2.cfg
 I have successfully tested the following PIConGPU module UI entries for Simulation and Config file:
     $PIC_EXAMPLES/LaserWakefield
     $PIC_CFG/sst.cfg
+    $PIC_CFG/sst_2.cfg
     $PIC_CFG/1.cfg
 */
 
@@ -75,13 +76,13 @@ bool PIConGPUAlgo::StartPIConGPU(const std::string sim_input, const std::string 
 
     text_file = "printf '#!/usr/bin bash\n\nsource /Project/picongpu.profile && pic-create "
                         +sim_input+" "+sim_clone+"\ncd "+sim_clone+" && pic-build && tbg -s bash -c "
-                        +cfg_input+" -t etc/picongpu/bash/mpiexec.tpl "+sim_output+" &' > /Project/Sim_run";
+                        +cfg_input+" -t /Project/src/picongpu/etc/picongpu/bash/mpiexec.tpl "+sim_output+" &' > /Project/Sim_run";
 
     if(cfg_input.compare("$PIC_CFG/sst.cfg")==0)
         {
         text_file = "printf '#!/usr/bin bash\n\nsource /Project/picongpu.profile && pic-create "
                   +sim_input+" "+sim_clone+"\ncd "+sim_clone+" && pic-build && tbg -s bash -c "
-                  +cfg_input+" -t etc/picongpu/bash/mpiexec.tpl /Project/scratch/runs/SST &' > /Project/Sim_run";
+                  +cfg_input+" -t /Project/src/picongpu/etc/picongpu/bash/mpiexec.tpl /Project/scratch/runs/SST &' > /Project/Sim_run";
         }
 
     if(reRun==0)
@@ -89,12 +90,12 @@ bool PIConGPUAlgo::StartPIConGPU(const std::string sim_input, const std::string 
         if(cfg_input.compare("$PIC_CFG/sst.cfg")==0)
             {
             text_file = "printf '#!/usr/bin bash\n\nsource /Project/picongpu_reRun.profile && rm -rf /Project/scratch/runs/SST && cd "+sim_clone+" && tbg -s bash -c "
-                      +cfg_input+" -t etc/picongpu/bash/mpiexec.tpl /Project/scratch/runs/SST &' > /Project/Sim_run";
+                      +cfg_input+" -t /Project/src/picongpu/etc/picongpu/bash/mpiexec.tpl /Project/scratch/runs/SST &' > /Project/Sim_run";
             }
         else
             {
             text_file = "printf '#!/usr/bin bash\n\nsource /Project/picongpu_reRun.profile && rm -rf "+sim_output+" && cd "+sim_clone+" && tbg -s bash -c "
-                      +cfg_input+" -t etc/picongpu/bash/mpiexec.tpl "+sim_output+" &' > /Project/Sim_run";
+                      +cfg_input+" -t /Project/src/picongpu/etc/picongpu/bash/mpiexec.tpl "+sim_output+" &' > /Project/Sim_run";
             }
         }
 
