@@ -1,19 +1,9 @@
 # Name and Path of this Script ############################### (DO NOT change!)
 export PIC_PROFILE=$(cd $(dirname $BASH_SOURCE) && pwd)"/"$(basename $BASH_SOURCE)
 
-# Note: This script is intended to be run from the $Base_directory (defined below)
-#       Existing 'scratch' and 'picInputs' directories are deleted when this 
-#       script is run from the $Base_directory
+# Note: The code that calls this script deletes the existing output directory
 
 export Base_directory=/Project
-
-# Delete existing directories
-rm -rf scratch
-rm -rf picInputs
-
-# Create directories
-mkdir -p $Base_directory/picInputs
-mkdir -p $Base_directory/scratch $Base_directory/scratch/runs
 
 # Set variables and paths
 #export PIC_BACKEND="omp2b:native"   # running on CPU
@@ -42,7 +32,7 @@ export LD_LIBRARY_PATH=$Base_directory/lib/openPMD-api/lib:$LD_LIBRARY_PATH
 export TBG_SUBMIT="bash"
 export TBG_TPLFILE="etc/picongpu/bash/mpirun.tpl"
 
-echo PIC_BACKEND is: $PIC_BACKEND from picongpu
+echo PIC_BACKEND is: $PIC_BACKEND from picongpu_reRun
 
 # Install and Run notes:
 

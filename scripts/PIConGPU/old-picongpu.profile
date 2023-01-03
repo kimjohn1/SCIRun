@@ -1,50 +1,61 @@
 # Name and Path of this Script ############################### (DO NOT change!)
 export PIC_PROFILE=$(cd $(dirname $BASH_SOURCE) && pwd)"/"$(basename $BASH_SOURCE)
 
-# Note: This script is intended to be run from the $Base_directory (defined below)
-#       Existing 'scratch' and 'picInputs' directories are deleted when this 
-#       script is run from the $Base_directory
-
-export Base_directory=/Project
+# Note: This script is intended to be run from the $HOME directory and will
+#       delete existing 'scratch' and 'picInputs' directories
 
 # Delete existing directories
 rm -rf scratch
 rm -rf picInputs
 
 # Create directories
-mkdir -p $Base_directory/picInputs
-mkdir -p $Base_directory/scratch $Base_directory/scratch/runs
+mkdir -p $HOME/picInputs
+mkdir -p $HOME/scratch $HOME/scratch/runs
 
 # Set variables and paths
-#export PIC_BACKEND="omp2b:native"   # running on CPU
+export PIC_BACKEND="omp2b:native"   # running on CPU
 #export PIC_BACKEND="cuda:61"        # running on GPU, compute capability 6.1 (GTX 1070)
-#export PIC_BACKEND="cuda:75"        # running on GPU, compute capability 7.5 (GTX 2060)
-export PIC_BACKEND="cuda:86"        # running on GPU, compute capability 8.6 (RTX 3060)
+#export PIC_BACKEND="cuda:86"        # running on GPU, compute capability 8.6 (RTX 3060)
 
-export SCRATCH=$Base_directory/scratch
-export PICSRC=$Base_directory/src/picongpu
+export SCRATCH=$HOME/scratch
+export PICSRC=$HOME/src/picongpu
 export PIC_EXAMPLES=$PICSRC/share/picongpu/examples
-export PIC_CLONE=$Base_directory/picInputs
+export PIC_CLONE=$HOME/picInputs
 export PIC_CFG=etc/picongpu
 export PIC_OUTPUT=$SCRATCH/runs
 
 export PATH=$PATH:$PICSRC:$PICSRC/bin:$PICSRC/src/tools/bin
 export PYTHONPATH=$PICSRC/lib/python:$PYTHONPATH
 
-export CMAKE_PREFIX_PATH=$Base_directory/lib/ADIOS2:$CMAKE_PREFIX_PATH
-export LD_LIBRARY_PATH=$Base_directory/lib/ADIOS2/lib:$LD_LIBRARY_PATH
-export CMAKE_PREFIX_PATH=$Base_directory/lib/pngwriter:$CMAKE_PREFIX_PATH
-export LD_LIBRARY_PATH=$Base_directory/lib/pngwriter/lib:$LD_LIBRARY_PATH
-export CMAKE_PREFIX_PATH=$Base_directory/lib/openPMD-api:$CMAKE_PREFIX_PATH
-export LD_LIBRARY_PATH=$Base_directory/lib/openPMD-api/lib:$LD_LIBRARY_PATH
+#Un-comment the next 2 lines if HDF5 was installed from source
+#export CMAKE_PREFIX_PATH=$HOME/lib/hdf5:$CMAKE_PREFIX_PATH
+#export LD_LIBRARY_PATH=$HOME/lib/hdf5/lib:$LD_LIBRARY_PATH
+export CMAKE_PREFIX_PATH=$HOME/lib/ADIOS2:$CMAKE_PREFIX_PATH
+export LD_LIBRARY_PATH=$HOME/lib/ADIOS2/lib:$LD_LIBRARY_PATH
+export CMAKE_PREFIX_PATH=$HOME/lib/pngwriter:$CMAKE_PREFIX_PATH
+export LD_LIBRARY_PATH=$HOME/lib/pngwriter/lib:$LD_LIBRARY_PATH
+export CMAKE_PREFIX_PATH=$HOME/lib/openPMD-api:$CMAKE_PREFIX_PATH
+export LD_LIBRARY_PATH=$HOME/lib/openPMD-api/lib:$LD_LIBRARY_PATH
 
 # Set "tbg" default options ######################################
+#
 export TBG_SUBMIT="bash"
 export TBG_TPLFILE="etc/picongpu/bash/mpirun.tpl"
 
-echo PIC_BACKEND is: $PIC_BACKEND from picongpu
+# Load autocompletion for PIConGPU commands
+#
+
+BASH_COMP_FILE=$PICSRC/bin/picongpu-completion.bash
+if [ -f $BASH_COMP_FILE ] ; then
+    source $BASH_COMP_FILE
+else
+    echo "bash completion file '$BASH_COMP_FILE' not found." >&2
+fi
+
+echo PIC_BACKEND is: $PIC_BACKEND
 
 # Install and Run notes:
+#
 
 #OpenMP version
 # Check with: echo |cpp -fopenmp -dM |grep -i open
@@ -52,8 +63,8 @@ echo PIC_BACKEND is: $PIC_BACKEND from picongpu
 
 # Compile and run PIConGPU
 #Modify the 1.cfg file if needed, this becomes unnecessary after PIConGPU issue 4004 is implemented
-#pic-create $PIC_EXAMPLES/LaserWakefield $Base_directory/picInputs/myLWFA
-#cd $Base_directory/picInputs/myLWFA
+#pic-create $PIC_EXAMPLES/LaserWakefield $HOME/picInputs/myLWFA
+#cd $HOME/picInputs/myLWFA
 #pic-build 2>err.txt | tee out.txt
 #tbg -s bash -c etc/picongpu/1.cfg -t etc/picongpu/bash/mpiexec.tpl $SCRATCH/runs/lwfa_001 2>erroutput
 
