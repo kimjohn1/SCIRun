@@ -142,13 +142,11 @@ void PIConGPUReader::execute()
 //  ************************************************Start the openPMD Reader function and loop
 
                                                         //Wait for simulation output data to be generated and posted via SST
-                                                        // TODO: figure out how to use a general reference for the home directory in these two lines of code
 
-//        std::string SST_dir = "../../../scratch/runs/SST/simOutput/openPMD/simData.sst";
-        std::string SST_dir = "/home/kj/scratch/runs/SST/simOutput/openPMD/simData.sst";
+        std::string SST_dir = "/Project/scratch/runs/SST/simOutput/openPMD/simData.sst";
 
         while(!std::filesystem::exists(SST_dir)) sleep(1);
-        Series series = Series("/home/kj/scratch/runs/SST/simOutput/openPMD/simData.sst", Access::READ_ONLY);
+        Series series = Series(SST_dir, Access::READ_ONLY);
 
         for (IndexedIteration iteration : series.readIterations())
             {
