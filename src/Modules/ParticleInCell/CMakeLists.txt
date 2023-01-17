@@ -32,6 +32,7 @@ SET(Modules_ParticleInCell_SRCS
   GravitySimulation.cc
   PIConGPU.cc
   PIConGPUReader.cc
+  PIConGPUReaderAsynch.cc
 )
 
 SET(Modules_ParticleInCell_HEADERS
@@ -40,6 +41,7 @@ SET(Modules_ParticleInCell_HEADERS
   GravitySimulation.h
   PIConGPU.h
   PIConGPUReader.h
+  PIConGPUReaderAsynch.h
 )
 
 SCIRUN_ADD_LIBRARY(Modules_ParticleInCell
