@@ -31,6 +31,7 @@ SET(Interface_Modules_ParticleInCell_FORMS
   GravitySimulationDialog.ui
   PIConGPUDialog.ui
   PIConGPUReaderDialog.ui
+  PIConGPUReaderAsynchDialog.ui
 )
 
 SET(Interface_Modules_ParticleInCell_HEADERS
@@ -38,6 +39,7 @@ SET(Interface_Modules_ParticleInCell_HEADERS
   GravitySimulationDialog.h
   PIConGPUDialog.h
   PIConGPUReaderDialog.h
+  PIConGPUReaderAsynchDialog.h
   share.h
 )
 
@@ -46,6 +48,7 @@ SET(Interface_Modules_ParticleInCell_SOURCES
   GravitySimulationDialog.cc
   PIConGPUDialog.cc
   PIConGPUReaderDialog.cc
+  PIConGPUReaderAsynchDialog.cc
 )
 
 QT_WRAP_UI(Interface_Modules_ParticleInCell_FORMS_HEADERS "${Interface_Modules_ParticleInCell_FORMS}")
