@@ -255,7 +255,7 @@ void PIConGPUReaderAsynch::execute()
         auto output=algo().run(input);
         SimulationStreamingReaderBaseImpl P;
         streamer_ = std::make_unique<StreamAppenderImpl>(this);
-        std::string SST_dir = "/home/kj/scratch/runs/SST/simOutput/openPMD/simData.sst";
+        std::string SST_dir = "/Project/scratch/runs/SST/simOutput/openPMD/simData.sst";
 
         while(!std::filesystem::exists(SST_dir)) sleep(1);
         Series series = Series(SST_dir, Access::READ_ONLY);
