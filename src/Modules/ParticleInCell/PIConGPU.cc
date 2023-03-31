@@ -85,13 +85,13 @@ void PIConGPU::execute()
 
         if(CPU_Method1)
             {
-            text_file = "cp -p /Project/src/picongpu/etc/picongpu/bash-pc-scii/CPUonly/*.profile /Project/";
+            text_file = "cp -p /Project/src/picongpu/etc/picongpu/bash-pc-scii/*.profile /Project/";
             const char *command_prof=text_file.c_str();
             system(command_prof);
             }
         else
             {
-            text_file = "cp -p /Project/src/picongpu/etc/picongpu/bash-pc-scii/*.profile /Project/";
+            text_file = "cp -p /Project/src/picongpu/etc/picongpu/bash-pc-scii/CPUonly/*.profile /Project/";
             const char *command_prof=text_file.c_str();
             system(command_prof);
             }
