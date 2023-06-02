@@ -77,7 +77,7 @@ bool PIConGPUAlgo::StartPIConGPU(const std::string sim_input, const std::string 
                                   //Assemble the script that creates the Sim_run script
     text_file = "printf '#!/usr/bin bash\n\nsource $HOME/picongpu.profile && pic-create "
                         +sim_input+" "+sim_clone+"\ncd "+sim_clone+" && pic-build && tbg -s bash -c "
-                        +cfg_input+" -t etc/picongpu/bash/mpiexec.tpl "+sim_output+" &' > /Project/Sim_run";
+                        +cfg_input+" -t etc/picongpu/bash/mpiexec.tpl "+sim_output+" &' > $HOME/Sim_run";
 
     if(reRun==0)
         {
