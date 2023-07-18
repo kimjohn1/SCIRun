@@ -347,7 +347,7 @@ void PIConGPUReader::setupStream()
 
 void PIConGPUReader::shutdownStream()
     {
-    std::cout << "Total visualization time is " << total_t << " seconds\n";          //here
+    //std::cout << "Total visualization time is " << total_t << " seconds\n";          //here
 
     string text_file;
     text_file = "rm ~/picongpu.profile ~/picongpu_reRun.profile ~/Sim.py ~/Sim_run";
