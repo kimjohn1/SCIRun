@@ -4,91 +4,27 @@
 <networkFile class_id="0" tracking_level="0" version="6">
 	<networkInfo class_id="1" tracking_level="0" version="0">
 		<modules class_id="2" tracking_level="0" version="0">
-			<count>14</count>
+			<count>11</count>
 			<item_version>0</item_version>
 			<item class_id="3" tracking_level="0" version="0">
-				<first>CollectMatrices:0</first>
+				<first>CreateStandardColorMap:2</first>
 				<second class_id="4" tracking_level="0" version="0">
 					<module class_id="5" tracking_level="0" version="0">
-						<package_name_>SCIRun</package_name_>
-						<category_name_>Math</category_name_>
-						<module_name_>CollectMatrices</module_name_>
-					</module>
-					<state class_id="6" tracking_level="0" version="0">
-						<stateMap class_id="7" tracking_level="0" version="0">
-							<count>4</count>
-							<item_version>0</item_version>
-							<item class_id="8" tracking_level="0" version="0">
-								<first class_id="9" tracking_level="0" version="0">
-									<name>CollectAppendIndicator</name>
-								</first>
-								<second class_id="10" tracking_level="0" version="0">
-									<name>CollectAppendIndicator</name>
-									<value class_id="11" tracking_level="1" version="0" object_id="_0">
-										<which>0</which>
-										<value>0</value>
-									</value>
-								</second>
-							</item>
-							<item>
-								<first>
-									<name>CollectPrependIndicator</name>
-								</first>
-								<second>
-									<name>CollectPrependIndicator</name>
-									<value object_id="_1">
-										<which>0</which>
-										<value>1</value>
-									</value>
-								</second>
-							</item>
-							<item>
-								<first>
-									<name>CollectRowIndicator</name>
-								</first>
-								<second>
-									<name>CollectRowIndicator</name>
-									<value object_id="_2">
-										<which>0</which>
-										<value>1</value>
-									</value>
-								</second>
-							</item>
-							<item>
-								<first>
-									<name>ProgrammableInputPortEnabled</name>
-								</first>
-								<second>
-									<name>ProgrammableInputPortEnabled</name>
-									<value object_id="_3">
-										<which>3</which>
-										<value>0</value>
-									</value>
-								</second>
-							</item>
-						</stateMap>
-					</state>
-				</second>
-			</item>
-			<item>
-				<first>CreateStandardColorMap:2</first>
-				<second>
-					<module>
 						<package_name_>SCIRun</package_name_>
 						<category_name_>Visualization</category_name_>
 						<module_name_>CreateStandardColorMap</module_name_>
 					</module>
-					<state>
-						<stateMap>
+					<state class_id="6" tracking_level="0" version="0">
+						<stateMap class_id="7" tracking_level="0" version="0">
 							<count>10</count>
 							<item_version>0</item_version>
-							<item>
-								<first>
+							<item class_id="8" tracking_level="0" version="0">
+								<first class_id="9" tracking_level="0" version="0">
 									<name>AlphaUserPointsVector</name>
 								</first>
-								<second>
+								<second class_id="10" tracking_level="0" version="0">
 									<name>AlphaUserPointsVector</name>
-									<value object_id="_4">
+									<value class_id="11" tracking_level="1" version="0" object_id="_0">
 										<which>5</which>
 										<value class_id="12" tracking_level="0" version="0">
 											<count>0</count>
@@ -103,7 +39,7 @@
 								</first>
 								<second>
 									<name>ColorMapInvert</name>
-									<value object_id="_5">
+									<value object_id="_1">
 										<which>3</which>
 										<value>0</value>
 									</value>
@@ -115,7 +51,7 @@
 								</first>
 								<second>
 									<name>ColorMapName</name>
-									<value object_id="_6">
+									<value object_id="_2">
 										<which>2</which>
 										<value>Pink,White,Blue</value>
 									</value>
@@ -127,7 +63,7 @@
 								</first>
 								<second>
 									<name>ColorMapOption</name>
-									<value object_id="_7">
+									<value object_id="_3">
 										<which>0</which>
 										<value>0</value>
 									</value>
@@ -139,7 +75,7 @@
 								</first>
 								<second>
 									<name>ColorMapResolution</name>
-									<value object_id="_8">
+									<value object_id="_4">
 										<which>0</which>
 										<value>40</value>
 									</value>
@@ -151,7 +87,7 @@
 								</first>
 								<second>
 									<name>ColorMapShift</name>
-									<value object_id="_9">
+									<value object_id="_5">
 										<which>1</which>
 										<value>7.50000000000000000e-01</value>
 									</value>
@@ -163,7 +99,7 @@
 								</first>
 								<second>
 									<name>CustomColor0</name>
-									<value object_id="_10">
+									<value object_id="_6">
 										<which>2</which>
 										<value>Color(0.2,0.2,0.2)</value>
 									</value>
@@ -175,7 +111,7 @@
 								</first>
 								<second>
 									<name>CustomColor1</name>
-									<value object_id="_11">
+									<value object_id="_7">
 										<which>2</which>
 										<value>Color(0.8,0.8,0.8)</value>
 									</value>
@@ -187,7 +123,7 @@
 								</first>
 								<second>
 									<name>DefaultAlphaValue</name>
-									<value object_id="_12">
+									<value object_id="_8">
 										<which>1</which>
 										<value>5.00000000000000000e-01</value>
 									</value>
@@ -199,7 +135,7 @@
 								</first>
 								<second>
 									<name>ProgrammableInputPortEnabled</name>
-									<value object_id="_13">
+									<value object_id="_9">
 										<which>3</which>
 										<value>0</value>
 									</value>
@@ -227,7 +163,7 @@
 								</first>
 								<second>
 									<name>IsovalueChoice</name>
-									<value object_id="_14">
+									<value object_id="_10">
 										<which>2</which>
 										<value>Quantity</value>
 									</value>
@@ -239,7 +175,7 @@
 								</first>
 								<second>
 									<name>IsovalueListInclusiveExclusive</name>
-									<value object_id="_15">
+									<value object_id="_11">
 										<which>0</which>
 										<value>0</value>
 									</value>
@@ -251,11 +187,11 @@
 								</first>
 								<second>
 									<name>IsovalueListString</name>
-									<value object_id="_16">
+									<value object_id="_12">
 										<which>2</which>
-										<value>-10.002
--6.66798
--3.33399
+										<value>-9.38105
+-6.25404
+-3.12702
 0
 </value>
 									</value>
@@ -267,7 +203,7 @@
 								</first>
 								<second>
 									<name>IsovalueQuantityFromField</name>
-									<value object_id="_17">
+									<value object_id="_13">
 										<which>0</which>
 										<value>1</value>
 									</value>
@@ -279,7 +215,7 @@
 								</first>
 								<second>
 									<name>ListOfIsovalues</name>
-									<value object_id="_18">
+									<value object_id="_14">
 										<which>2</which>
 										<value></value>
 									</value>
@@ -291,7 +227,7 @@
 								</first>
 								<second>
 									<name>ManualMaximumIsovalue</name>
-									<value object_id="_19">
+									<value object_id="_15">
 										<which>1</which>
 										<value>-4.00000000000000022e-01</value>
 									</value>
@@ -303,7 +239,7 @@
 								</first>
 								<second>
 									<name>ManualMinimumIsovalue</name>
-									<value object_id="_20">
+									<value object_id="_16">
 										<which>1</which>
 										<value>-8.00000000000000044e-01</value>
 									</value>
@@ -315,7 +251,7 @@
 								</first>
 								<second>
 									<name>ProgrammableInputPortEnabled</name>
-									<value object_id="_21">
+									<value object_id="_17">
 										<which>3</which>
 										<value>0</value>
 									</value>
@@ -327,7 +263,7 @@
 								</first>
 								<second>
 									<name>QuantityOfIsovalues</name>
-									<value object_id="_22">
+									<value object_id="_18">
 										<which>0</which>
 										<value>4</value>
 									</value>
@@ -339,7 +275,7 @@
 								</first>
 								<second>
 									<name>SingleIsoValue</name>
-									<value object_id="_23">
+									<value object_id="_19">
 										<which>1</which>
 										<value>-3.59534230200000027e-01</value>
 									</value>
@@ -367,9 +303,9 @@
 								</first>
 								<second>
 									<name>BufferSize</name>
-									<value object_id="_24">
+									<value object_id="_20">
 										<which>0</which>
-										<value>0</value>
+										<value>21</value>
 									</value>
 								</second>
 							</item>
@@ -379,7 +315,7 @@
 								</first>
 								<second>
 									<name>GeometryIncrement</name>
-									<value object_id="_25">
+									<value object_id="_21">
 										<which>0</which>
 										<value>1</value>
 									</value>
@@ -391,7 +327,7 @@
 								</first>
 								<second>
 									<name>GeometryIndex</name>
-									<value object_id="_26">
+									<value object_id="_22">
 										<which>0</which>
 										<value>20</value>
 									</value>
@@ -403,7 +339,7 @@
 								</first>
 								<second>
 									<name>LoopForever</name>
-									<value object_id="_27">
+									<value object_id="_23">
 										<which>3</which>
 										<value>0</value>
 									</value>
@@ -415,7 +351,7 @@
 								</first>
 								<second>
 									<name>PlayModeActive</name>
-									<value object_id="_28">
+									<value object_id="_24">
 										<which>3</which>
 										<value>0</value>
 									</value>
@@ -427,7 +363,7 @@
 								</first>
 								<second>
 									<name>PlayModeDelay</name>
-									<value object_id="_29">
+									<value object_id="_25">
 										<which>0</which>
 										<value>50</value>
 									</value>
@@ -439,7 +375,7 @@
 								</first>
 								<second>
 									<name>ProgrammableInputPortEnabled</name>
-									<value object_id="_30">
+									<value object_id="_26">
 										<which>3</which>
 										<value>0</value>
 									</value>
@@ -451,35 +387,7 @@
 								</first>
 								<second>
 									<name>SingleStep</name>
-									<value object_id="_31">
-										<which>3</which>
-										<value>0</value>
-									</value>
-								</second>
-							</item>
-						</stateMap>
-					</state>
-				</second>
-			</item>
-			<item>
-				<first>GetFieldData:0</first>
-				<second>
-					<module>
-						<package_name_>SCIRun</package_name_>
-						<category_name_>ChangeFieldData</category_name_>
-						<module_name_>GetFieldData</module_name_>
-					</module>
-					<state>
-						<stateMap>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>
-									<name>ProgrammableInputPortEnabled</name>
-								</first>
-								<second>
-									<name>ProgrammableInputPortEnabled</name>
-									<value object_id="_32">
+									<value object_id="_27">
 										<which>3</which>
 										<value>0</value>
 									</value>
@@ -507,7 +415,7 @@
 								</first>
 								<second>
 									<name>AxisReexecute</name>
-									<value object_id="_33">
+									<value object_id="_28">
 										<which>3</which>
 										<value>0</value>
 									</value>
@@ -519,7 +427,7 @@
 								</first>
 								<second>
 									<name>Axis_ijk</name>
-									<value object_id="_34">
+									<value object_id="_29">
 										<which>0</which>
 										<value>0</value>
 									</value>
@@ -531,7 +439,7 @@
 								</first>
 								<second>
 									<name>Dim_i</name>
-									<value object_id="_35">
+									<value object_id="_30">
 										<which>0</which>
 										<value>12</value>
 									</value>
@@ -543,7 +451,7 @@
 								</first>
 								<second>
 									<name>Dim_j</name>
-									<value object_id="_36">
+									<value object_id="_31">
 										<which>0</which>
 										<value>1024</value>
 									</value>
@@ -555,7 +463,7 @@
 								</first>
 								<second>
 									<name>Dim_k</name>
-									<value object_id="_37">
+									<value object_id="_32">
 										<which>0</which>
 										<value>192</value>
 									</value>
@@ -567,7 +475,7 @@
 								</first>
 								<second>
 									<name>Index_i</name>
-									<value object_id="_38">
+									<value object_id="_33">
 										<which>0</which>
 										<value>6</value>
 									</value>
@@ -579,7 +487,7 @@
 								</first>
 								<second>
 									<name>Index_j</name>
-									<value object_id="_39">
+									<value object_id="_34">
 										<which>0</which>
 										<value>0</value>
 									</value>
@@ -591,7 +499,7 @@
 								</first>
 								<second>
 									<name>Index_k</name>
-									<value object_id="_40">
+									<value object_id="_35">
 										<which>0</which>
 										<value>0</value>
 									</value>
@@ -603,7 +511,7 @@
 								</first>
 								<second>
 									<name>ProgrammableInputPortEnabled</name>
-									<value object_id="_41">
+									<value object_id="_36">
 										<which>3</which>
 										<value>0</value>
 									</value>
@@ -615,7 +523,7 @@
 								</first>
 								<second>
 									<name>SliderReexecute</name>
-									<value object_id="_42">
+									<value object_id="_37">
 										<which>3</which>
 										<value>0</value>
 									</value>
@@ -627,7 +535,7 @@
 								</first>
 								<second>
 									<name>SpinBoxReexecute</name>
-									<value object_id="_43">
+									<value object_id="_38">
 										<which>3</which>
 										<value>0</value>
 									</value>
@@ -655,9 +563,9 @@
 								</first>
 								<second>
 									<name>BackEnd</name>
-									<value object_id="_44">
+									<value object_id="_39">
 										<which>2</which>
-										<value>CPUonly</value>
+										<value>RTX4090</value>
 									</value>
 								</second>
 							</item>
@@ -667,7 +575,7 @@
 								</first>
 								<second>
 									<name>CloneDir</name>
-									<value object_id="_45">
+									<value object_id="_40">
 										<which>2</which>
 										<value>$PIC_CLONE/myLWFA</value>
 									</value>
@@ -679,9 +587,9 @@
 								</first>
 								<second>
 									<name>ConfigFile</name>
-									<value object_id="_46">
+									<value object_id="_41">
 										<which>2</which>
-										<value>$PIC_CFG/sst_1_mesh_data.cfg</value>
+										<value>$PIC_CFG/sst_1_cd_HiRes_data.cfg</value>
 									</value>
 								</second>
 							</item>
@@ -691,9 +599,9 @@
 								</first>
 								<second>
 									<name>Method</name>
-									<value object_id="_47">
+									<value object_id="_42">
 										<which>0</which>
-										<value>0</value>
+										<value>1</value>
 									</value>
 								</second>
 							</item>
@@ -703,7 +611,7 @@
 								</first>
 								<second>
 									<name>OutputDir</name>
-									<value object_id="_48">
+									<value object_id="_43">
 										<which>2</which>
 										<value>$PIC_OUTPUT/SST</value>
 									</value>
@@ -715,7 +623,7 @@
 								</first>
 								<second>
 									<name>ProgrammableInputPortEnabled</name>
-									<value object_id="_49">
+									<value object_id="_44">
 										<which>3</which>
 										<value>0</value>
 									</value>
@@ -727,9 +635,9 @@
 								</first>
 								<second>
 									<name>SimulationFile</name>
-									<value object_id="_50">
+									<value object_id="_45">
 										<which>2</which>
-										<value>$PIC_EXAMPLES/LaserWakefield</value>
+										<value>$PIC_EXAMPLES/V-LaserWakefield</value>
 									</value>
 								</second>
 							</item>
@@ -755,7 +663,7 @@
 								</first>
 								<second>
 									<name>Dim_i_max</name>
-									<value object_id="_51">
+									<value object_id="_46">
 										<which>0</which>
 										<value>12</value>
 									</value>
@@ -767,7 +675,7 @@
 								</first>
 								<second>
 									<name>Dim_j_max</name>
-									<value object_id="_52">
+									<value object_id="_47">
 										<which>0</which>
 										<value>0</value>
 									</value>
@@ -779,7 +687,7 @@
 								</first>
 								<second>
 									<name>Dim_k_max</name>
-									<value object_id="_53">
+									<value object_id="_48">
 										<which>0</which>
 										<value>0</value>
 									</value>
@@ -791,7 +699,7 @@
 								</first>
 								<second>
 									<name>Method</name>
-									<value object_id="_54">
+									<value object_id="_49">
 										<which>0</which>
 										<value>0</value>
 									</value>
@@ -803,7 +711,7 @@
 								</first>
 								<second>
 									<name>ParticleType</name>
-									<value object_id="_55">
+									<value object_id="_50">
 										<which>2</which>
 										<value>None</value>
 									</value>
@@ -815,7 +723,7 @@
 								</first>
 								<second>
 									<name>ProgrammableInputPortEnabled</name>
-									<value object_id="_56">
+									<value object_id="_51">
 										<which>3</which>
 										<value>0</value>
 									</value>
@@ -827,7 +735,7 @@
 								</first>
 								<second>
 									<name>SampleRate</name>
-									<value object_id="_57">
+									<value object_id="_52">
 										<which>0</which>
 										<value>100</value>
 									</value>
@@ -839,7 +747,7 @@
 								</first>
 								<second>
 									<name>ScalarFieldComp</name>
-									<value object_id="_58">
+									<value object_id="_53">
 										<which>2</which>
 										<value>e_all_chargeDensity</value>
 									</value>
@@ -851,7 +759,7 @@
 								</first>
 								<second>
 									<name>VectorFieldType</name>
-									<value object_id="_59">
+									<value object_id="_54">
 										<which>2</which>
 										<value>None</value>
 									</value>
@@ -879,7 +787,7 @@
 								</first>
 								<second>
 									<name>AutoScale</name>
-									<value object_id="_60">
+									<value object_id="_55">
 										<which>0</which>
 										<value>1</value>
 									</value>
@@ -891,7 +799,7 @@
 								</first>
 								<second>
 									<name>FixedMax</name>
-									<value object_id="_61">
+									<value object_id="_56">
 										<which>1</which>
 										<value>0.00000000000000000e+00</value>
 									</value>
@@ -903,7 +811,7 @@
 								</first>
 								<second>
 									<name>FixedMin</name>
-									<value object_id="_62">
+									<value object_id="_57">
 										<which>1</which>
 										<value>-1.48089300000000001e+00</value>
 									</value>
@@ -915,7 +823,7 @@
 								</first>
 								<second>
 									<name>ProgrammableInputPortEnabled</name>
-									<value object_id="_63">
+									<value object_id="_58">
 										<which>3</which>
 										<value>0</value>
 									</value>
@@ -927,7 +835,7 @@
 								</first>
 								<second>
 									<name>Symmetric</name>
-									<value object_id="_64">
+									<value object_id="_59">
 										<which>3</which>
 										<value>0</value>
 									</value>
@@ -955,7 +863,7 @@
 								</first>
 								<second>
 									<name>CullBackfacingText</name>
-									<value object_id="_65">
+									<value object_id="_60">
 										<which>3</which>
 										<value>0</value>
 									</value>
@@ -967,7 +875,7 @@
 								</first>
 								<second>
 									<name>CylinderRadius</name>
-									<value object_id="_66">
+									<value object_id="_61">
 										<which>1</which>
 										<value>1.00000000000000006e-01</value>
 									</value>
@@ -979,7 +887,7 @@
 								</first>
 								<second>
 									<name>CylinderResolution</name>
-									<value object_id="_67">
+									<value object_id="_62">
 										<which>0</which>
 										<value>5</value>
 									</value>
@@ -991,7 +899,7 @@
 								</first>
 								<second>
 									<name>DefaultMeshColor</name>
-									<value object_id="_68">
+									<value object_id="_63">
 										<which>2</which>
 										<value>Color(0.396078,0.482353,0.513725)</value>
 									</value>
@@ -1003,7 +911,7 @@
 								</first>
 								<second>
 									<name>DefaultTextColor</name>
-									<value object_id="_69">
+									<value object_id="_64">
 										<which>2</which>
 										<value>Color(1,1,1)</value>
 									</value>
@@ -1015,7 +923,7 @@
 								</first>
 								<second>
 									<name>EdgeTransparency</name>
-									<value object_id="_70">
+									<value object_id="_65">
 										<which>3</which>
 										<value>0</value>
 									</value>
@@ -1027,7 +935,7 @@
 								</first>
 								<second>
 									<name>EdgeTransparencyValue</name>
-									<value object_id="_71">
+									<value object_id="_66">
 										<which>1</which>
 										<value>6.49999976158142090e-01</value>
 									</value>
@@ -1039,7 +947,7 @@
 								</first>
 								<second>
 									<name>EdgesAsCylinders</name>
-									<value object_id="_72">
+									<value object_id="_67">
 										<which>0</which>
 										<value>0</value>
 									</value>
@@ -1051,7 +959,7 @@
 								</first>
 								<second>
 									<name>EdgesAvailable</name>
-									<value object_id="_73">
+									<value object_id="_68">
 										<which>3</which>
 										<value>1</value>
 									</value>
@@ -1063,7 +971,7 @@
 								</first>
 								<second>
 									<name>EdgesColoring</name>
-									<value object_id="_74">
+									<value object_id="_69">
 										<which>0</which>
 										<value>0</value>
 									</value>
@@ -1075,7 +983,7 @@
 								</first>
 								<second>
 									<name>FaceInvertNormals</name>
-									<value object_id="_75">
+									<value object_id="_70">
 										<which>3</which>
 										<value>0</value>
 									</value>
@@ -1087,7 +995,7 @@
 								</first>
 								<second>
 									<name>FaceTransparency</name>
-									<value object_id="_76">
+									<value object_id="_71">
 										<which>3</which>
 										<value>0</value>
 									</value>
@@ -1099,7 +1007,7 @@
 								</first>
 								<second>
 									<name>FaceTransparencyValue</name>
-									<value object_id="_77">
+									<value object_id="_72">
 										<which>1</which>
 										<value>9.00000000000000355e-01</value>
 									</value>
@@ -1111,7 +1019,7 @@
 								</first>
 								<second>
 									<name>FacesAvailable</name>
-									<value object_id="_78">
+									<value object_id="_73">
 										<which>3</which>
 										<value>1</value>
 									</value>
@@ -1123,7 +1031,7 @@
 								</first>
 								<second>
 									<name>FacesColoring</name>
-									<value object_id="_79">
+									<value object_id="_74">
 										<which>0</which>
 										<value>0</value>
 									</value>
@@ -1135,7 +1043,7 @@
 								</first>
 								<second>
 									<name>FieldName</name>
-									<value object_id="_80">
+									<value object_id="_75">
 										<which>2</which>
 										<value></value>
 									</value>
@@ -1147,7 +1055,7 @@
 								</first>
 								<second>
 									<name>NodeAsSpheres</name>
-									<value object_id="_81">
+									<value object_id="_76">
 										<which>0</which>
 										<value>0</value>
 									</value>
@@ -1159,7 +1067,7 @@
 								</first>
 								<second>
 									<name>NodeTransparency</name>
-									<value object_id="_82">
+									<value object_id="_77">
 										<which>3</which>
 										<value>0</value>
 									</value>
@@ -1171,7 +1079,7 @@
 								</first>
 								<second>
 									<name>NodeTransparencyValue</name>
-									<value object_id="_83">
+									<value object_id="_78">
 										<which>1</which>
 										<value>6.49999976158142090e-01</value>
 									</value>
@@ -1183,7 +1091,7 @@
 								</first>
 								<second>
 									<name>NodesAvailable</name>
-									<value object_id="_84">
+									<value object_id="_79">
 										<which>3</which>
 										<value>1</value>
 									</value>
@@ -1195,7 +1103,7 @@
 								</first>
 								<second>
 									<name>NodesColoring</name>
-									<value object_id="_85">
+									<value object_id="_80">
 										<which>0</which>
 										<value>1</value>
 									</value>
@@ -1207,6 +1115,66 @@
 								</first>
 								<second>
 									<name>ProgrammableInputPortEnabled</name>
+									<value object_id="_81">
+										<which>3</which>
+										<value>0</value>
+									</value>
+								</second>
+							</item>
+							<item>
+								<first>
+									<name>RenderAsLocation</name>
+								</first>
+								<second>
+									<name>RenderAsLocation</name>
+									<value object_id="_82">
+										<which>3</which>
+										<value>0</value>
+									</value>
+								</second>
+							</item>
+							<item>
+								<first>
+									<name>ShowCellIndices</name>
+								</first>
+								<second>
+									<name>ShowCellIndices</name>
+									<value object_id="_83">
+										<which>3</which>
+										<value>0</value>
+									</value>
+								</second>
+							</item>
+							<item>
+								<first>
+									<name>ShowDataValues</name>
+								</first>
+								<second>
+									<name>ShowDataValues</name>
+									<value object_id="_84">
+										<which>3</which>
+										<value>1</value>
+									</value>
+								</second>
+							</item>
+							<item>
+								<first>
+									<name>ShowEdgeIndices</name>
+								</first>
+								<second>
+									<name>ShowEdgeIndices</name>
+									<value object_id="_85">
+										<which>3</which>
+										<value>0</value>
+									</value>
+								</second>
+							</item>
+							<item>
+								<first>
+									<name>ShowEdges</name>
+								</first>
+								<second>
+									<name>ShowEdges</name>
 									<value object_id="_86">
 										<which>3</which>
 										<value>0</value>
@@ -1215,10 +1183,10 @@
 							</item>
 							<item>
 								<first>
-									<name>RenderAsLocation</name>
+									<name>ShowFaceIndices</name>
 								</first>
 								<second>
-									<name>RenderAsLocation</name>
+									<name>ShowFaceIndices</name>
 									<value object_id="_87">
 										<which>3</which>
 										<value>0</value>
@@ -1227,23 +1195,11 @@
 							</item>
 							<item>
 								<first>
-									<name>ShowCellIndices</name>
+									<name>ShowFaces</name>
 								</first>
 								<second>
-									<name>ShowCellIndices</name>
+									<name>ShowFaces</name>
 									<value object_id="_88">
-										<which>3</which>
-										<value>0</value>
-									</value>
-								</second>
-							</item>
-							<item>
-								<first>
-									<name>ShowDataValues</name>
-								</first>
-								<second>
-									<name>ShowDataValues</name>
-									<value object_id="_89">
 										<which>3</which>
 										<value>1</value>
 									</value>
@@ -1251,10 +1207,22 @@
 							</item>
 							<item>
 								<first>
-									<name>ShowEdgeIndices</name>
+									<name>ShowNodeIndices</name>
 								</first>
 								<second>
-									<name>ShowEdgeIndices</name>
+									<name>ShowNodeIndices</name>
+									<value object_id="_89">
+										<which>3</which>
+										<value>0</value>
+									</value>
+								</second>
+							</item>
+							<item>
+								<first>
+									<name>ShowNodes</name>
+								</first>
+								<second>
+									<name>ShowNodes</name>
 									<value object_id="_90">
 										<which>3</which>
 										<value>0</value>
@@ -1263,10 +1231,10 @@
 							</item>
 							<item>
 								<first>
-									<name>ShowEdges</name>
+									<name>ShowText</name>
 								</first>
 								<second>
-									<name>ShowEdges</name>
+									<name>ShowText</name>
 									<value object_id="_91">
 										<which>3</which>
 										<value>0</value>
@@ -1275,71 +1243,11 @@
 							</item>
 							<item>
 								<first>
-									<name>ShowFaceIndices</name>
+									<name>SphereResolution</name>
 								</first>
 								<second>
-									<name>ShowFaceIndices</name>
+									<name>SphereResolution</name>
 									<value object_id="_92">
-										<which>3</which>
-										<value>0</value>
-									</value>
-								</second>
-							</item>
-							<item>
-								<first>
-									<name>ShowFaces</name>
-								</first>
-								<second>
-									<name>ShowFaces</name>
-									<value object_id="_93">
-										<which>3</which>
-										<value>1</value>
-									</value>
-								</second>
-							</item>
-							<item>
-								<first>
-									<name>ShowNodeIndices</name>
-								</first>
-								<second>
-									<name>ShowNodeIndices</name>
-									<value object_id="_94">
-										<which>3</which>
-										<value>0</value>
-									</value>
-								</second>
-							</item>
-							<item>
-								<first>
-									<name>ShowNodes</name>
-								</first>
-								<second>
-									<name>ShowNodes</name>
-									<value object_id="_95">
-										<which>3</which>
-										<value>0</value>
-									</value>
-								</second>
-							</item>
-							<item>
-								<first>
-									<name>ShowText</name>
-								</first>
-								<second>
-									<name>ShowText</name>
-									<value object_id="_96">
-										<which>3</which>
-										<value>0</value>
-									</value>
-								</second>
-							</item>
-							<item>
-								<first>
-									<name>SphereResolution</name>
-								</first>
-								<second>
-									<name>SphereResolution</name>
-									<value object_id="_97">
 										<which>0</which>
 										<value>5</value>
 									</value>
@@ -1351,7 +1259,7 @@
 								</first>
 								<second>
 									<name>SphereScaleValue</name>
-									<value object_id="_98">
+									<value object_id="_93">
 										<which>1</which>
 										<value>2.99999999999999989e-02</value>
 									</value>
@@ -1363,7 +1271,7 @@
 								</first>
 								<second>
 									<name>TextAlwaysVisible</name>
-									<value object_id="_99">
+									<value object_id="_94">
 										<which>3</which>
 										<value>0</value>
 									</value>
@@ -1375,7 +1283,7 @@
 								</first>
 								<second>
 									<name>TextColoring</name>
-									<value object_id="_100">
+									<value object_id="_95">
 										<which>0</which>
 										<value>0</value>
 									</value>
@@ -1387,7 +1295,7 @@
 								</first>
 								<second>
 									<name>TextPrecision</name>
-									<value object_id="_101">
+									<value object_id="_96">
 										<which>0</which>
 										<value>3</value>
 									</value>
@@ -1399,7 +1307,7 @@
 								</first>
 								<second>
 									<name>TextSize</name>
-									<value object_id="_102">
+									<value object_id="_97">
 										<which>0</which>
 										<value>8</value>
 									</value>
@@ -1411,7 +1319,7 @@
 								</first>
 								<second>
 									<name>UseFaceNormals</name>
-									<value object_id="_103">
+									<value object_id="_98">
 										<which>3</which>
 										<value>0</value>
 									</value>
@@ -1439,7 +1347,7 @@
 								</first>
 								<second>
 									<name>CullBackfacingText</name>
-									<value object_id="_104">
+									<value object_id="_99">
 										<which>3</which>
 										<value>0</value>
 									</value>
@@ -1451,7 +1359,7 @@
 								</first>
 								<second>
 									<name>CylinderRadius</name>
-									<value object_id="_105">
+									<value object_id="_100">
 										<which>1</which>
 										<value>1.00000000000000006e-01</value>
 									</value>
@@ -1463,7 +1371,7 @@
 								</first>
 								<second>
 									<name>CylinderResolution</name>
-									<value object_id="_106">
+									<value object_id="_101">
 										<which>0</which>
 										<value>5</value>
 									</value>
@@ -1475,7 +1383,7 @@
 								</first>
 								<second>
 									<name>DefaultMeshColor</name>
-									<value object_id="_107">
+									<value object_id="_102">
 										<which>2</which>
 										<value>Color(0.5,0.5,0.5)</value>
 									</value>
@@ -1487,7 +1395,7 @@
 								</first>
 								<second>
 									<name>DefaultTextColor</name>
-									<value object_id="_108">
+									<value object_id="_103">
 										<which>2</which>
 										<value>Color(1,1,1)</value>
 									</value>
@@ -1499,6 +1407,66 @@
 								</first>
 								<second>
 									<name>EdgeTransparency</name>
+									<value object_id="_104">
+										<which>3</which>
+										<value>0</value>
+									</value>
+								</second>
+							</item>
+							<item>
+								<first>
+									<name>EdgeTransparencyValue</name>
+								</first>
+								<second>
+									<name>EdgeTransparencyValue</name>
+									<value object_id="_105">
+										<which>1</which>
+										<value>6.49999976158142090e-01</value>
+									</value>
+								</second>
+							</item>
+							<item>
+								<first>
+									<name>EdgesAsCylinders</name>
+								</first>
+								<second>
+									<name>EdgesAsCylinders</name>
+									<value object_id="_106">
+										<which>0</which>
+										<value>0</value>
+									</value>
+								</second>
+							</item>
+							<item>
+								<first>
+									<name>EdgesAvailable</name>
+								</first>
+								<second>
+									<name>EdgesAvailable</name>
+									<value object_id="_107">
+										<which>3</which>
+										<value>1</value>
+									</value>
+								</second>
+							</item>
+							<item>
+								<first>
+									<name>EdgesColoring</name>
+								</first>
+								<second>
+									<name>EdgesColoring</name>
+									<value object_id="_108">
+										<which>0</which>
+										<value>0</value>
+									</value>
+								</second>
+							</item>
+							<item>
+								<first>
+									<name>FaceInvertNormals</name>
+								</first>
+								<second>
+									<name>FaceInvertNormals</name>
 									<value object_id="_109">
 										<which>3</which>
 										<value>0</value>
@@ -1507,11 +1475,23 @@
 							</item>
 							<item>
 								<first>
-									<name>EdgeTransparencyValue</name>
+									<name>FaceTransparency</name>
 								</first>
 								<second>
-									<name>EdgeTransparencyValue</name>
+									<name>FaceTransparency</name>
 									<value object_id="_110">
+										<which>3</which>
+										<value>0</value>
+									</value>
+								</second>
+							</item>
+							<item>
+								<first>
+									<name>FaceTransparencyValue</name>
+								</first>
+								<second>
+									<name>FaceTransparencyValue</name>
+									<value object_id="_111">
 										<which>1</which>
 										<value>6.49999976158142090e-01</value>
 									</value>
@@ -1519,22 +1499,10 @@
 							</item>
 							<item>
 								<first>
-									<name>EdgesAsCylinders</name>
+									<name>FacesAvailable</name>
 								</first>
 								<second>
-									<name>EdgesAsCylinders</name>
-									<value object_id="_111">
-										<which>0</which>
-										<value>0</value>
-									</value>
-								</second>
-							</item>
-							<item>
-								<first>
-									<name>EdgesAvailable</name>
-								</first>
-								<second>
-									<name>EdgesAvailable</name>
+									<name>FacesAvailable</name>
 									<value object_id="_112">
 										<which>3</which>
 										<value>1</value>
@@ -1543,83 +1511,23 @@
 							</item>
 							<item>
 								<first>
-									<name>EdgesColoring</name>
+									<name>FacesColoring</name>
 								</first>
 								<second>
-									<name>EdgesColoring</name>
+									<name>FacesColoring</name>
 									<value object_id="_113">
 										<which>0</which>
-										<value>0</value>
+										<value>1</value>
 									</value>
 								</second>
 							</item>
 							<item>
 								<first>
-									<name>FaceInvertNormals</name>
+									<name>FieldName</name>
 								</first>
 								<second>
-									<name>FaceInvertNormals</name>
+									<name>FieldName</name>
 									<value object_id="_114">
-										<which>3</which>
-										<value>0</value>
-									</value>
-								</second>
-							</item>
-							<item>
-								<first>
-									<name>FaceTransparency</name>
-								</first>
-								<second>
-									<name>FaceTransparency</name>
-									<value object_id="_115">
-										<which>3</which>
-										<value>0</value>
-									</value>
-								</second>
-							</item>
-							<item>
-								<first>
-									<name>FaceTransparencyValue</name>
-								</first>
-								<second>
-									<name>FaceTransparencyValue</name>
-									<value object_id="_116">
-										<which>1</which>
-										<value>6.49999976158142090e-01</value>
-									</value>
-								</second>
-							</item>
-							<item>
-								<first>
-									<name>FacesAvailable</name>
-								</first>
-								<second>
-									<name>FacesAvailable</name>
-									<value object_id="_117">
-										<which>3</which>
-										<value>1</value>
-									</value>
-								</second>
-							</item>
-							<item>
-								<first>
-									<name>FacesColoring</name>
-								</first>
-								<second>
-									<name>FacesColoring</name>
-									<value object_id="_118">
-										<which>0</which>
-										<value>1</value>
-									</value>
-								</second>
-							</item>
-							<item>
-								<first>
-									<name>FieldName</name>
-								</first>
-								<second>
-									<name>FieldName</name>
-									<value object_id="_119">
 										<which>2</which>
 										<value>slice</value>
 									</value>
@@ -1631,7 +1539,7 @@
 								</first>
 								<second>
 									<name>NodeAsSpheres</name>
-									<value object_id="_120">
+									<value object_id="_115">
 										<which>0</which>
 										<value>0</value>
 									</value>
@@ -1643,7 +1551,7 @@
 								</first>
 								<second>
 									<name>NodeTransparency</name>
-									<value object_id="_121">
+									<value object_id="_116">
 										<which>3</which>
 										<value>0</value>
 									</value>
@@ -1655,7 +1563,7 @@
 								</first>
 								<second>
 									<name>NodeTransparencyValue</name>
-									<value object_id="_122">
+									<value object_id="_117">
 										<which>1</which>
 										<value>6.49999976158142090e-01</value>
 									</value>
@@ -1667,7 +1575,7 @@
 								</first>
 								<second>
 									<name>NodesAvailable</name>
-									<value object_id="_123">
+									<value object_id="_118">
 										<which>3</which>
 										<value>1</value>
 									</value>
@@ -1679,7 +1587,7 @@
 								</first>
 								<second>
 									<name>NodesColoring</name>
-									<value object_id="_124">
+									<value object_id="_119">
 										<which>0</which>
 										<value>1</value>
 									</value>
@@ -1691,6 +1599,66 @@
 								</first>
 								<second>
 									<name>ProgrammableInputPortEnabled</name>
+									<value object_id="_120">
+										<which>3</which>
+										<value>0</value>
+									</value>
+								</second>
+							</item>
+							<item>
+								<first>
+									<name>RenderAsLocation</name>
+								</first>
+								<second>
+									<name>RenderAsLocation</name>
+									<value object_id="_121">
+										<which>3</which>
+										<value>0</value>
+									</value>
+								</second>
+							</item>
+							<item>
+								<first>
+									<name>ShowCellIndices</name>
+								</first>
+								<second>
+									<name>ShowCellIndices</name>
+									<value object_id="_122">
+										<which>3</which>
+										<value>0</value>
+									</value>
+								</second>
+							</item>
+							<item>
+								<first>
+									<name>ShowDataValues</name>
+								</first>
+								<second>
+									<name>ShowDataValues</name>
+									<value object_id="_123">
+										<which>3</which>
+										<value>1</value>
+									</value>
+								</second>
+							</item>
+							<item>
+								<first>
+									<name>ShowEdgeIndices</name>
+								</first>
+								<second>
+									<name>ShowEdgeIndices</name>
+									<value object_id="_124">
+										<which>3</which>
+										<value>0</value>
+									</value>
+								</second>
+							</item>
+							<item>
+								<first>
+									<name>ShowEdges</name>
+								</first>
+								<second>
+									<name>ShowEdges</name>
 									<value object_id="_125">
 										<which>3</which>
 										<value>0</value>
@@ -1699,10 +1667,10 @@
 							</item>
 							<item>
 								<first>
-									<name>RenderAsLocation</name>
+									<name>ShowFaceIndices</name>
 								</first>
 								<second>
-									<name>RenderAsLocation</name>
+									<name>ShowFaceIndices</name>
 									<value object_id="_126">
 										<which>3</which>
 										<value>0</value>
@@ -1711,23 +1679,11 @@
 							</item>
 							<item>
 								<first>
-									<name>ShowCellIndices</name>
+									<name>ShowFaces</name>
 								</first>
 								<second>
-									<name>ShowCellIndices</name>
+									<name>ShowFaces</name>
 									<value object_id="_127">
-										<which>3</which>
-										<value>0</value>
-									</value>
-								</second>
-							</item>
-							<item>
-								<first>
-									<name>ShowDataValues</name>
-								</first>
-								<second>
-									<name>ShowDataValues</name>
-									<value object_id="_128">
 										<which>3</which>
 										<value>1</value>
 									</value>
@@ -1735,10 +1691,22 @@
 							</item>
 							<item>
 								<first>
-									<name>ShowEdgeIndices</name>
+									<name>ShowNodeIndices</name>
 								</first>
 								<second>
-									<name>ShowEdgeIndices</name>
+									<name>ShowNodeIndices</name>
+									<value object_id="_128">
+										<which>3</which>
+										<value>0</value>
+									</value>
+								</second>
+							</item>
+							<item>
+								<first>
+									<name>ShowNodes</name>
+								</first>
+								<second>
+									<name>ShowNodes</name>
 									<value object_id="_129">
 										<which>3</which>
 										<value>0</value>
@@ -1747,10 +1715,10 @@
 							</item>
 							<item>
 								<first>
-									<name>ShowEdges</name>
+									<name>ShowText</name>
 								</first>
 								<second>
-									<name>ShowEdges</name>
+									<name>ShowText</name>
 									<value object_id="_130">
 										<which>3</which>
 										<value>0</value>
@@ -1759,71 +1727,11 @@
 							</item>
 							<item>
 								<first>
-									<name>ShowFaceIndices</name>
+									<name>SphereResolution</name>
 								</first>
 								<second>
-									<name>ShowFaceIndices</name>
+									<name>SphereResolution</name>
 									<value object_id="_131">
-										<which>3</which>
-										<value>0</value>
-									</value>
-								</second>
-							</item>
-							<item>
-								<first>
-									<name>ShowFaces</name>
-								</first>
-								<second>
-									<name>ShowFaces</name>
-									<value object_id="_132">
-										<which>3</which>
-										<value>1</value>
-									</value>
-								</second>
-							</item>
-							<item>
-								<first>
-									<name>ShowNodeIndices</name>
-								</first>
-								<second>
-									<name>ShowNodeIndices</name>
-									<value object_id="_133">
-										<which>3</which>
-										<value>0</value>
-									</value>
-								</second>
-							</item>
-							<item>
-								<first>
-									<name>ShowNodes</name>
-								</first>
-								<second>
-									<name>ShowNodes</name>
-									<value object_id="_134">
-										<which>3</which>
-										<value>0</value>
-									</value>
-								</second>
-							</item>
-							<item>
-								<first>
-									<name>ShowText</name>
-								</first>
-								<second>
-									<name>ShowText</name>
-									<value object_id="_135">
-										<which>3</which>
-										<value>0</value>
-									</value>
-								</second>
-							</item>
-							<item>
-								<first>
-									<name>SphereResolution</name>
-								</first>
-								<second>
-									<name>SphereResolution</name>
-									<value object_id="_136">
 										<which>0</which>
 										<value>5</value>
 									</value>
@@ -1835,7 +1743,7 @@
 								</first>
 								<second>
 									<name>SphereScaleValue</name>
-									<value object_id="_137">
+									<value object_id="_132">
 										<which>1</which>
 										<value>2.99999999999999989e-02</value>
 									</value>
@@ -1847,7 +1755,7 @@
 								</first>
 								<second>
 									<name>TextAlwaysVisible</name>
-									<value object_id="_138">
+									<value object_id="_133">
 										<which>3</which>
 										<value>0</value>
 									</value>
@@ -1859,7 +1767,7 @@
 								</first>
 								<second>
 									<name>TextColoring</name>
-									<value object_id="_139">
+									<value object_id="_134">
 										<which>0</which>
 										<value>0</value>
 									</value>
@@ -1871,7 +1779,7 @@
 								</first>
 								<second>
 									<name>TextPrecision</name>
-									<value object_id="_140">
+									<value object_id="_135">
 										<which>0</which>
 										<value>3</value>
 									</value>
@@ -1883,7 +1791,7 @@
 								</first>
 								<second>
 									<name>TextSize</name>
-									<value object_id="_141">
+									<value object_id="_136">
 										<which>0</which>
 										<value>8</value>
 									</value>
@@ -1895,7 +1803,7 @@
 								</first>
 								<second>
 									<name>UseFaceNormals</name>
-									<value object_id="_142">
+									<value object_id="_137">
 										<which>3</which>
 										<value>0</value>
 									</value>
@@ -1923,7 +1831,7 @@
 								</first>
 								<second>
 									<name>Ambient</name>
-									<value object_id="_143">
+									<value object_id="_138">
 										<which>1</which>
 										<value>2.00000000000000011e-01</value>
 									</value>
@@ -1935,7 +1843,7 @@
 								</first>
 								<second>
 									<name>AxesSize</name>
-									<value object_id="_144">
+									<value object_id="_139">
 										<which>0</which>
 										<value>10</value>
 									</value>
@@ -1947,7 +1855,7 @@
 								</first>
 								<second>
 									<name>AxesVisible</name>
-									<value object_id="_145">
+									<value object_id="_140">
 										<which>3</which>
 										<value>1</value>
 									</value>
@@ -1959,7 +1867,7 @@
 								</first>
 								<second>
 									<name>AxesX</name>
-									<value object_id="_146">
+									<value object_id="_141">
 										<which>0</which>
 										<value>100</value>
 									</value>
@@ -1971,7 +1879,7 @@
 								</first>
 								<second>
 									<name>AxesY</name>
-									<value object_id="_147">
+									<value object_id="_142">
 										<which>0</which>
 										<value>100</value>
 									</value>
@@ -1983,7 +1891,7 @@
 								</first>
 								<second>
 									<name>BackgroundColor</name>
-									<value object_id="_148">
+									<value object_id="_143">
 										<which>2</which>
 										<value>Color(0,0,0)</value>
 									</value>
@@ -1995,7 +1903,7 @@
 								</first>
 								<second>
 									<name>CameraDistance</name>
-									<value object_id="_149">
+									<value object_id="_144">
 										<which>1</which>
 										<value>5.71562255859375000e+02</value>
 									</value>
@@ -2007,7 +1915,7 @@
 								</first>
 								<second>
 									<name>CameraDistanceMinimum</name>
-									<value object_id="_150">
+									<value object_id="_145">
 										<which>1</which>
 										<value>1.00000000000000004e-10</value>
 									</value>
@@ -2019,28 +1927,28 @@
 								</first>
 								<second>
 									<name>CameraLookAt</name>
-									<value object_id="_151">
+									<value object_id="_146">
 										<which>5</which>
 										<value>
 											<count>3</count>
 											<item_version>0</item_version>
 											<item>
 												<name>listElement</name>
-												<value object_id="_152">
+												<value object_id="_147">
 													<which>1</which>
 													<value>6.54545450210571289e+00</value>
 												</value>
 											</item>
 											<item>
 												<name>listElement</name>
-												<value object_id="_153">
+												<value object_id="_148">
 													<which>1</which>
 													<value>5.12000000000000000e+02</value>
 												</value>
 											</item>
 											<item>
 												<name>listElement</name>
-												<value object_id="_154">
+												<value object_id="_149">
 													<which>1</which>
 													<value>9.60000000000000000e+01</value>
 												</value>
@@ -2055,35 +1963,35 @@
 								</first>
 								<second>
 									<name>CameraRotation</name>
-									<value object_id="_155">
+									<value object_id="_150">
 										<which>5</which>
 										<value>
 											<count>4</count>
 											<item_version>0</item_version>
 											<item>
 												<name>listElement</name>
-												<value object_id="_156">
+												<value object_id="_151">
 													<which>1</which>
 													<value>5.00000000000000000e-01</value>
 												</value>
 											</item>
 											<item>
 												<name>listElement</name>
-												<value object_id="_157">
+												<value object_id="_152">
 													<which>1</which>
 													<value>-5.00000000000000000e-01</value>
 												</value>
 											</item>
 											<item>
 												<name>listElement</name>
-												<value object_id="_158">
+												<value object_id="_153">
 													<which>1</which>
 													<value>-5.00000000000000000e-01</value>
 												</value>
 											</item>
 											<item>
 												<name>listElement</name>
-												<value object_id="_159">
+												<value object_id="_154">
 													<which>1</which>
 													<value>-5.00000000000000000e-01</value>
 												</value>
@@ -2098,11 +2006,46 @@
 								</first>
 								<second>
 									<name>ClippingPlaneD</name>
-									<value object_id="_160">
+									<value object_id="_155">
 										<which>5</which>
 										<value>
 											<count>6</count>
 											<item_version>0</item_version>
+											<item>
+												<name></name>
+												<value object_id="_156">
+													<which>1</which>
+													<value>0.00000000000000000e+00</value>
+												</value>
+											</item>
+											<item>
+												<name></name>
+												<value object_id="_157">
+													<which>1</which>
+													<value>0.00000000000000000e+00</value>
+												</value>
+											</item>
+											<item>
+												<name></name>
+												<value object_id="_158">
+													<which>1</which>
+													<value>0.00000000000000000e+00</value>
+												</value>
+											</item>
+											<item>
+												<name></name>
+												<value object_id="_159">
+													<which>1</which>
+													<value>0.00000000000000000e+00</value>
+												</value>
+											</item>
+											<item>
+												<name></name>
+												<value object_id="_160">
+													<which>1</which>
+													<value>0.00000000000000000e+00</value>
+												</value>
+											</item>
 											<item>
 												<name></name>
 												<value object_id="_161">
@@ -2110,41 +2053,6 @@
 													<value>0.00000000000000000e+00</value>
 												</value>
 											</item>
-											<item>
-												<name></name>
-												<value object_id="_162">
-													<which>1</which>
-													<value>0.00000000000000000e+00</value>
-												</value>
-											</item>
-											<item>
-												<name></name>
-												<value object_id="_163">
-													<which>1</which>
-													<value>0.00000000000000000e+00</value>
-												</value>
-											</item>
-											<item>
-												<name></name>
-												<value object_id="_164">
-													<which>1</which>
-													<value>0.00000000000000000e+00</value>
-												</value>
-											</item>
-											<item>
-												<name></name>
-												<value object_id="_165">
-													<which>1</which>
-													<value>0.00000000000000000e+00</value>
-												</value>
-											</item>
-											<item>
-												<name></name>
-												<value object_id="_166">
-													<which>1</which>
-													<value>0.00000000000000000e+00</value>
-												</value>
-											</item>
 										</value>
 									</value>
 								</second>
@@ -2155,11 +2063,46 @@
 								</first>
 								<second>
 									<name>ClippingPlaneEnabled</name>
-									<value object_id="_167">
+									<value object_id="_162">
 										<which>5</which>
 										<value>
 											<count>6</count>
 											<item_version>0</item_version>
+											<item>
+												<name></name>
+												<value object_id="_163">
+													<which>3</which>
+													<value>0</value>
+												</value>
+											</item>
+											<item>
+												<name></name>
+												<value object_id="_164">
+													<which>3</which>
+													<value>0</value>
+												</value>
+											</item>
+											<item>
+												<name></name>
+												<value object_id="_165">
+													<which>3</which>
+													<value>0</value>
+												</value>
+											</item>
+											<item>
+												<name></name>
+												<value object_id="_166">
+													<which>3</which>
+													<value>0</value>
+												</value>
+											</item>
+											<item>
+												<name></name>
+												<value object_id="_167">
+													<which>3</which>
+													<value>0</value>
+												</value>
+											</item>
 											<item>
 												<name></name>
 												<value object_id="_168">
@@ -2167,13 +2110,21 @@
 													<value>0</value>
 												</value>
 											</item>
-											<item>
-												<name></name>
-												<value object_id="_169">
-													<which>3</which>
-													<value>0</value>
-												</value>
-											</item>
+										</value>
+									</value>
+								</second>
+							</item>
+							<item>
+								<first>
+									<name>ClippingPlaneNormalReversed</name>
+								</first>
+								<second>
+									<name>ClippingPlaneNormalReversed</name>
+									<value object_id="_169">
+										<which>5</which>
+										<value>
+											<count>6</count>
+											<item_version>0</item_version>
 											<item>
 												<name></name>
 												<value object_id="_170">
@@ -2202,21 +2153,13 @@
 													<value>0</value>
 												</value>
 											</item>
-										</value>
-									</value>
-								</second>
-							</item>
-							<item>
-								<first>
-									<name>ClippingPlaneNormalReversed</name>
-								</first>
-								<second>
-									<name>ClippingPlaneNormalReversed</name>
-									<value object_id="_174">
-										<which>5</which>
-										<value>
-											<count>6</count>
-											<item_version>0</item_version>
+											<item>
+												<name></name>
+												<value object_id="_174">
+													<which>3</which>
+													<value>0</value>
+												</value>
+											</item>
 											<item>
 												<name></name>
 												<value object_id="_175">
@@ -2224,41 +2167,6 @@
 													<value>0</value>
 												</value>
 											</item>
-											<item>
-												<name></name>
-												<value object_id="_176">
-													<which>3</which>
-													<value>0</value>
-												</value>
-											</item>
-											<item>
-												<name></name>
-												<value object_id="_177">
-													<which>3</which>
-													<value>0</value>
-												</value>
-											</item>
-											<item>
-												<name></name>
-												<value object_id="_178">
-													<which>3</which>
-													<value>0</value>
-												</value>
-											</item>
-											<item>
-												<name></name>
-												<value object_id="_179">
-													<which>3</which>
-													<value>0</value>
-												</value>
-											</item>
-											<item>
-												<name></name>
-												<value object_id="_180">
-													<which>3</which>
-													<value>0</value>
-												</value>
-											</item>
 										</value>
 									</value>
 								</second>
@@ -2269,11 +2177,46 @@
 								</first>
 								<second>
 									<name>ClippingPlaneX</name>
-									<value object_id="_181">
+									<value object_id="_176">
 										<which>5</which>
 										<value>
 											<count>6</count>
 											<item_version>0</item_version>
+											<item>
+												<name></name>
+												<value object_id="_177">
+													<which>1</which>
+													<value>0.00000000000000000e+00</value>
+												</value>
+											</item>
+											<item>
+												<name></name>
+												<value object_id="_178">
+													<which>1</which>
+													<value>0.00000000000000000e+00</value>
+												</value>
+											</item>
+											<item>
+												<name></name>
+												<value object_id="_179">
+													<which>1</which>
+													<value>0.00000000000000000e+00</value>
+												</value>
+											</item>
+											<item>
+												<name></name>
+												<value object_id="_180">
+													<which>1</which>
+													<value>0.00000000000000000e+00</value>
+												</value>
+											</item>
+											<item>
+												<name></name>
+												<value object_id="_181">
+													<which>1</which>
+													<value>0.00000000000000000e+00</value>
+												</value>
+											</item>
 											<item>
 												<name></name>
 												<value object_id="_182">
@@ -2281,13 +2224,21 @@
 													<value>0.00000000000000000e+00</value>
 												</value>
 											</item>
-											<item>
-												<name></name>
-												<value object_id="_183">
-													<which>1</which>
-													<value>0.00000000000000000e+00</value>
-												</value>
-											</item>
+										</value>
+									</value>
+								</second>
+							</item>
+							<item>
+								<first>
+									<name>ClippingPlaneY</name>
+								</first>
+								<second>
+									<name>ClippingPlaneY</name>
+									<value object_id="_183">
+										<which>5</which>
+										<value>
+											<count>6</count>
+											<item_version>0</item_version>
 											<item>
 												<name></name>
 												<value object_id="_184">
@@ -2316,21 +2267,13 @@
 													<value>0.00000000000000000e+00</value>
 												</value>
 											</item>
-										</value>
-									</value>
-								</second>
-							</item>
-							<item>
-								<first>
-									<name>ClippingPlaneY</name>
-								</first>
-								<second>
-									<name>ClippingPlaneY</name>
-									<value object_id="_188">
-										<which>5</which>
-										<value>
-											<count>6</count>
-											<item_version>0</item_version>
+											<item>
+												<name></name>
+												<value object_id="_188">
+													<which>1</which>
+													<value>0.00000000000000000e+00</value>
+												</value>
+											</item>
 											<item>
 												<name></name>
 												<value object_id="_189">
@@ -2338,13 +2281,21 @@
 													<value>0.00000000000000000e+00</value>
 												</value>
 											</item>
-											<item>
-												<name></name>
-												<value object_id="_190">
-													<which>1</which>
-													<value>0.00000000000000000e+00</value>
-												</value>
-											</item>
+										</value>
+									</value>
+								</second>
+							</item>
+							<item>
+								<first>
+									<name>ClippingPlaneZ</name>
+								</first>
+								<second>
+									<name>ClippingPlaneZ</name>
+									<value object_id="_190">
+										<which>5</which>
+										<value>
+											<count>6</count>
+											<item_version>0</item_version>
 											<item>
 												<name></name>
 												<value object_id="_191">
@@ -2373,21 +2324,13 @@
 													<value>0.00000000000000000e+00</value>
 												</value>
 											</item>
-										</value>
-									</value>
-								</second>
-							</item>
-							<item>
-								<first>
-									<name>ClippingPlaneZ</name>
-								</first>
-								<second>
-									<name>ClippingPlaneZ</name>
-									<value object_id="_195">
-										<which>5</which>
-										<value>
-											<count>6</count>
-											<item_version>0</item_version>
+											<item>
+												<name></name>
+												<value object_id="_195">
+													<which>1</which>
+													<value>0.00000000000000000e+00</value>
+												</value>
+											</item>
 											<item>
 												<name></name>
 												<value object_id="_196">
@@ -2395,41 +2338,6 @@
 													<value>0.00000000000000000e+00</value>
 												</value>
 											</item>
-											<item>
-												<name></name>
-												<value object_id="_197">
-													<which>1</which>
-													<value>0.00000000000000000e+00</value>
-												</value>
-											</item>
-											<item>
-												<name></name>
-												<value object_id="_198">
-													<which>1</which>
-													<value>0.00000000000000000e+00</value>
-												</value>
-											</item>
-											<item>
-												<name></name>
-												<value object_id="_199">
-													<which>1</which>
-													<value>0.00000000000000000e+00</value>
-												</value>
-											</item>
-											<item>
-												<name></name>
-												<value object_id="_200">
-													<which>1</which>
-													<value>0.00000000000000000e+00</value>
-												</value>
-											</item>
-											<item>
-												<name></name>
-												<value object_id="_201">
-													<which>1</which>
-													<value>0.00000000000000000e+00</value>
-												</value>
-											</item>
 										</value>
 									</value>
 								</second>
@@ -2440,7 +2348,7 @@
 								</first>
 								<second>
 									<name>Diffuse</name>
-									<value object_id="_202">
+									<value object_id="_197">
 										<which>1</which>
 										<value>1.00000000000000000e+00</value>
 									</value>
@@ -2452,7 +2360,7 @@
 								</first>
 								<second>
 									<name>Emission</name>
-									<value object_id="_203">
+									<value object_id="_198">
 										<which>1</which>
 										<value>0.00000000000000000e+00</value>
 									</value>
@@ -2464,7 +2372,7 @@
 								</first>
 								<second>
 									<name>FogColor</name>
-									<value object_id="_204">
+									<value object_id="_199">
 										<which>2</which>
 										<value>Color(0,0,255)</value>
 									</value>
@@ -2476,7 +2384,7 @@
 								</first>
 								<second>
 									<name>FogEnd</name>
-									<value object_id="_205">
+									<value object_id="_200">
 										<which>1</which>
 										<value>7.09999999999999964e-01</value>
 									</value>
@@ -2488,7 +2396,7 @@
 								</first>
 								<second>
 									<name>FogOn</name>
-									<value object_id="_206">
+									<value object_id="_201">
 										<which>3</which>
 										<value>0</value>
 									</value>
@@ -2500,7 +2408,7 @@
 								</first>
 								<second>
 									<name>FogStart</name>
-									<value object_id="_207">
+									<value object_id="_202">
 										<which>1</which>
 										<value>0.00000000000000000e+00</value>
 									</value>
@@ -2512,7 +2420,7 @@
 								</first>
 								<second>
 									<name>HasNewGeometry</name>
-									<value object_id="_208">
+									<value object_id="_203">
 										<which>3</which>
 										<value>1</value>
 									</value>
@@ -2524,7 +2432,7 @@
 								</first>
 								<second>
 									<name>HeadLightAzimuth</name>
-									<value object_id="_209">
+									<value object_id="_204">
 										<which>0</which>
 										<value>180</value>
 									</value>
@@ -2536,7 +2444,7 @@
 								</first>
 								<second>
 									<name>HeadLightColor</name>
-									<value object_id="_210">
+									<value object_id="_205">
 										<which>2</which>
 										<value>Color(1,1,1)</value>
 									</value>
@@ -2548,7 +2456,7 @@
 								</first>
 								<second>
 									<name>HeadLightInclination</name>
-									<value object_id="_211">
+									<value object_id="_206">
 										<which>0</which>
 										<value>90</value>
 									</value>
@@ -2560,7 +2468,7 @@
 								</first>
 								<second>
 									<name>HeadLightOn</name>
-									<value object_id="_212">
+									<value object_id="_207">
 										<which>3</which>
 										<value>1</value>
 									</value>
@@ -2572,6 +2480,66 @@
 								</first>
 								<second>
 									<name>IsExecuting</name>
+									<value object_id="_208">
+										<which>3</which>
+										<value>0</value>
+									</value>
+								</second>
+							</item>
+							<item>
+								<first>
+									<name>IsFloating</name>
+								</first>
+								<second>
+									<name>IsFloating</name>
+									<value object_id="_209">
+										<which>3</which>
+										<value>1</value>
+									</value>
+								</second>
+							</item>
+							<item>
+								<first>
+									<name>Light1Azimuth</name>
+								</first>
+								<second>
+									<name>Light1Azimuth</name>
+									<value object_id="_210">
+										<which>0</which>
+										<value>180</value>
+									</value>
+								</second>
+							</item>
+							<item>
+								<first>
+									<name>Light1Color</name>
+								</first>
+								<second>
+									<name>Light1Color</name>
+									<value object_id="_211">
+										<which>2</which>
+										<value>Color(1,1,1)</value>
+									</value>
+								</second>
+							</item>
+							<item>
+								<first>
+									<name>Light1Inclination</name>
+								</first>
+								<second>
+									<name>Light1Inclination</name>
+									<value object_id="_212">
+										<which>0</which>
+										<value>90</value>
+									</value>
+								</second>
+							</item>
+							<item>
+								<first>
+									<name>Light1On</name>
+								</first>
+								<second>
+									<name>Light1On</name>
 									<value object_id="_213">
 										<which>3</which>
 										<value>0</value>
@@ -2580,23 +2548,11 @@
 							</item>
 							<item>
 								<first>
-									<name>IsFloating</name>
+									<name>Light2Azimuth</name>
 								</first>
 								<second>
-									<name>IsFloating</name>
+									<name>Light2Azimuth</name>
 									<value object_id="_214">
-										<which>3</which>
-										<value>1</value>
-									</value>
-								</second>
-							</item>
-							<item>
-								<first>
-									<name>Light1Azimuth</name>
-								</first>
-								<second>
-									<name>Light1Azimuth</name>
-									<value object_id="_215">
 										<which>0</which>
 										<value>180</value>
 									</value>
@@ -2604,11 +2560,11 @@
 							</item>
 							<item>
 								<first>
-									<name>Light1Color</name>
+									<name>Light2Color</name>
 								</first>
 								<second>
-									<name>Light1Color</name>
-									<value object_id="_216">
+									<name>Light2Color</name>
+									<value object_id="_215">
 										<which>2</which>
 										<value>Color(1,1,1)</value>
 									</value>
@@ -2616,11 +2572,11 @@
 							</item>
 							<item>
 								<first>
-									<name>Light1Inclination</name>
+									<name>Light2Inclination</name>
 								</first>
 								<second>
-									<name>Light1Inclination</name>
-									<value object_id="_217">
+									<name>Light2Inclination</name>
+									<value object_id="_216">
 										<which>0</which>
 										<value>90</value>
 									</value>
@@ -2628,11 +2584,11 @@
 							</item>
 							<item>
 								<first>
-									<name>Light1On</name>
+									<name>Light2On</name>
 								</first>
 								<second>
-									<name>Light1On</name>
-									<value object_id="_218">
+									<name>Light2On</name>
+									<value object_id="_217">
 										<which>3</which>
 										<value>0</value>
 									</value>
@@ -2640,11 +2596,11 @@
 							</item>
 							<item>
 								<first>
-									<name>Light2Azimuth</name>
+									<name>Light3Azimuth</name>
 								</first>
 								<second>
-									<name>Light2Azimuth</name>
-									<value object_id="_219">
+									<name>Light3Azimuth</name>
+									<value object_id="_218">
 										<which>0</which>
 										<value>180</value>
 									</value>
@@ -2652,11 +2608,11 @@
 							</item>
 							<item>
 								<first>
-									<name>Light2Color</name>
+									<name>Light3Color</name>
 								</first>
 								<second>
-									<name>Light2Color</name>
-									<value object_id="_220">
+									<name>Light3Color</name>
+									<value object_id="_219">
 										<which>2</which>
 										<value>Color(1,1,1)</value>
 									</value>
@@ -2664,11 +2620,11 @@
 							</item>
 							<item>
 								<first>
-									<name>Light2Inclination</name>
+									<name>Light3Inclination</name>
 								</first>
 								<second>
-									<name>Light2Inclination</name>
-									<value object_id="_221">
+									<name>Light3Inclination</name>
+									<value object_id="_220">
 										<which>0</which>
 										<value>90</value>
 									</value>
@@ -2676,72 +2632,24 @@
 							</item>
 							<item>
 								<first>
-									<name>Light2On</name>
+									<name>Light3On</name>
 								</first>
 								<second>
-									<name>Light2On</name>
+									<name>Light3On</name>
+									<value object_id="_221">
+										<which>3</which>
+										<value>0</value>
+									</value>
+								</second>
+							</item>
+							<item>
+								<first>
+									<name>ObjectsOnly</name>
+								</first>
+								<second>
+									<name>ObjectsOnly</name>
 									<value object_id="_222">
 										<which>3</which>
-										<value>0</value>
-									</value>
-								</second>
-							</item>
-							<item>
-								<first>
-									<name>Light3Azimuth</name>
-								</first>
-								<second>
-									<name>Light3Azimuth</name>
-									<value object_id="_223">
-										<which>0</which>
-										<value>180</value>
-									</value>
-								</second>
-							</item>
-							<item>
-								<first>
-									<name>Light3Color</name>
-								</first>
-								<second>
-									<name>Light3Color</name>
-									<value object_id="_224">
-										<which>2</which>
-										<value>Color(1,1,1)</value>
-									</value>
-								</second>
-							</item>
-							<item>
-								<first>
-									<name>Light3Inclination</name>
-								</first>
-								<second>
-									<name>Light3Inclination</name>
-									<value object_id="_225">
-										<which>0</which>
-										<value>90</value>
-									</value>
-								</second>
-							</item>
-							<item>
-								<first>
-									<name>Light3On</name>
-								</first>
-								<second>
-									<name>Light3On</name>
-									<value object_id="_226">
-										<which>3</which>
-										<value>0</value>
-									</value>
-								</second>
-							</item>
-							<item>
-								<first>
-									<name>ObjectsOnly</name>
-								</first>
-								<second>
-									<name>ObjectsOnly</name>
-									<value object_id="_227">
-										<which>3</which>
 										<value>1</value>
 									</value>
 								</second>
@@ -2752,7 +2660,7 @@
 								</first>
 								<second>
 									<name>ProgrammableInputPortEnabled</name>
-									<value object_id="_228">
+									<value object_id="_223">
 										<which>3</which>
 										<value>0</value>
 									</value>
@@ -2764,7 +2672,7 @@
 								</first>
 								<second>
 									<name>ScaleBarFontSize</name>
-									<value object_id="_229">
+									<value object_id="_224">
 										<which>0</which>
 										<value>8</value>
 									</value>
@@ -2776,7 +2684,7 @@
 								</first>
 								<second>
 									<name>ScaleBarHeight</name>
-									<value object_id="_230">
+									<value object_id="_225">
 										<which>1</which>
 										<value>1.00000000000000000e+00</value>
 									</value>
@@ -2788,7 +2696,7 @@
 								</first>
 								<second>
 									<name>ScaleBarLength</name>
-									<value object_id="_231">
+									<value object_id="_226">
 										<which>1</which>
 										<value>1.00000000000000000e+00</value>
 									</value>
@@ -2800,7 +2708,7 @@
 								</first>
 								<second>
 									<name>ScaleBarLineWidth</name>
-									<value object_id="_232">
+									<value object_id="_227">
 										<which>1</which>
 										<value>1.00000000000000000e+00</value>
 									</value>
@@ -2812,7 +2720,7 @@
 								</first>
 								<second>
 									<name>ScaleBarMultiplier</name>
-									<value object_id="_233">
+									<value object_id="_228">
 										<which>1</which>
 										<value>1.00000000000000000e+00</value>
 									</value>
@@ -2824,7 +2732,7 @@
 								</first>
 								<second>
 									<name>ScaleBarNumTicks</name>
-									<value object_id="_234">
+									<value object_id="_229">
 										<which>0</which>
 										<value>11</value>
 									</value>
@@ -2836,7 +2744,7 @@
 								</first>
 								<second>
 									<name>ScaleBarUnitValue</name>
-									<value object_id="_235">
+									<value object_id="_230">
 										<which>2</which>
 										<value>mm</value>
 									</value>
@@ -2848,7 +2756,7 @@
 								</first>
 								<second>
 									<name>Shine</name>
-									<value object_id="_236">
+									<value object_id="_231">
 										<which>1</which>
 										<value>5.00000000000000000e-01</value>
 									</value>
@@ -2860,7 +2768,7 @@
 								</first>
 								<second>
 									<name>ShowScaleBar</name>
-									<value object_id="_237">
+									<value object_id="_232">
 										<which>3</which>
 										<value>0</value>
 									</value>
@@ -2872,7 +2780,7 @@
 								</first>
 								<second>
 									<name>ShowViewer</name>
-									<value object_id="_238">
+									<value object_id="_233">
 										<which>3</which>
 										<value>1</value>
 									</value>
@@ -2884,7 +2792,7 @@
 								</first>
 								<second>
 									<name>Specular</name>
-									<value object_id="_239">
+									<value object_id="_234">
 										<which>1</which>
 										<value>2.99999999999999989e-01</value>
 									</value>
@@ -2896,7 +2804,7 @@
 								</first>
 								<second>
 									<name>UseBGColor</name>
-									<value object_id="_240">
+									<value object_id="_235">
 										<which>3</which>
 										<value>1</value>
 									</value>
@@ -2908,11 +2816,49 @@
 								</first>
 								<second>
 									<name>VisibleItemListState</name>
-									<value object_id="_241">
+									<value object_id="_236">
 										<which>5</which>
 										<value>
 											<count>2</count>
 											<item_version>0</item_version>
+											<item>
+												<name>graphicsItem</name>
+												<value object_id="_237">
+													<which>5</which>
+													<value>
+														<count>4</count>
+														<item_version>0</item_version>
+														<item>
+															<name>ShowField:0</name>
+															<value object_id="_238">
+																<which>3</which>
+																<value>0</value>
+															</value>
+														</item>
+														<item>
+															<name>Edges</name>
+															<value object_id="_239">
+																<which>3</which>
+																<value>0</value>
+															</value>
+														</item>
+														<item>
+															<name>Faces</name>
+															<value object_id="_240">
+																<which>3</which>
+																<value>1</value>
+															</value>
+														</item>
+														<item>
+															<name>Nodes</name>
+															<value object_id="_241">
+																<which>3</which>
+																<value>0</value>
+															</value>
+														</item>
+													</value>
+												</value>
+											</item>
 											<item>
 												<name>graphicsItem</name>
 												<value object_id="_242">
@@ -2921,10 +2867,10 @@
 														<count>4</count>
 														<item_version>0</item_version>
 														<item>
-															<name>ShowField:0</name>
+															<name>slice (from ShowField:1)</name>
 															<value object_id="_243">
 																<which>3</which>
-																<value>0</value>
+																<value>1</value>
 															</value>
 														</item>
 														<item>
@@ -2938,50 +2884,12 @@
 															<name>Faces</name>
 															<value object_id="_245">
 																<which>3</which>
-																<value>1</value>
+																<value>0</value>
 															</value>
 														</item>
 														<item>
 															<name>Nodes</name>
 															<value object_id="_246">
-																<which>3</which>
-																<value>0</value>
-															</value>
-														</item>
-													</value>
-												</value>
-											</item>
-											<item>
-												<name>graphicsItem</name>
-												<value object_id="_247">
-													<which>5</which>
-													<value>
-														<count>4</count>
-														<item_version>0</item_version>
-														<item>
-															<name>slice (from ShowField:1)</name>
-															<value object_id="_248">
-																<which>3</which>
-																<value>1</value>
-															</value>
-														</item>
-														<item>
-															<name>Edges</name>
-															<value object_id="_249">
-																<which>3</which>
-																<value>0</value>
-															</value>
-														</item>
-														<item>
-															<name>Faces</name>
-															<value object_id="_250">
-																<which>3</which>
-																<value>0</value>
-															</value>
-														</item>
-														<item>
-															<name>Nodes</name>
-															<value object_id="_251">
 																<which>3</which>
 																<value>0</value>
 															</value>
@@ -2999,9 +2907,9 @@
 								</first>
 								<second>
 									<name>WindowPositionX</name>
-									<value object_id="_252">
+									<value object_id="_247">
 										<which>0</which>
-										<value>971</value>
+										<value>449</value>
 									</value>
 								</second>
 							</item>
@@ -3011,7 +2919,7 @@
 								</first>
 								<second>
 									<name>WindowPositionY</name>
-									<value object_id="_253">
+									<value object_id="_248">
 										<which>0</which>
 										<value>402</value>
 									</value>
@@ -3023,9 +2931,9 @@
 								</first>
 								<second>
 									<name>WindowSizeX</name>
-									<value object_id="_254">
+									<value object_id="_249">
 										<which>0</which>
-										<value>917</value>
+										<value>897</value>
 									</value>
 								</second>
 							</item>
@@ -3035,7 +2943,7 @@
 								</first>
 								<second>
 									<name>WindowSizeY</name>
-									<value object_id="_255">
+									<value object_id="_250">
 										<which>0</which>
 										<value>300</value>
 									</value>
@@ -3063,7 +2971,7 @@
 								</first>
 								<second>
 									<name>Ambient</name>
-									<value object_id="_256">
+									<value object_id="_251">
 										<which>1</which>
 										<value>2.00000000000000011e-01</value>
 									</value>
@@ -3075,7 +2983,7 @@
 								</first>
 								<second>
 									<name>AxesSize</name>
-									<value object_id="_257">
+									<value object_id="_252">
 										<which>0</which>
 										<value>10</value>
 									</value>
@@ -3087,7 +2995,7 @@
 								</first>
 								<second>
 									<name>AxesVisible</name>
-									<value object_id="_258">
+									<value object_id="_253">
 										<which>3</which>
 										<value>1</value>
 									</value>
@@ -3099,7 +3007,7 @@
 								</first>
 								<second>
 									<name>AxesX</name>
-									<value object_id="_259">
+									<value object_id="_254">
 										<which>0</which>
 										<value>100</value>
 									</value>
@@ -3111,7 +3019,7 @@
 								</first>
 								<second>
 									<name>AxesY</name>
-									<value object_id="_260">
+									<value object_id="_255">
 										<which>0</which>
 										<value>100</value>
 									</value>
@@ -3123,7 +3031,7 @@
 								</first>
 								<second>
 									<name>BackgroundColor</name>
-									<value object_id="_261">
+									<value object_id="_256">
 										<which>2</which>
 										<value>Color(0,0,0)</value>
 									</value>
@@ -3135,7 +3043,7 @@
 								</first>
 								<second>
 									<name>CameraDistance</name>
-									<value object_id="_262">
+									<value object_id="_257">
 										<which>1</which>
 										<value>4.65480957031250000e+02</value>
 									</value>
@@ -3147,7 +3055,7 @@
 								</first>
 								<second>
 									<name>CameraDistanceMinimum</name>
-									<value object_id="_263">
+									<value object_id="_258">
 										<which>1</which>
 										<value>1.00000000000000004e-10</value>
 									</value>
@@ -3159,28 +3067,28 @@
 								</first>
 								<second>
 									<name>CameraLookAt</name>
-									<value object_id="_264">
+									<value object_id="_259">
 										<which>5</which>
 										<value>
 											<count>3</count>
 											<item_version>0</item_version>
 											<item>
 												<name>listElement</name>
-												<value object_id="_265">
+												<value object_id="_260">
 													<which>1</which>
 													<value>6.54545450210571289e+00</value>
 												</value>
 											</item>
 											<item>
 												<name>listElement</name>
-												<value object_id="_266">
+												<value object_id="_261">
 													<which>1</which>
 													<value>5.12000000000000000e+02</value>
 												</value>
 											</item>
 											<item>
 												<name>listElement</name>
-												<value object_id="_267">
+												<value object_id="_262">
 													<which>1</which>
 													<value>9.60000000000000000e+01</value>
 												</value>
@@ -3195,35 +3103,35 @@
 								</first>
 								<second>
 									<name>CameraRotation</name>
-									<value object_id="_268">
+									<value object_id="_263">
 										<which>5</which>
 										<value>
 											<count>4</count>
 											<item_version>0</item_version>
 											<item>
 												<name>listElement</name>
-												<value object_id="_269">
+												<value object_id="_264">
 													<which>1</which>
 													<value>5.00000000000000000e-01</value>
 												</value>
 											</item>
 											<item>
 												<name>listElement</name>
-												<value object_id="_270">
+												<value object_id="_265">
 													<which>1</which>
 													<value>-5.00000000000000000e-01</value>
 												</value>
 											</item>
 											<item>
 												<name>listElement</name>
-												<value object_id="_271">
+												<value object_id="_266">
 													<which>1</which>
 													<value>-5.00000000000000000e-01</value>
 												</value>
 											</item>
 											<item>
 												<name>listElement</name>
-												<value object_id="_272">
+												<value object_id="_267">
 													<which>1</which>
 													<value>-5.00000000000000000e-01</value>
 												</value>
@@ -3238,11 +3146,46 @@
 								</first>
 								<second>
 									<name>ClippingPlaneD</name>
-									<value object_id="_273">
+									<value object_id="_268">
 										<which>5</which>
 										<value>
 											<count>6</count>
 											<item_version>0</item_version>
+											<item>
+												<name></name>
+												<value object_id="_269">
+													<which>1</which>
+													<value>0.00000000000000000e+00</value>
+												</value>
+											</item>
+											<item>
+												<name></name>
+												<value object_id="_270">
+													<which>1</which>
+													<value>0.00000000000000000e+00</value>
+												</value>
+											</item>
+											<item>
+												<name></name>
+												<value object_id="_271">
+													<which>1</which>
+													<value>0.00000000000000000e+00</value>
+												</value>
+											</item>
+											<item>
+												<name></name>
+												<value object_id="_272">
+													<which>1</which>
+													<value>0.00000000000000000e+00</value>
+												</value>
+											</item>
+											<item>
+												<name></name>
+												<value object_id="_273">
+													<which>1</which>
+													<value>0.00000000000000000e+00</value>
+												</value>
+											</item>
 											<item>
 												<name></name>
 												<value object_id="_274">
@@ -3250,41 +3193,6 @@
 													<value>0.00000000000000000e+00</value>
 												</value>
 											</item>
-											<item>
-												<name></name>
-												<value object_id="_275">
-													<which>1</which>
-													<value>0.00000000000000000e+00</value>
-												</value>
-											</item>
-											<item>
-												<name></name>
-												<value object_id="_276">
-													<which>1</which>
-													<value>0.00000000000000000e+00</value>
-												</value>
-											</item>
-											<item>
-												<name></name>
-												<value object_id="_277">
-													<which>1</which>
-													<value>0.00000000000000000e+00</value>
-												</value>
-											</item>
-											<item>
-												<name></name>
-												<value object_id="_278">
-													<which>1</which>
-													<value>0.00000000000000000e+00</value>
-												</value>
-											</item>
-											<item>
-												<name></name>
-												<value object_id="_279">
-													<which>1</which>
-													<value>0.00000000000000000e+00</value>
-												</value>
-											</item>
 										</value>
 									</value>
 								</second>
@@ -3295,11 +3203,46 @@
 								</first>
 								<second>
 									<name>ClippingPlaneEnabled</name>
-									<value object_id="_280">
+									<value object_id="_275">
 										<which>5</which>
 										<value>
 											<count>6</count>
 											<item_version>0</item_version>
+											<item>
+												<name></name>
+												<value object_id="_276">
+													<which>3</which>
+													<value>0</value>
+												</value>
+											</item>
+											<item>
+												<name></name>
+												<value object_id="_277">
+													<which>3</which>
+													<value>0</value>
+												</value>
+											</item>
+											<item>
+												<name></name>
+												<value object_id="_278">
+													<which>3</which>
+													<value>0</value>
+												</value>
+											</item>
+											<item>
+												<name></name>
+												<value object_id="_279">
+													<which>3</which>
+													<value>0</value>
+												</value>
+											</item>
+											<item>
+												<name></name>
+												<value object_id="_280">
+													<which>3</which>
+													<value>0</value>
+												</value>
+											</item>
 											<item>
 												<name></name>
 												<value object_id="_281">
@@ -3307,13 +3250,21 @@
 													<value>0</value>
 												</value>
 											</item>
-											<item>
-												<name></name>
-												<value object_id="_282">
-													<which>3</which>
-													<value>0</value>
-												</value>
-											</item>
+										</value>
+									</value>
+								</second>
+							</item>
+							<item>
+								<first>
+									<name>ClippingPlaneNormalReversed</name>
+								</first>
+								<second>
+									<name>ClippingPlaneNormalReversed</name>
+									<value object_id="_282">
+										<which>5</which>
+										<value>
+											<count>6</count>
+											<item_version>0</item_version>
 											<item>
 												<name></name>
 												<value object_id="_283">
@@ -3342,21 +3293,13 @@
 													<value>0</value>
 												</value>
 											</item>
-										</value>
-									</value>
-								</second>
-							</item>
-							<item>
-								<first>
-									<name>ClippingPlaneNormalReversed</name>
-								</first>
-								<second>
-									<name>ClippingPlaneNormalReversed</name>
-									<value object_id="_287">
-										<which>5</which>
-										<value>
-											<count>6</count>
-											<item_version>0</item_version>
+											<item>
+												<name></name>
+												<value object_id="_287">
+													<which>3</which>
+													<value>0</value>
+												</value>
+											</item>
 											<item>
 												<name></name>
 												<value object_id="_288">
@@ -3364,41 +3307,6 @@
 													<value>0</value>
 												</value>
 											</item>
-											<item>
-												<name></name>
-												<value object_id="_289">
-													<which>3</which>
-													<value>0</value>
-												</value>
-											</item>
-											<item>
-												<name></name>
-												<value object_id="_290">
-													<which>3</which>
-													<value>0</value>
-												</value>
-											</item>
-											<item>
-												<name></name>
-												<value object_id="_291">
-													<which>3</which>
-													<value>0</value>
-												</value>
-											</item>
-											<item>
-												<name></name>
-												<value object_id="_292">
-													<which>3</which>
-													<value>0</value>
-												</value>
-											</item>
-											<item>
-												<name></name>
-												<value object_id="_293">
-													<which>3</which>
-													<value>0</value>
-												</value>
-											</item>
 										</value>
 									</value>
 								</second>
@@ -3409,11 +3317,46 @@
 								</first>
 								<second>
 									<name>ClippingPlaneX</name>
-									<value object_id="_294">
+									<value object_id="_289">
 										<which>5</which>
 										<value>
 											<count>6</count>
 											<item_version>0</item_version>
+											<item>
+												<name></name>
+												<value object_id="_290">
+													<which>1</which>
+													<value>0.00000000000000000e+00</value>
+												</value>
+											</item>
+											<item>
+												<name></name>
+												<value object_id="_291">
+													<which>1</which>
+													<value>0.00000000000000000e+00</value>
+												</value>
+											</item>
+											<item>
+												<name></name>
+												<value object_id="_292">
+													<which>1</which>
+													<value>0.00000000000000000e+00</value>
+												</value>
+											</item>
+											<item>
+												<name></name>
+												<value object_id="_293">
+													<which>1</which>
+													<value>0.00000000000000000e+00</value>
+												</value>
+											</item>
+											<item>
+												<name></name>
+												<value object_id="_294">
+													<which>1</which>
+													<value>0.00000000000000000e+00</value>
+												</value>
+											</item>
 											<item>
 												<name></name>
 												<value object_id="_295">
@@ -3421,13 +3364,21 @@
 													<value>0.00000000000000000e+00</value>
 												</value>
 											</item>
-											<item>
-												<name></name>
-												<value object_id="_296">
-													<which>1</which>
-													<value>0.00000000000000000e+00</value>
-												</value>
-											</item>
+										</value>
+									</value>
+								</second>
+							</item>
+							<item>
+								<first>
+									<name>ClippingPlaneY</name>
+								</first>
+								<second>
+									<name>ClippingPlaneY</name>
+									<value object_id="_296">
+										<which>5</which>
+										<value>
+											<count>6</count>
+											<item_version>0</item_version>
 											<item>
 												<name></name>
 												<value object_id="_297">
@@ -3456,21 +3407,13 @@
 													<value>0.00000000000000000e+00</value>
 												</value>
 											</item>
-										</value>
-									</value>
-								</second>
-							</item>
-							<item>
-								<first>
-									<name>ClippingPlaneY</name>
-								</first>
-								<second>
-									<name>ClippingPlaneY</name>
-									<value object_id="_301">
-										<which>5</which>
-										<value>
-											<count>6</count>
-											<item_version>0</item_version>
+											<item>
+												<name></name>
+												<value object_id="_301">
+													<which>1</which>
+													<value>0.00000000000000000e+00</value>
+												</value>
+											</item>
 											<item>
 												<name></name>
 												<value object_id="_302">
@@ -3478,13 +3421,21 @@
 													<value>0.00000000000000000e+00</value>
 												</value>
 											</item>
-											<item>
-												<name></name>
-												<value object_id="_303">
-													<which>1</which>
-													<value>0.00000000000000000e+00</value>
-												</value>
-											</item>
+										</value>
+									</value>
+								</second>
+							</item>
+							<item>
+								<first>
+									<name>ClippingPlaneZ</name>
+								</first>
+								<second>
+									<name>ClippingPlaneZ</name>
+									<value object_id="_303">
+										<which>5</which>
+										<value>
+											<count>6</count>
+											<item_version>0</item_version>
 											<item>
 												<name></name>
 												<value object_id="_304">
@@ -3513,21 +3464,13 @@
 													<value>0.00000000000000000e+00</value>
 												</value>
 											</item>
-										</value>
-									</value>
-								</second>
-							</item>
-							<item>
-								<first>
-									<name>ClippingPlaneZ</name>
-								</first>
-								<second>
-									<name>ClippingPlaneZ</name>
-									<value object_id="_308">
-										<which>5</which>
-										<value>
-											<count>6</count>
-											<item_version>0</item_version>
+											<item>
+												<name></name>
+												<value object_id="_308">
+													<which>1</which>
+													<value>0.00000000000000000e+00</value>
+												</value>
+											</item>
 											<item>
 												<name></name>
 												<value object_id="_309">
@@ -3535,41 +3478,6 @@
 													<value>0.00000000000000000e+00</value>
 												</value>
 											</item>
-											<item>
-												<name></name>
-												<value object_id="_310">
-													<which>1</which>
-													<value>0.00000000000000000e+00</value>
-												</value>
-											</item>
-											<item>
-												<name></name>
-												<value object_id="_311">
-													<which>1</which>
-													<value>0.00000000000000000e+00</value>
-												</value>
-											</item>
-											<item>
-												<name></name>
-												<value object_id="_312">
-													<which>1</which>
-													<value>0.00000000000000000e+00</value>
-												</value>
-											</item>
-											<item>
-												<name></name>
-												<value object_id="_313">
-													<which>1</which>
-													<value>0.00000000000000000e+00</value>
-												</value>
-											</item>
-											<item>
-												<name></name>
-												<value object_id="_314">
-													<which>1</which>
-													<value>0.00000000000000000e+00</value>
-												</value>
-											</item>
 										</value>
 									</value>
 								</second>
@@ -3580,7 +3488,7 @@
 								</first>
 								<second>
 									<name>Diffuse</name>
-									<value object_id="_315">
+									<value object_id="_310">
 										<which>1</which>
 										<value>1.00000000000000000e+00</value>
 									</value>
@@ -3592,7 +3500,7 @@
 								</first>
 								<second>
 									<name>Emission</name>
-									<value object_id="_316">
+									<value object_id="_311">
 										<which>1</which>
 										<value>0.00000000000000000e+00</value>
 									</value>
@@ -3604,7 +3512,7 @@
 								</first>
 								<second>
 									<name>FogColor</name>
-									<value object_id="_317">
+									<value object_id="_312">
 										<which>2</which>
 										<value>Color(0,0,255)</value>
 									</value>
@@ -3616,7 +3524,7 @@
 								</first>
 								<second>
 									<name>FogEnd</name>
-									<value object_id="_318">
+									<value object_id="_313">
 										<which>1</which>
 										<value>7.09999999999999964e-01</value>
 									</value>
@@ -3628,7 +3536,7 @@
 								</first>
 								<second>
 									<name>FogOn</name>
-									<value object_id="_319">
+									<value object_id="_314">
 										<which>3</which>
 										<value>0</value>
 									</value>
@@ -3640,7 +3548,7 @@
 								</first>
 								<second>
 									<name>FogStart</name>
-									<value object_id="_320">
+									<value object_id="_315">
 										<which>1</which>
 										<value>0.00000000000000000e+00</value>
 									</value>
@@ -3652,7 +3560,7 @@
 								</first>
 								<second>
 									<name>HasNewGeometry</name>
-									<value object_id="_321">
+									<value object_id="_316">
 										<which>3</which>
 										<value>1</value>
 									</value>
@@ -3664,7 +3572,7 @@
 								</first>
 								<second>
 									<name>HeadLightAzimuth</name>
-									<value object_id="_322">
+									<value object_id="_317">
 										<which>0</which>
 										<value>180</value>
 									</value>
@@ -3676,7 +3584,7 @@
 								</first>
 								<second>
 									<name>HeadLightColor</name>
-									<value object_id="_323">
+									<value object_id="_318">
 										<which>2</which>
 										<value>Color(1,1,1)</value>
 									</value>
@@ -3688,7 +3596,7 @@
 								</first>
 								<second>
 									<name>HeadLightInclination</name>
-									<value object_id="_324">
+									<value object_id="_319">
 										<which>0</which>
 										<value>90</value>
 									</value>
@@ -3700,7 +3608,7 @@
 								</first>
 								<second>
 									<name>HeadLightOn</name>
-									<value object_id="_325">
+									<value object_id="_320">
 										<which>3</which>
 										<value>1</value>
 									</value>
@@ -3712,6 +3620,66 @@
 								</first>
 								<second>
 									<name>IsExecuting</name>
+									<value object_id="_321">
+										<which>3</which>
+										<value>0</value>
+									</value>
+								</second>
+							</item>
+							<item>
+								<first>
+									<name>IsFloating</name>
+								</first>
+								<second>
+									<name>IsFloating</name>
+									<value object_id="_322">
+										<which>3</which>
+										<value>1</value>
+									</value>
+								</second>
+							</item>
+							<item>
+								<first>
+									<name>Light1Azimuth</name>
+								</first>
+								<second>
+									<name>Light1Azimuth</name>
+									<value object_id="_323">
+										<which>0</which>
+										<value>180</value>
+									</value>
+								</second>
+							</item>
+							<item>
+								<first>
+									<name>Light1Color</name>
+								</first>
+								<second>
+									<name>Light1Color</name>
+									<value object_id="_324">
+										<which>2</which>
+										<value>Color(1,1,1)</value>
+									</value>
+								</second>
+							</item>
+							<item>
+								<first>
+									<name>Light1Inclination</name>
+								</first>
+								<second>
+									<name>Light1Inclination</name>
+									<value object_id="_325">
+										<which>0</which>
+										<value>90</value>
+									</value>
+								</second>
+							</item>
+							<item>
+								<first>
+									<name>Light1On</name>
+								</first>
+								<second>
+									<name>Light1On</name>
 									<value object_id="_326">
 										<which>3</which>
 										<value>0</value>
@@ -3720,23 +3688,11 @@
 							</item>
 							<item>
 								<first>
-									<name>IsFloating</name>
+									<name>Light2Azimuth</name>
 								</first>
 								<second>
-									<name>IsFloating</name>
+									<name>Light2Azimuth</name>
 									<value object_id="_327">
-										<which>3</which>
-										<value>1</value>
-									</value>
-								</second>
-							</item>
-							<item>
-								<first>
-									<name>Light1Azimuth</name>
-								</first>
-								<second>
-									<name>Light1Azimuth</name>
-									<value object_id="_328">
 										<which>0</which>
 										<value>180</value>
 									</value>
@@ -3744,11 +3700,11 @@
 							</item>
 							<item>
 								<first>
-									<name>Light1Color</name>
+									<name>Light2Color</name>
 								</first>
 								<second>
-									<name>Light1Color</name>
-									<value object_id="_329">
+									<name>Light2Color</name>
+									<value object_id="_328">
 										<which>2</which>
 										<value>Color(1,1,1)</value>
 									</value>
@@ -3756,11 +3712,11 @@
 							</item>
 							<item>
 								<first>
-									<name>Light1Inclination</name>
+									<name>Light2Inclination</name>
 								</first>
 								<second>
-									<name>Light1Inclination</name>
-									<value object_id="_330">
+									<name>Light2Inclination</name>
+									<value object_id="_329">
 										<which>0</which>
 										<value>90</value>
 									</value>
@@ -3768,11 +3724,11 @@
 							</item>
 							<item>
 								<first>
-									<name>Light1On</name>
+									<name>Light2On</name>
 								</first>
 								<second>
-									<name>Light1On</name>
-									<value object_id="_331">
+									<name>Light2On</name>
+									<value object_id="_330">
 										<which>3</which>
 										<value>0</value>
 									</value>
@@ -3780,11 +3736,11 @@
 							</item>
 							<item>
 								<first>
-									<name>Light2Azimuth</name>
+									<name>Light3Azimuth</name>
 								</first>
 								<second>
-									<name>Light2Azimuth</name>
-									<value object_id="_332">
+									<name>Light3Azimuth</name>
+									<value object_id="_331">
 										<which>0</which>
 										<value>180</value>
 									</value>
@@ -3792,11 +3748,11 @@
 							</item>
 							<item>
 								<first>
-									<name>Light2Color</name>
+									<name>Light3Color</name>
 								</first>
 								<second>
-									<name>Light2Color</name>
-									<value object_id="_333">
+									<name>Light3Color</name>
+									<value object_id="_332">
 										<which>2</which>
 										<value>Color(1,1,1)</value>
 									</value>
@@ -3804,11 +3760,11 @@
 							</item>
 							<item>
 								<first>
-									<name>Light2Inclination</name>
+									<name>Light3Inclination</name>
 								</first>
 								<second>
-									<name>Light2Inclination</name>
-									<value object_id="_334">
+									<name>Light3Inclination</name>
+									<value object_id="_333">
 										<which>0</which>
 										<value>90</value>
 									</value>
@@ -3816,72 +3772,24 @@
 							</item>
 							<item>
 								<first>
-									<name>Light2On</name>
+									<name>Light3On</name>
 								</first>
 								<second>
-									<name>Light2On</name>
+									<name>Light3On</name>
+									<value object_id="_334">
+										<which>3</which>
+										<value>0</value>
+									</value>
+								</second>
+							</item>
+							<item>
+								<first>
+									<name>ObjectsOnly</name>
+								</first>
+								<second>
+									<name>ObjectsOnly</name>
 									<value object_id="_335">
 										<which>3</which>
-										<value>0</value>
-									</value>
-								</second>
-							</item>
-							<item>
-								<first>
-									<name>Light3Azimuth</name>
-								</first>
-								<second>
-									<name>Light3Azimuth</name>
-									<value object_id="_336">
-										<which>0</which>
-										<value>180</value>
-									</value>
-								</second>
-							</item>
-							<item>
-								<first>
-									<name>Light3Color</name>
-								</first>
-								<second>
-									<name>Light3Color</name>
-									<value object_id="_337">
-										<which>2</which>
-										<value>Color(1,1,1)</value>
-									</value>
-								</second>
-							</item>
-							<item>
-								<first>
-									<name>Light3Inclination</name>
-								</first>
-								<second>
-									<name>Light3Inclination</name>
-									<value object_id="_338">
-										<which>0</which>
-										<value>90</value>
-									</value>
-								</second>
-							</item>
-							<item>
-								<first>
-									<name>Light3On</name>
-								</first>
-								<second>
-									<name>Light3On</name>
-									<value object_id="_339">
-										<which>3</which>
-										<value>0</value>
-									</value>
-								</second>
-							</item>
-							<item>
-								<first>
-									<name>ObjectsOnly</name>
-								</first>
-								<second>
-									<name>ObjectsOnly</name>
-									<value object_id="_340">
-										<which>3</which>
 										<value>1</value>
 									</value>
 								</second>
@@ -3892,7 +3800,7 @@
 								</first>
 								<second>
 									<name>ProgrammableInputPortEnabled</name>
-									<value object_id="_341">
+									<value object_id="_336">
 										<which>3</which>
 										<value>0</value>
 									</value>
@@ -3904,7 +3812,7 @@
 								</first>
 								<second>
 									<name>ScaleBarFontSize</name>
-									<value object_id="_342">
+									<value object_id="_337">
 										<which>0</which>
 										<value>8</value>
 									</value>
@@ -3916,7 +3824,7 @@
 								</first>
 								<second>
 									<name>ScaleBarHeight</name>
-									<value object_id="_343">
+									<value object_id="_338">
 										<which>1</which>
 										<value>1.00000000000000000e+00</value>
 									</value>
@@ -3928,7 +3836,7 @@
 								</first>
 								<second>
 									<name>ScaleBarLength</name>
-									<value object_id="_344">
+									<value object_id="_339">
 										<which>1</which>
 										<value>1.00000000000000000e+00</value>
 									</value>
@@ -3940,7 +3848,7 @@
 								</first>
 								<second>
 									<name>ScaleBarLineWidth</name>
-									<value object_id="_345">
+									<value object_id="_340">
 										<which>1</which>
 										<value>1.00000000000000000e+00</value>
 									</value>
@@ -3952,7 +3860,7 @@
 								</first>
 								<second>
 									<name>ScaleBarMultiplier</name>
-									<value object_id="_346">
+									<value object_id="_341">
 										<which>1</which>
 										<value>1.00000000000000000e+00</value>
 									</value>
@@ -3964,7 +3872,7 @@
 								</first>
 								<second>
 									<name>ScaleBarNumTicks</name>
-									<value object_id="_347">
+									<value object_id="_342">
 										<which>0</which>
 										<value>11</value>
 									</value>
@@ -3976,7 +3884,7 @@
 								</first>
 								<second>
 									<name>ScaleBarUnitValue</name>
-									<value object_id="_348">
+									<value object_id="_343">
 										<which>2</which>
 										<value>mm</value>
 									</value>
@@ -3988,7 +3896,7 @@
 								</first>
 								<second>
 									<name>Shine</name>
-									<value object_id="_349">
+									<value object_id="_344">
 										<which>1</which>
 										<value>5.00000000000000000e-01</value>
 									</value>
@@ -4000,7 +3908,7 @@
 								</first>
 								<second>
 									<name>ShowScaleBar</name>
-									<value object_id="_350">
+									<value object_id="_345">
 										<which>3</which>
 										<value>0</value>
 									</value>
@@ -4012,7 +3920,7 @@
 								</first>
 								<second>
 									<name>ShowViewer</name>
-									<value object_id="_351">
+									<value object_id="_346">
 										<which>3</which>
 										<value>0</value>
 									</value>
@@ -4024,7 +3932,7 @@
 								</first>
 								<second>
 									<name>Specular</name>
-									<value object_id="_352">
+									<value object_id="_347">
 										<which>1</which>
 										<value>2.99999999999999989e-01</value>
 									</value>
@@ -4036,7 +3944,7 @@
 								</first>
 								<second>
 									<name>UseBGColor</name>
-									<value object_id="_353">
+									<value object_id="_348">
 										<which>3</which>
 										<value>1</value>
 									</value>
@@ -4048,11 +3956,49 @@
 								</first>
 								<second>
 									<name>VisibleItemListState</name>
-									<value object_id="_354">
+									<value object_id="_349">
 										<which>5</which>
 										<value>
 											<count>2</count>
 											<item_version>0</item_version>
+											<item>
+												<name>graphicsItem</name>
+												<value object_id="_350">
+													<which>5</which>
+													<value>
+														<count>4</count>
+														<item_version>0</item_version>
+														<item>
+															<name>ShowField:0</name>
+															<value object_id="_351">
+																<which>3</which>
+																<value>0</value>
+															</value>
+														</item>
+														<item>
+															<name>Edges</name>
+															<value object_id="_352">
+																<which>3</which>
+																<value>0</value>
+															</value>
+														</item>
+														<item>
+															<name>Faces</name>
+															<value object_id="_353">
+																<which>3</which>
+																<value>0</value>
+															</value>
+														</item>
+														<item>
+															<name>Nodes</name>
+															<value object_id="_354">
+																<which>3</which>
+																<value>0</value>
+															</value>
+														</item>
+													</value>
+												</value>
+											</item>
 											<item>
 												<name>graphicsItem</name>
 												<value object_id="_355">
@@ -4061,10 +4007,10 @@
 														<count>4</count>
 														<item_version>0</item_version>
 														<item>
-															<name>ShowField:0</name>
+															<name>slice (from ShowField:1)</name>
 															<value object_id="_356">
 																<which>3</which>
-																<value>0</value>
+																<value>1</value>
 															</value>
 														</item>
 														<item>
@@ -4091,44 +4037,6 @@
 													</value>
 												</value>
 											</item>
-											<item>
-												<name>graphicsItem</name>
-												<value object_id="_360">
-													<which>5</which>
-													<value>
-														<count>4</count>
-														<item_version>0</item_version>
-														<item>
-															<name>slice (from ShowField:1)</name>
-															<value object_id="_361">
-																<which>3</which>
-																<value>1</value>
-															</value>
-														</item>
-														<item>
-															<name>Edges</name>
-															<value object_id="_362">
-																<which>3</which>
-																<value>0</value>
-															</value>
-														</item>
-														<item>
-															<name>Faces</name>
-															<value object_id="_363">
-																<which>3</which>
-																<value>0</value>
-															</value>
-														</item>
-														<item>
-															<name>Nodes</name>
-															<value object_id="_364">
-																<which>3</which>
-																<value>0</value>
-															</value>
-														</item>
-													</value>
-												</value>
-											</item>
 										</value>
 									</value>
 								</second>
@@ -4139,7 +4047,7 @@
 								</first>
 								<second>
 									<name>WindowPositionX</name>
-									<value object_id="_365">
+									<value object_id="_360">
 										<which>0</which>
 										<value>809</value>
 									</value>
@@ -4151,7 +4059,7 @@
 								</first>
 								<second>
 									<name>WindowPositionY</name>
-									<value object_id="_366">
+									<value object_id="_361">
 										<which>0</which>
 										<value>100</value>
 									</value>
@@ -4163,7 +4071,7 @@
 								</first>
 								<second>
 									<name>WindowSizeX</name>
-									<value object_id="_367">
+									<value object_id="_362">
 										<which>0</which>
 										<value>1091</value>
 									</value>
@@ -4175,7 +4083,7 @@
 								</first>
 								<second>
 									<name>WindowSizeY</name>
-									<value object_id="_368">
+									<value object_id="_363">
 										<which>0</which>
 										<value>317</value>
 									</value>
@@ -4185,89 +4093,13 @@
 					</state>
 				</second>
 			</item>
-			<item>
-				<first>WriteMatrix:0</first>
-				<second>
-					<module>
-						<package_name_>SCIRun</package_name_>
-						<category_name_>DataIO</category_name_>
-						<module_name_>WriteMatrix</module_name_>
-					</module>
-					<state>
-						<stateMap>
-							<count>4</count>
-							<item_version>0</item_version>
-							<item>
-								<first>
-									<name>FileTypeName</name>
-								</first>
-								<second>
-									<name>FileTypeName</name>
-									<value object_id="_369">
-										<which>2</which>
-										<value>Matlab Matrix</value>
-									</value>
-								</second>
-							</item>
-							<item>
-								<first>
-									<name>Filename</name>
-								</first>
-								<second>
-									<name>Filename</name>
-									<value object_id="_370">
-										<which>2</which>
-										<value>/home/kj/Documents/sim_out/sim_output.mat</value>
-									</value>
-								</second>
-							</item>
-							<item>
-								<first>
-									<name>GuiFileTypeName</name>
-								</first>
-								<second>
-									<name>GuiFileTypeName</name>
-									<value object_id="_371">
-										<which>2</which>
-										<value>Matlab Matrix (*.mat)</value>
-									</value>
-								</second>
-							</item>
-							<item>
-								<first>
-									<name>ProgrammableInputPortEnabled</name>
-								</first>
-								<second>
-									<name>ProgrammableInputPortEnabled</name>
-									<value object_id="_372">
-										<which>3</which>
-										<value>0</value>
-									</value>
-								</second>
-							</item>
-						</stateMap>
-					</state>
-				</second>
-			</item>
 		</modules>
 		<connections class_id="13" tracking_level="0" version="0">
-			<count>17</count>
+			<count>14</count>
 			<item_version>0</item_version>
 			<item class_id="14" tracking_level="0" version="0">
-				<moduleId1_>CollectMatrices:0</moduleId1_>
-				<port1_ class_id="15" tracking_level="0" version="0">
-					<name>CompositeMatrix</name>
-					<id>0</id>
-				</port1_>
-				<moduleId2_>WriteMatrix:0</moduleId2_>
-				<port2_>
-					<name>MatrixToWrite</name>
-					<id>0</id>
-				</port2_>
-			</item>
-			<item>
 				<moduleId1_>CreateStandardColorMap:2</moduleId1_>
-				<port1_>
+				<port1_ class_id="15" tracking_level="0" version="0">
 					<name>ColorMapObject</name>
 					<id>0</id>
 				</port1_>
@@ -4314,18 +4146,6 @@
 				</port2_>
 			</item>
 			<item>
-				<moduleId1_>GetFieldData:0</moduleId1_>
-				<port1_>
-					<name>OutputMatrix</name>
-					<id>0</id>
-				</port1_>
-				<moduleId2_>CollectMatrices:0</moduleId2_>
-				<port2_>
-					<name>SubMatrix</name>
-					<id>0</id>
-				</port2_>
-			</item>
-			<item>
 				<moduleId1_>GetSliceFromStructuredFieldByIndices:0</moduleId1_>
 				<port1_>
 					<name>OutputField</name>
@@ -4344,18 +4164,6 @@
 					<id>0</id>
 				</port1_>
 				<moduleId2_>ExtractIsosurface:1</moduleId2_>
-				<port2_>
-					<name>InputField</name>
-					<id>0</id>
-				</port2_>
-			</item>
-			<item>
-				<moduleId1_>PIConGPUReader:0</moduleId1_>
-				<port1_>
-					<name>ScalarField</name>
-					<id>0</id>
-				</port1_>
-				<moduleId2_>GetFieldData:0</moduleId2_>
 				<port2_>
 					<name>InputField</name>
 					<id>0</id>
@@ -4460,18 +4268,11 @@
 		</connections>
 	</networkInfo>
 	<modulePositions class_id="16" tracking_level="0" version="0">
-		<count>14</count>
+		<count>11</count>
 		<item_version>0</item_version>
 		<item class_id="17" tracking_level="0" version="0">
-			<first>CollectMatrices:0</first>
-			<second class_id="18" tracking_level="0" version="0">
-				<first>-1.44400000000000000e+03</first>
-				<second>-4.56000000000000000e+02</second>
-			</second>
-		</item>
-		<item>
 			<first>CreateStandardColorMap:2</first>
-			<second>
+			<second class_id="18" tracking_level="0" version="0">
 				<first>-1.21600000000000000e+03</first>
 				<second>-5.32000000000000000e+02</second>
 			</second>
@@ -4488,13 +4289,6 @@
 			<second>
 				<first>-1.44400000000000000e+03</first>
 				<second>-2.28000000000000000e+02</second>
-			</second>
-		</item>
-		<item>
-			<first>GetFieldData:0</first>
-			<second>
-				<first>-1.44300000000000000e+03</first>
-				<second>-5.31000000000000000e+02</second>
 			</second>
 		</item>
 		<item>
@@ -4553,13 +4347,6 @@
 				<second>-1.52000000000000000e+02</second>
 			</second>
 		</item>
-		<item>
-			<first>WriteMatrix:0</first>
-			<second>
-				<first>-1.44400000000000000e+03</first>
-				<second>-3.80000000000000000e+02</second>
-			</second>
-		</item>
 	</modulePositions>
 	<moduleNotes class_id="19" tracking_level="0" version="0">
 		<count>0</count>
@@ -4570,13 +4357,9 @@
 		<item_version>0</item_version>
 	</connectionNotes>
 	<moduleTags class_id="20" tracking_level="0" version="0">
-		<count>14</count>
+		<count>11</count>
 		<item_version>0</item_version>
 		<item class_id="21" tracking_level="0" version="0">
-			<first>CollectMatrices:0</first>
-			<second>-1</second>
-		</item>
-		<item>
 			<first>CreateStandardColorMap:2</first>
 			<second>-1</second>
 		</item>
@@ -4586,10 +4369,6 @@
 		</item>
 		<item>
 			<first>GeometryBuffer:0</first>
-			<second>-1</second>
-		</item>
-		<item>
-			<first>GetFieldData:0</first>
 			<second>-1</second>
 		</item>
 		<item>
@@ -4622,10 +4401,6 @@
 		</item>
 		<item>
 			<first>ViewScene:1</first>
-			<second>-1</second>
-		</item>
-		<item>
-			<first>WriteMatrix:0</first>
 			<second>-1</second>
 		</item>
 	</moduleTags>

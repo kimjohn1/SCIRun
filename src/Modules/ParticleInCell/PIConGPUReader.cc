@@ -276,6 +276,15 @@ void PIConGPUReader::execute()
     SimulationStreamingReaderBaseImpl P;
     if (!setup_) setupStream();
 
+
+    t2 = std::chrono::high_resolution_clock::now();                                            //here
+    auto duration = std::chrono::duration_cast<std::chrono::microseconds>( t2 - t1 ).count();  //here
+    std::cout << "/n" << "Visualization time for data count" << data_counter << " is ";        //here
+    std::cout << duration << " microseconds/n";                                                //here
+    t1 = std::chrono::high_resolution_clock::now();                                            //here
+    data_counter++;
+
+
 #if openPMDIsAvailable
     IndexedIteration iteration = *it;
 
@@ -305,6 +314,11 @@ void PIConGPUReader::setupStream()
     VectorFieldType = state->getValue(Variables::VectorFieldType).toString();
 
     while (!std::filesystem::exists(SST_dir)) std::this_thread::sleep_for(std::chrono::seconds(1));
+
+
+    t1 = std::chrono::high_resolution_clock::now();              //here
+
+
 #if openPMDIsAvailable
     series = Series(SST_dir, Access::READ_ONLY);
     end    = series.readIterations().end();
@@ -318,11 +332,11 @@ void PIConGPUReader::setupStream()
 
     if(iter_ss.meshes.size())
         for (auto const &pm : iter_ss.meshes)
-
             {
             if(pm.first == ScalarFieldComp) scalarFieldPresent = true;
             if(pm.first == VectorFieldType) vectorFieldPresent = true;
             }
+
     if(DataSet==0) showDataSet();
 #endif
     }

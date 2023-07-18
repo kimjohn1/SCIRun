@@ -47,6 +47,7 @@ Series series;
 SeriesIterator it, end;
 #endif
 
+int data_counter           = 0;                                  //here
 int iteration_filter_i     = 1;
 int iteration_filter_j     = 1;
 int iteration_filter_k     = 1;
@@ -65,6 +66,11 @@ int         SampleRate;
 std::string ParticleType;
 std::string ScalarFieldComp;
 std::string VectorFieldType;
+
+
+auto t1 = std::chrono::high_resolution_clock::now();             //here
+auto t2 = std::chrono::high_resolution_clock::now();             //here
+
 
 class SCISHARE PIConGPUReader : public SCIRun::Dataflow::Networks::Module,
     public HasNoInputPorts,
