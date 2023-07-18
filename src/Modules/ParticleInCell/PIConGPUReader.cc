@@ -278,9 +278,9 @@ void PIConGPUReader::execute()
 
 
     t2 = std::chrono::high_resolution_clock::now();                                            //here
-    auto duration = std::chrono::duration_cast<std::chrono::microseconds>( t2 - t1 ).count();  //here
-    std::cout << "/n" << "Visualization time for data count" << data_counter << " is ";        //here
-    std::cout << duration << " microseconds/n";                                                //here
+    auto duration = std::chrono::duration_cast<std::chrono::seconds>( t2 - t1 ).count();       //here
+    std::cout << "\n" << "Visualization time for data count " << data_counter << " is ";       //here
+    std::cout << duration << " seconds\n";                                                     //here
     t1 = std::chrono::high_resolution_clock::now();                                            //here
     data_counter++;
 
