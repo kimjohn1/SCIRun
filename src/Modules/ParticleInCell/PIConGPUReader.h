@@ -48,7 +48,6 @@ SeriesIterator it, end;
 #endif
 
 int data_counter           = 0;                                  //here
-std::chrono::duration<double> total_t;                                  //here
 int iteration_filter_i     = 1;
 int iteration_filter_j     = 1;
 int iteration_filter_k     = 1;
@@ -69,8 +68,9 @@ std::string ScalarFieldComp;
 std::string VectorFieldType;
 
 
-auto t1 = std::chrono::high_resolution_clock::now();             //here
-auto t2 = std::chrono::high_resolution_clock::now();             //here
+auto t1       = std::chrono::high_resolution_clock::now();       //here
+auto t2       = std::chrono::high_resolution_clock::now();       //here
+auto big_time = std::chrono::high_resolution_clock::now();       //here
 
 
 class SCISHARE PIConGPUReader : public SCIRun::Dataflow::Networks::Module,
