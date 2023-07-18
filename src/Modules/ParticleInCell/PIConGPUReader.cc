@@ -282,8 +282,8 @@ void PIConGPUReader::execute()
     std::cout << "\n" << "Visualization time for data count " << data_counter << " is ";       //here
     std::cout << duration << " seconds\n";                                                     //here
 
-    auto big_duration = std::chrono::duration_cast<std::chrono::seconds>( t2 - big_time ).count();
-    std::cout << "Total visualization time is " << big_duration << " seconds\n";
+    //auto big_duration = std::chrono::duration_cast<std::chrono::seconds>( t2 - big_time ).count();
+    //std::cout << "Total visualization time is " << big_duration << " seconds\n";
     t1 = std::chrono::high_resolution_clock::now();                                            //here
     data_counter++;                                                                            //here
 
@@ -320,7 +320,7 @@ void PIConGPUReader::setupStream()
 
 
     t1       = std::chrono::high_resolution_clock::now();        //here
-    big_time = t1;                                               //here
+    //big_time = t1;                                               //here
 
 
 #if openPMDIsAvailable
