@@ -289,7 +289,7 @@ void PIConGPUReader::execute()
     t1 = std::chrono::high_resolution_clock::now();                                            //here
     data_counter++;                                                                            //here
     //total_t += duration;                                                                       //here
-    total_t += diff;
+    total_t = totat_t + diff;
 
 
 #if openPMDIsAvailable
