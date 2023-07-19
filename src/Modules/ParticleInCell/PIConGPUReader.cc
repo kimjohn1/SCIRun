@@ -277,19 +277,15 @@ void PIConGPUReader::execute()
     if (!setup_) setupStream();
 
 
-    t2 = std::chrono::high_resolution_clock::now();                                                //here
-    auto duration     = std::chrono::duration_cast<std::chrono::milliseconds>( t2 - t1 ).count();  //here
-    //auto big_duration = std::chrono::duration_cast<std::chrono::milliseconds>( t2 - big_time ).count();
+    t2 = std::chrono::high_resolution_clock::now();                                                      //here
+    float duration     = std::chrono::duration_cast<std::chrono::milliseconds>( t2 - t1 ).count();       //here
     float big_duration = std::chrono::duration_cast<std::chrono::milliseconds>( t2 - big_time ).count();
-    std::cout << "Visualization time for iteration " << data_counter << " is ";                    //here
-    std::cout << "\t" 
-              //<< std::fixed << std::setprecision(3)
-              << duration/1000.0 << " seconds\n";                                                    //here
-    std::cout << "Total visualization time is\t\t" 
-              //<< std::fixed << std::setprecision(3)
-              << big_duration/1000.0 << " seconds\n\n";
-    t1 = std::chrono::high_resolution_clock::now();                                                //here
-    data_counter++;                                                                                //here
+    std::cout << "Visualization time for iteration " << data_counter << " is ";                          //here
+    std::cout << "\t" << duration/1000.0 << " seconds\n";                                                //here
+    std::cout << "Total visualization time is\t\t" << big_duration/1000.0 << " seconds\n\n";
+    vis_out << "Total visualization time is\t\t" << big_duration/1000.0 << " seconds\n\n";               //here, out
+    t1 = std::chrono::high_resolution_clock::now();                                                      //here
+    data_counter++;                                                                                      //here
 
 
 #if openPMDIsAvailable
