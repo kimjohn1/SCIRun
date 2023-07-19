@@ -283,7 +283,11 @@ void PIConGPUReader::execute()
     std::cout << "Visualization time for iteration " << data_counter << " is ";                          //here
     std::cout << "\t" << duration/1000.0 << " seconds\n";                                                //here
     std::cout << "Total visualization time is\t\t" << big_duration/1000.0 << " seconds\n\n";
-    vis_out << "Total visualization time is\t\t" << big_duration/1000.0 << " seconds\n\n";               //here, out
+
+    vis_out.open("visout.txt", ios::app);                                                               //here, out
+    vis_out << "\nTotal visualization time is\t\t" << big_duration/1000.0 << " seconds\n";              //here, out
+    vis_out.close();                                                                                    //here, out
+
     t1 = std::chrono::high_resolution_clock::now();                                                      //here
     data_counter++;                                                                                      //here
 
