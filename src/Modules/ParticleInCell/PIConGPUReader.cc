@@ -277,15 +277,14 @@ void PIConGPUReader::execute()
     if (!setup_) setupStream();
 
 
-    t2 = std::chrono::high_resolution_clock::now();                                            //here
-    auto duration = std::chrono::duration_cast<std::chrono::seconds>( t2 - t1 ).count();       //here
-    std::cout << "\n" << "Visualization time for data count " << data_counter << " is ";       //here
-    std::cout << duration << " seconds\n";                                                     //here
-
-    //auto big_duration = std::chrono::duration_cast<std::chrono::seconds>( t2 - big_time ).count();
-    //std::cout << "Total visualization time is " << big_duration << " seconds\n";
-    t1 = std::chrono::high_resolution_clock::now();                                            //here
-    data_counter++;                                                                            //here
+    t2 = std::chrono::high_resolution_clock::now();                                                //here
+    auto duration     = std::chrono::duration_cast<std::chrono::seconds>( t2 - t1 ).count();       //here
+    auto big_duration = std::chrono::duration_cast<std::chrono::seconds>( t2 - big_time ).count();
+    std::cout << "\n" << "Visualization time for data count " << data_counter << " is ";           //here
+    std::cout << duration << " seconds\n";                                                         //here
+    std::cout << "\n" << "Total visualization time is " << big_duration << " seconds\n";
+    t1 = std::chrono::high_resolution_clock::now();                                                //here
+    data_counter++;                                                                                //here
 
 
 #if openPMDIsAvailable
@@ -320,7 +319,7 @@ void PIConGPUReader::setupStream()
 
 
     t1       = std::chrono::high_resolution_clock::now();        //here
-    //big_time = t1;                                               //here
+    big_time = t1;                                               //here
 
 
 #if openPMDIsAvailable
