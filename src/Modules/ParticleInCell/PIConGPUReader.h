@@ -33,8 +33,8 @@
 #include <Dataflow/Network/Module.h>
 #include <Modules/Basic/share.h>
 
-//#include <iostream>                                              //here, out
-//#include <fstream>                                               //here, out
+#include <iostream>                                              //here, out
+#include <fstream>                                               //here, out
 
 #include <Core/Algorithms/Base/AlgorithmVariableNames.h>
 
@@ -71,8 +71,7 @@ std::string ScalarFieldComp;
 std::string VectorFieldType;
 
 
-
-//ofstream vis_out;                                              //here, out
+std::ofstream vis_out;                                           //here, out
 
 
 auto t1       = std::chrono::high_resolution_clock::now();       //here

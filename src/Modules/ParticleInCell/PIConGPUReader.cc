@@ -295,9 +295,10 @@ void PIConGPUReader::execute()
     std::cout << "\t" << duration/1000.0 << " seconds\n";                                                //here
     std::cout << "Total visualization time is\t\t" << big_duration/1000.0 << " seconds\n\n";
 
-    //vis_out.open("visout.txt", ios::app);                                                               //here, out
-    //vis_out << "\nTotal visualization time is\t\t" << big_duration/1000.0 << " seconds\n";              //here, out
-    //vis_out.close();                                                                                    //here, out
+    vis_out.open("$PIC_OUTPUT/SST/simOutput/visout.txt", ios::app);                                      //here, out
+    vis_out << "\nVisualization time for iteration " << data_counter << " is " << "\t" << duration/1000.0 << " seconds\n";
+    vis_out << "Total visualization time is\t\t" << big_duration/1000.0 << " seconds\n";                //here, out
+    vis_out.close();                                                                                    //here, out
 
     data_counter++;                                                                                      //here
     t1 = std::chrono::high_resolution_clock::now();                                                      //here
@@ -323,12 +324,12 @@ void PIConGPUReader::setupStream()
     ScalarFieldComp = state->getValue(Variables::ScalarFieldComp).toString();
     VectorFieldType = state->getValue(Variables::VectorFieldType).toString();
 
-    while (!std::filesystem::exists(SST_dir)) std::this_thread::sleep_for(std::chrono::seconds(1));
-
 
     t1       = std::chrono::high_resolution_clock::now();        //here
     big_time = t1;                                               //here
 
+
+    while (!std::filesystem::exists(SST_dir)) std::this_thread::sleep_for(std::chrono::seconds(1));
 
 #if openPMDIsAvailable
     series = Series(SST_dir, Access::READ_ONLY);
