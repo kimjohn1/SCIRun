@@ -71,8 +71,10 @@ std::string ScalarFieldComp;
 std::string VectorFieldType;
 
 
-//ofstream vis_out("~/scratch/vis_output.txt", std::ofstream::out);                    //here, out
-ofstream vis_out;                    //here, out
+
+//ofstream vis_out;                                              //here, out
+
+
 auto t1       = std::chrono::high_resolution_clock::now();       //here
 auto t2       = std::chrono::high_resolution_clock::now();       //here
 auto big_time = std::chrono::high_resolution_clock::now();       //here

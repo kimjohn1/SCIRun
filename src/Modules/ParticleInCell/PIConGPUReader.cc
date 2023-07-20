@@ -284,9 +284,9 @@ void PIConGPUReader::execute()
     std::cout << "\t" << duration/1000.0 << " seconds\n";                                                //here
     std::cout << "Total visualization time is\t\t" << big_duration/1000.0 << " seconds\n\n";
 
-    vis_out.open("visout.txt", ios::app);                                                               //here, out
-    vis_out << "\nTotal visualization time is\t\t" << big_duration/1000.0 << " seconds\n";              //here, out
-    vis_out.close();                                                                                    //here, out
+    //vis_out.open("visout.txt", ios::app);                                                               //here, out
+    //vis_out << "\nTotal visualization time is\t\t" << big_duration/1000.0 << " seconds\n";              //here, out
+    //vis_out.close();                                                                                    //here, out
 
     t1 = std::chrono::high_resolution_clock::now();                                                      //here
     data_counter++;                                                                                      //here
@@ -351,8 +351,6 @@ void PIConGPUReader::setupStream()
 
 void PIConGPUReader::shutdownStream()
     {
-    //std::cout << "Total visualization time is " << total_t << " seconds\n";          //here
-
     string text_file;
     text_file = "rm ~/picongpu.profile ~/picongpu_reRun.profile ~/Sim.py ~/Sim_run";
     const char *command_shutDown = text_file.c_str();
