@@ -60,6 +60,8 @@ bool vectorFieldPresent    = false;
 bool scalarFieldPresent    = false;
 const std::string& home_   = std::getenv("HOME");
 const std::string& SST_dir = home_+"/scratch/runs/SST/simOutput/openPMD/simData.sst";
+const std::string& visout_dir = home_+"/scratch/runs/SST/simOutput/visout.txt";
+
 
 int         DataSet;
 int         Dim_i_max;
