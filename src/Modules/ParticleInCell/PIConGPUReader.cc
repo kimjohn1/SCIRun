@@ -364,6 +364,8 @@ void PIConGPUReader::shutdownStream()
     particlesPresent   = false;
     vectorFieldPresent = false;
     scalarFieldPresent = false;
+
+    data_counter       = 0;                                      //here
     }
 
 void PIConGPUReader::showDataSet()
