@@ -290,15 +290,15 @@ void PIConGPUReader::execute()
 
     t2 = std::chrono::high_resolution_clock::now();                                                      //here
     float duration     = std::chrono::duration_cast<std::chrono::milliseconds>( t2 - t1 ).count();       //here
-    float big_duration = std::chrono::duration_cast<std::chrono::milliseconds>( t2 - big_time ).count();
+    float big_duration = std::chrono::duration_cast<std::chrono::milliseconds>( t2 - big_time ).count(); //here
     std::cout << "Visualization time for iteration " << data_counter << " is ";                          //here
     std::cout << "\t" << duration/1000.0 << " seconds\n";                                                //here
-    std::cout << "Total visualization time is\t\t" << big_duration/1000.0 << " seconds\n\n";
+    std::cout << "Total visualization time is\t\t" << big_duration/1000.0 << " seconds\n\n";             //here
 
-    vis_out.open(visout_dir, ios::app);                                      //here, out
+    vis_out.open(visout_dir, ios::app);                                                                  //here, out
     vis_out << "\nVisualization time for iteration " << data_counter << " is " << "\t" << duration/1000.0 << " seconds\n";
-    vis_out << "Total visualization time is\t\t" << big_duration/1000.0 << " seconds\n";                //here, out
-    vis_out.close();                                                                                    //here, out
+    vis_out << "Total visualization time is\t\t" << big_duration/1000.0 << " seconds\n";                 //here, out
+    vis_out.close();                                                                                     //here, out
 
     data_counter++;                                                                                      //here
     t1 = std::chrono::high_resolution_clock::now();                                                      //here
