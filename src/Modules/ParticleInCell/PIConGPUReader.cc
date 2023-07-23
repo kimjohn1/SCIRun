@@ -276,15 +276,6 @@ void PIConGPUReader::execute()
     SimulationStreamingReaderBaseImpl P;
     if (!setup_) setupStream();
 
-#if openPMDIsAvailable
-    IndexedIteration iteration = *it;
-
-    if(particlesPresent  ) sendOutput(Particles,   P.makeParticleOutput(iteration, SampleRate, ParticleType));
-    if(scalarFieldPresent) sendOutput(ScalarField, P.makeScalarOutput(iteration,   ScalarFieldComp));
-    if(vectorFieldPresent) sendOutput(VectorField, P.makeVectorOutput(iteration,   VectorFieldType));
-    iteration.close();
-#endif
-    ++it;
 
 
 
@@ -301,9 +292,21 @@ void PIConGPUReader::execute()
     vis_out.close();                                                                                     //here, out
 
     data_counter++;                                                                                      //here
-    t1 = std::chrono::high_resolution_clock::now();                                                      //here
+    //t1 = std::chrono::high_resolution_clock::now();                                                      //here
+    t1 = t2;
 
 
+
+
+#if openPMDIsAvailable
+    IndexedIteration iteration = *it;
+
+    if(particlesPresent  ) sendOutput(Particles,   P.makeParticleOutput(iteration, SampleRate, ParticleType));
+    if(scalarFieldPresent) sendOutput(ScalarField, P.makeScalarOutput(iteration,   ScalarFieldComp));
+    if(vectorFieldPresent) sendOutput(VectorField, P.makeVectorOutput(iteration,   VectorFieldType));
+    iteration.close();
+#endif
+    ++it;
 
 #if openPMDIsAvailable
     if(it != end) enqueueExecuteAgain(false);
