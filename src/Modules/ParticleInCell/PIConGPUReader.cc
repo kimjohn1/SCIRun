@@ -137,6 +137,18 @@ class SimulationStreamingReaderBaseImpl
             values[c_m_index] = scalarFieldData_buffer.get()[flat_index];                         //values is used here: 6 March - kj
             }
 
+
+
+
+        int scalar_field_size = extent_sFD[0]*extent_sFD[1]*extent_sFD[2];                    //the raw data output task 1 Nov
+        ofstream rawdata_out(rawdataout_dir, ios::out | ios::binary);                         //the raw data output task 1 Nov
+        for(int i=0; i < scalar_field_size; i++) rawdata_out.write((char *) &(scalarFieldData_buffer.get()[i]), (int)sizeof(float));
+        rawdata_out.close();                                                                  //the raw data output task 1 Nov
+
+
+
+
+
         VField* ofield = ofh->vfield();
         ofield->set_values(values);
 

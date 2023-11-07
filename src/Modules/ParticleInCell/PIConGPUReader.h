@@ -61,6 +61,7 @@ bool scalarFieldPresent    = false;
 const std::string& home_   = std::getenv("HOME");
 const std::string& SST_dir = home_+"/scratch/runs/SST/simOutput/openPMD/simData.sst";
 const std::string& visout_dir = home_+"/scratch/runs/SST/simOutput/visout.txt";
+const std::string& rawdataout_dir = home_+"/scratch/runs/SST/simOutput/raw_data_out.bin";     //the raw data output task 1 Nov
 
 
 int         DataSet;
