@@ -26,6 +26,7 @@
 #
 
 find_package(openPMD REQUIRED)
+find_package(OpenVisus REQUIRED)
 
 SET(Modules_ParticleInCell_SRCS
   ElectroStatic.cc
@@ -58,6 +59,7 @@ TARGET_LINK_LIBRARIES(Modules_ParticleInCell
   Algorithms_Base
   Core_Parser
   openPMD::openPMD
+  OpenVisus::OpenVisus
   ${SCI_BOOST_LIBRARY}
 )
 

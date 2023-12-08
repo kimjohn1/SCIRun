@@ -123,18 +123,18 @@ class SimulationStreamingReaderBaseImpl
             iteration_filter_k = (extent_sFD[2]) / sFD_2;
             }
 
-        const int buffer_size_sFD = (sFD_0 * sFD_1 * sFD_2)+1;                    //added a plus 1 here that might not be needed: 6 March - kj
+        const int buffer_size_sFD = (sFD_0 * sFD_1 * sFD_2)+1;//added a plus 1 here that might not be needed: 6 March - kj
         FieldInformation lfi("LatVolMesh",1,"float");
-        std::vector<float> values(buffer_size_sFD);                                               //look at values created here, and maybe in mesh created in the statment below, for the data leak: 6 March - kj
+        std::vector<float> values(buffer_size_sFD);//look at values created here, and in mesh below, for the data leak: 6 March - kj
 
         MeshHandle mesh = CreateMesh(lfi, sFD_0, sFD_1, sFD_2, Point(0.0,0.0,0.0), Point(sFD_0,sFD_1,sFD_2));
-        FieldHandle ofh = CreateField(lfi,mesh);                                                  //mesh is used here: 6 March - kj
+        FieldHandle ofh = CreateField(lfi,mesh);   //mesh is used here: 6 March - kj
 
         for(int i=0; i < sFD_0; i++) for(int j=0; j < sFD_1; j++) for(int k=0; k < sFD_2; k++)
             {
             int flat_index    = (i * iteration_filter_i)*sFD_1*sFD_2+j*sFD_2+k;
             int c_m_index     = k*sFD_0*sFD_1+j*sFD_0+i;
-            values[c_m_index] = scalarFieldData_buffer.get()[flat_index];                         //values is used here: 6 March - kj
+            values[c_m_index] = scalarFieldData_buffer.get()[flat_index];//values is used here: 6 March - kj
             }
 
 
@@ -145,6 +145,39 @@ class SimulationStreamingReaderBaseImpl
         for(int i=0; i < scalar_field_size; i++) rawdata_out.write((char *) &(scalarFieldData_buffer.get()[i]), (int)sizeof(float));
         rawdata_out.close();                                                                  //the raw data output task 1 Nov
 
+
+/*
+        #include <Visus/IdxDataset.h>
+        #include <Visus/Encoder.h>
+
+        namespace Visus
+            {
+          //Create an (empty) .idx data file in storage
+            String filename=idxdataout_dir;
+            IdxFile idxfile;
+            idxfile.logic_box=BoxNi(PointNi(0,0,0),PointNi(extent_sFD[0],extent_sFD[1],extent_sFD[2]));
+            idxfile.fields.push_back(Field::fromString("myfield float));
+            idxfile.save(filename);
+
+          //Create a dataset for the size and type of data in the .idx data file, and create a bounding box for it
+            auto dataset     = LoadDataset(filename);
+            auto access      = dataset->createAccessForBlockQuery();
+            BoxNi volume_box = dataset->getLogicBox());
+
+          //prepare a write query that holds the dataset
+            auto query=dataset->createBoxQuery(volume_box, 'w');
+            dataset->beginBoxQuery(query);
+
+          //Create and fill the query buffer
+            query->buffer = Array(query->getNumberOfSamples(),query->field.dtype);
+            GetSamples<float> Dst(query->buffer);
+            for (int i=0;i<scalar_field_size;i++) 
+              Dst[i]=scalarFieldData_buffer.get()[i];
+
+          //Write the datset to the .idx data file
+            VisusReleaseAssert(dataset->executeBoxQuery(access,query));
+            }
+*/
 
 
 
