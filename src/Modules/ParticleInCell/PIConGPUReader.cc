@@ -41,6 +41,9 @@
 #include <Core/Datatypes/Legacy/Field/VMesh.h>
 #include <Core/Datatypes/Legacy/Field/FieldInformation.h>
 
+#include <Visus/IdxDataset.h>
+#include <Visus/Encoder.h>
+
 using namespace SCIRun;
 using namespace SCIRun::Core::Datatypes;
 using namespace SCIRun::Core::Algorithms;
@@ -52,6 +55,7 @@ using namespace SCIRun::Core::Thread;
 using std::cout;
 using namespace std;
 using namespace openPMD;
+using namespace Visus;
 
 #define openPMDIsAvailable 1
 
@@ -146,38 +150,34 @@ class SimulationStreamingReaderBaseImpl
         rawdata_out.close();                                                                  //the raw data output task 1 Nov
 
 
-/*
-        #include <Visus/IdxDataset.h>
-        #include <Visus/Encoder.h>
 
-        namespace Visus
-            {
+
+
+            
           //Create an (empty) .idx data file in storage
-            String filename=idxdataout_dir;
+            DbModule::attach();
             IdxFile idxfile;
             idxfile.logic_box=BoxNi(PointNi(0,0,0),PointNi(extent_sFD[0],extent_sFD[1],extent_sFD[2]));
-            idxfile.fields.push_back(Field::fromString("myfield float));
-            idxfile.save(filename);
+            idxfile.fields.push_back(Visus::Field::fromString("MY_FIELD 1*float32"));
+            idxfile.save(idxdataout_dir);
 
           //Create a dataset for the size and type of data in the .idx data file, and create a bounding box for it
-            auto dataset     = LoadDataset(filename);
-            auto access      = dataset->createAccessForBlockQuery();
-            BoxNi volume_box = dataset->getLogicBox());
+            auto dataset=LoadDataset(idxdataout_dir);
+            auto access=dataset->createAccessForBlockQuery();
+            BoxNi volume_box=dataset->getLogicBox();
 
           //prepare a write query that holds the dataset
             auto query=dataset->createBoxQuery(volume_box, 'w');
             dataset->beginBoxQuery(query);
 
           //Create and fill the query buffer
-            query->buffer = Array(query->getNumberOfSamples(),query->field.dtype);
+            query->buffer=Array(query->getNumberOfSamples(),query->field.dtype);
             GetSamples<float> Dst(query->buffer);
-            for (int i=0;i<scalar_field_size;i++) 
-              Dst[i]=scalarFieldData_buffer.get()[i];
+            for (int i=0;i<scalar_field_size;i++) Dst[i]=scalarFieldData_buffer.get()[i];
 
           //Write the datset to the .idx data file
             VisusReleaseAssert(dataset->executeBoxQuery(access,query));
-            }
-*/
+
 
 
 
@@ -380,7 +380,7 @@ void PIConGPUReader::setupStream()
 
 
 #if openPMDIsAvailable
-    series = Series(SST_dir, Access::READ_ONLY);
+    series = openPMD::Series(SST_dir, openPMD::Access::READ_ONLY);
     end    = series.readIterations().end();
     it     = series.readIterations().begin();
     setup_ = true;

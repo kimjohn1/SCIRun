@@ -26,7 +26,9 @@
 #
 
 find_package(openPMD REQUIRED)
-find_package(OpenVisus REQUIRED)
+#FIND_PATH(OPENVISUS_DIR include/Kernel/Visus/Kernel.h REQUIRED)
+
+SET(OPENVISUS_DIR /home/kj/OpenVisus/build/Release/OpenVisus/)
 
 SET(Modules_ParticleInCell_SRCS
   ElectroStatic.cc
@@ -47,6 +49,11 @@ SET(Modules_ParticleInCell_HEADERS
   PIConGPUReaderSimple.h
 )
 
+include_directories(
+  ${OPENVISUS_DIR}/include/
+  ${OPENVISUS_DIR}/include/Kernel
+  ${OPENVISUS_DIR}/include/Db)
+
 SCIRUN_ADD_LIBRARY(Modules_ParticleInCell
   ${Modules_ParticleInCell_HEADERS}
   ${Modules_ParticleInCell_SRCS}
@@ -59,7 +66,8 @@ TARGET_LINK_LIBRARIES(Modules_ParticleInCell
   Algorithms_Base
   Core_Parser
   openPMD::openPMD
-  OpenVisus::OpenVisus
+  ${OPENVISUS_DIR}/bin/libVisusKernel.so
+  ${OPENVISUS_DIR}/bin/libVisusDb.so
   ${SCI_BOOST_LIBRARY}
 )
 
