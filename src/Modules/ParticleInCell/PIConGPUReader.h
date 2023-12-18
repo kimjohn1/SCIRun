@@ -58,14 +58,18 @@ bool setup_                = false;
 bool particlesPresent      = false;
 bool vectorFieldPresent    = false;
 bool scalarFieldPresent    = false;
+bool FirstPass             = true;
 const std::string& home_   = std::getenv("HOME");
 const std::string& SST_dir = home_+"/scratch/runs/SST/simOutput/openPMD/simData.sst";
 const std::string& visout_dir = home_+"/scratch/runs/SST/simOutput/visout.txt";
 const std::string& rawdataout_dir = home_+"/scratch/runs/SST/simOutput/raw_data_out.bin";     //the raw data output task 1 Nov
-const std::string& idxdataout_dir = home_+"/scratch/runs/SST/simOutput/idx_data_out.idx";     //the idx data output task 9 Nov
+const std::string& idxdataout_dir = "/dev/shm/idx_data.idx";                                  //the idx data output task 9 Nov
+const std::string& VisFile = home_+"/launch_visus.sh";
 
 
-int         DataSet;
+bool        DataSet1;
+bool        DataSet2;
+bool        DataSet3;
 int         Dim_i_max;
 int         Dim_j_max;
 int         Dim_k_max;

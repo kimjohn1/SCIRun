@@ -71,7 +71,9 @@ PIConGPUReader::PIConGPUReader() : Module(staticInfo_)
 void PIConGPUReader::setStateDefaults()
     {
     auto state = get_state();
-    state->setValue(Variables::Method, 1);
+    state->setValue(Variables::Method1, true);
+    state->setValue(Variables::Method2, false);
+    state->setValue(Variables::Method3, true);
     state->setValue(Variables::Dim_i_max, 0);
     state->setValue(Variables::Dim_j_max, 0);
     state->setValue(Variables::Dim_k_max, 0);
@@ -142,18 +144,18 @@ class SimulationStreamingReaderBaseImpl
             }
 
 
+        int scalar_field_size = extent_sFD[0]*extent_sFD[1]*extent_sFD[2];                        //the raw data output task 1 Nov
+        if(DataSet2==0)
+            {
+            ofstream rawdata_out(rawdataout_dir, ios::out | ios::binary);                         //the raw data output task 1 Nov
+            for(int i=0; i < scalar_field_size; i++) rawdata_out.write((char *) &(scalarFieldData_buffer.get()[i]), (int)sizeof(float));
+            rawdata_out.close();                                                                  //the raw data output task 1 Nov
+            }
 
 
-        int scalar_field_size = extent_sFD[0]*extent_sFD[1]*extent_sFD[2];                    //the raw data output task 1 Nov
-        ofstream rawdata_out(rawdataout_dir, ios::out | ios::binary);                         //the raw data output task 1 Nov
-        for(int i=0; i < scalar_field_size; i++) rawdata_out.write((char *) &(scalarFieldData_buffer.get()[i]), (int)sizeof(float));
-        rawdata_out.close();                                                                  //the raw data output task 1 Nov
 
-
-
-
-
-            
+        if(DataSet3==0)
+            {            
           //Create an (empty) .idx data file in storage
             DbModule::attach();
             IdxFile idxfile;
@@ -178,6 +180,17 @@ class SimulationStreamingReaderBaseImpl
           //Write the datset to the .idx data file
             VisusReleaseAssert(dataset->executeBoxQuery(access,query));
 
+            if(FirstPass)
+                {
+                FirstPass = false;
+              //Run the OpenVisus Viewer 
+                string Vis_file;
+                //Vis_file = "PYTHONPATH=~/OpenVisus/build/Release python3 -m OpenVisus viewer /dev/shm/idx_data.idx";
+                Vis_file = VisFile;
+                const char *command_viewer = Vis_file.c_str();
+                system(command_viewer);
+                }
+            }
 
 
 
@@ -363,7 +376,9 @@ void PIConGPUReader::execute()
 void PIConGPUReader::setupStream()
     {
     auto state      = get_state();
-    DataSet         = state->getValue(Variables::Method).toInt();
+    DataSet1        = state->getValue(Variables::Method1).toBool();
+    DataSet2        = state->getValue(Variables::Method2).toBool();
+    DataSet3        = state->getValue(Variables::Method3).toBool();
     Dim_i_max       = state->getValue(Variables::Dim_i_max).toInt();
     Dim_j_max       = state->getValue(Variables::Dim_j_max).toInt();
     Dim_k_max       = state->getValue(Variables::Dim_k_max).toInt();
@@ -371,6 +386,8 @@ void PIConGPUReader::setupStream()
     ParticleType    = state->getValue(Variables::ParticleType).toString();
     ScalarFieldComp = state->getValue(Variables::ScalarFieldComp).toString();
     VectorFieldType = state->getValue(Variables::VectorFieldType).toString();
+
+cout << "\nDebug1 DataSet1 is " << DataSet1 << " DataSet2 is " << DataSet2 << " DataSet3 is " << DataSet3 << "\n";
 
     while (!std::filesystem::exists(SST_dir)) std::this_thread::sleep_for(std::chrono::seconds(1));
 
@@ -397,7 +414,7 @@ void PIConGPUReader::setupStream()
             if(pm.first == VectorFieldType) vectorFieldPresent = true;
             }
 
-    if(DataSet==0) showDataSet();
+    if(DataSet1==0) showDataSet();
 #endif
     }
 
@@ -412,6 +429,7 @@ void PIConGPUReader::shutdownStream()
     particlesPresent   = false;
     vectorFieldPresent = false;
     scalarFieldPresent = false;
+    FirstPass          = true;
 
     data_counter       = 0;                                      //here
     }

@@ -47,5 +47,7 @@ PIConGPUReaderDialog::PIConGPUReaderDialog(const std::string& name, ModuleStateH
     addComboBoxManager({particleType_},         Variables::ParticleType);
     addComboBoxManager({vectorFieldType_},      Variables::VectorFieldType);
     addComboBoxManager({scalarFieldComponent_}, Variables::ScalarFieldComp);
-    addRadioButtonGroupManager({dataSet_},      Variables::Method);
+    addCheckBoxManager({dataSet1_},             Variables::Method1);
+    addCheckBoxManager({dataSet2_},             Variables::Method2);
+    addCheckBoxManager({dataSet3_},             Variables::Method3);
     }
