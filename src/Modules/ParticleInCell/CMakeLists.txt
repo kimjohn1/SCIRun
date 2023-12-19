@@ -37,6 +37,7 @@ SET(Modules_ParticleInCell_SRCS
   PIConGPUReader.cc
   TestModuleSimple.cc
   PIConGPUReaderSimple.cc
+  OpenVisusViewer.cc
 )
 
 SET(Modules_ParticleInCell_HEADERS
@@ -47,6 +48,7 @@ SET(Modules_ParticleInCell_HEADERS
   PIConGPUReader.h
   TestModuleSimple.h
   PIConGPUReaderSimple.h
+  OpenVisusViewer.h
 )
 
 include_directories(

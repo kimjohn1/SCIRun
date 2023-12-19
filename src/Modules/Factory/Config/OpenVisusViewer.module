@@ -1,0 +1,21 @@
+{
+"module":
+    {
+    "name": "OpenVisusViewer",
+    "namespace": "ParticleInCell",
+    "status": "new module",
+    "description": "OpenVisus Viewer module",
+    "header": "Modules/ParticleInCell/OpenVisusViewer.h"
+    },
+"algorithm":
+    {
+    "name": "N/A",
+    "namespace": "N/A",
+    "header": "N/A"
+    },
+"UI":
+    {
+    "name": "N/A",
+    "header": "N/A"
+    }
+}

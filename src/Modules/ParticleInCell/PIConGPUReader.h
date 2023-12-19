@@ -58,7 +58,6 @@ bool setup_                = false;
 bool particlesPresent      = false;
 bool vectorFieldPresent    = false;
 bool scalarFieldPresent    = false;
-bool FirstPass             = true;
 const std::string& home_   = std::getenv("HOME");
 const std::string& SST_dir = home_+"/scratch/runs/SST/simOutput/openPMD/simData.sst";
 const std::string& visout_dir = home_+"/scratch/runs/SST/simOutput/visout.txt";
@@ -80,6 +79,7 @@ std::string VectorFieldType;
 
 
 std::ofstream vis_out;                                           //here, out
+//std::ofstream v_out;
 
 
 auto t1       = std::chrono::high_resolution_clock::now();       //here

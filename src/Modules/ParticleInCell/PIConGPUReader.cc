@@ -145,7 +145,7 @@ class SimulationStreamingReaderBaseImpl
 
 
         int scalar_field_size = extent_sFD[0]*extent_sFD[1]*extent_sFD[2];                        //the raw data output task 1 Nov
-        if(DataSet2==0)
+        if(DataSet2==1)
             {
             ofstream rawdata_out(rawdataout_dir, ios::out | ios::binary);                         //the raw data output task 1 Nov
             for(int i=0; i < scalar_field_size; i++) rawdata_out.write((char *) &(scalarFieldData_buffer.get()[i]), (int)sizeof(float));
@@ -154,7 +154,7 @@ class SimulationStreamingReaderBaseImpl
 
 
 
-        if(DataSet3==0)
+        if(DataSet3==1)
             {            
           //Create an (empty) .idx data file in storage
             DbModule::attach();
@@ -179,17 +179,6 @@ class SimulationStreamingReaderBaseImpl
 
           //Write the datset to the .idx data file
             VisusReleaseAssert(dataset->executeBoxQuery(access,query));
-
-            if(FirstPass)
-                {
-                FirstPass = false;
-              //Run the OpenVisus Viewer 
-                string Vis_file;
-                //Vis_file = "PYTHONPATH=~/OpenVisus/build/Release python3 -m OpenVisus viewer /dev/shm/idx_data.idx";
-                Vis_file = VisFile;
-                const char *command_viewer = Vis_file.c_str();
-                system(command_viewer);
-                }
             }
 
 
@@ -334,9 +323,6 @@ void PIConGPUReader::execute()
     SimulationStreamingReaderBaseImpl P;
     if (!setup_) setupStream();
 
-
-
-
     t2 = std::chrono::high_resolution_clock::now();                                                      //here
     float duration     = std::chrono::duration_cast<std::chrono::milliseconds>( t2 - t1 ).count();       //here
     float big_duration = std::chrono::duration_cast<std::chrono::milliseconds>( t2 - big_time ).count(); //here
@@ -350,11 +336,7 @@ void PIConGPUReader::execute()
     vis_out.close();                                                                                     //here, out
 
     data_counter++;                                                                                      //here
-    //t1 = std::chrono::high_resolution_clock::now();                                                      //here
     t1 = t2;
-
-
-
 
 #if openPMDIsAvailable
     IndexedIteration iteration = *it;
@@ -387,10 +369,7 @@ void PIConGPUReader::setupStream()
     ScalarFieldComp = state->getValue(Variables::ScalarFieldComp).toString();
     VectorFieldType = state->getValue(Variables::VectorFieldType).toString();
 
-cout << "\nDebug1 DataSet1 is " << DataSet1 << " DataSet2 is " << DataSet2 << " DataSet3 is " << DataSet3 << "\n";
-
     while (!std::filesystem::exists(SST_dir)) std::this_thread::sleep_for(std::chrono::seconds(1));
-
 
     t1       = std::chrono::high_resolution_clock::now();        //here
     big_time = t1;                                               //here
@@ -414,7 +393,7 @@ cout << "\nDebug1 DataSet1 is " << DataSet1 << " DataSet2 is " << DataSet2 << " 
             if(pm.first == VectorFieldType) vectorFieldPresent = true;
             }
 
-    if(DataSet1==0) showDataSet();
+    if(DataSet1==1) showDataSet();
 #endif
     }
 
@@ -424,12 +403,15 @@ void PIConGPUReader::shutdownStream()
     text_file = "rm ~/picongpu.profile ~/picongpu_reRun.profile ~/Sim.py ~/Sim_run";
     const char *command_shutDown = text_file.c_str();
     system(command_shutDown);
-
+/*
+    text_file = idxdataout_dir;
+    const char *command_cleanup = text_file.c_str();
+    system(command_cleanup);
+*/
     setup_             = false;
     particlesPresent   = false;
     vectorFieldPresent = false;
     scalarFieldPresent = false;
-    FirstPass          = true;
 
     data_counter       = 0;                                      //here
     }
