@@ -57,7 +57,7 @@ using namespace Visus;
 
 MODULE_INFO_DEF(OpenVisusViewer,ParticleInCell,SCIRun);
 
-OpenVisusViewer::OpenVisusViewer() : Module(staticInfo_) {}
+OpenVisusViewer::OpenVisusViewer() : Module(staticInfo_,false) {}
 
 void OpenVisusViewer::setStateDefaults() {}
 
