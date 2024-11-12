@@ -178,6 +178,64 @@ class SimulationStreamingReaderBaseImpl
 
           //Write the datset to the .idx data file
             VisusReleaseAssert(dataset->executeBoxQuery(access,query));
+
+//temporary placement for code to output a .png dataset
+            #include <string> 
+            #include <pngwriter.h>
+
+            //variables set in PIConGPUReader.h
+            //int data_counter           = 0;
+            //const std::string& home_   = std::getenv("HOME");
+
+            //variables set earlier in PIConGPUReader.cc
+            //int sFD_0 = extent_sFD[0];
+            //int sFD_1 = extent_sFD[1];
+            //int sFD_2 = extent_sFD[2];
+
+            int x_png;
+            int y_png;
+            int z_png;
+
+            //set up a temporary variable to hold a 3D matrix and a variable to hold an individual element of that matrix 
+
+            float temp3D[sFD_0][sFD_1][sFD_2];
+            double node_value;
+
+            //create the folder where this iteration of simulation data is to be posted
+
+            const std::string& stringFolderNumber = std::to_string(data_counter); //c++11 usual method for converting int to string, see: https://stackoverflow.com/questions/5590381/how-to-convert-int-to-string-in-c
+            stringDir="home_"+"/scratch/runs/Iteration"+stringFolderNumber;
+            stringDirCreate="mkdir "+stringDir;
+            const char *command_Dir=stringDirCreate.c_str();
+            system(command_Dir);
+
+            //load the temporary3D matrix with the iteration output raw data (electric charge density scalar field)
+
+            for (x_png=1; x_png<=sFD_0; x_png++) for (y_png=1; y_png<=sFD_1; y_png++) for (z_png=1; z_png<=sFD_2; z_png++)
+                {
+                int flat_index = x_png*sFD_1*sFD_2+y_png*sFD_2+z_png;
+                temp3D[x_png][y_png][z_png]=scalarFieldData_buffer.get()[flat_index];
+                }
+
+            //create a full set of image slices from the iteration output data
+
+            for (z_png=1; z_png<=(sFD_2; z_png++)
+                {
+                const std::string& stringPngNumber = std::to_string(z_png);
+                const std::string& pngOut = stringDir+"/slice"+stringPngNumber+".png"; //path and filename example: home/scratch/runs/Iteration1/slice1.png
+                pngwriter png(sFD_0,sFD_1,0,pngOut);                                   //if you get an error about wrong variable type here, this step can be written as pngwriter png(sFD_0,sFD_1,0,pngOut.c_str());
+                
+                for (x_png=1; x_png<=sFD_0; x_png++) for (y_png=1; y_png<=sFD_1; y_png++)
+                    {
+                    node_value = (-1.0/67.0)*temp3D[x_png][y_png][z_png]; //multiplying temp3D[][][] by -1 and dividing by 67 to see if that provides a visual
+                    png.plot(x_png,y_png, 0.0, 0.0, node_value);
+                    }
+
+                png.close();
+                }
+
+            //write the code to compress the set of slices in stringDir as a zip file
+//end of temporary placement
             }
 
 
