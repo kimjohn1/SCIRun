@@ -25,6 +25,9 @@
    DEALINGS IN THE SOFTWARE.
 */
 
+#include <string> 
+#include "/home/kj/lib/pngwriter/include/pngwriter.h"
+
 #include <openPMD/openPMD.hpp>
 #include <filesystem>
 #include <stdlib.h>
@@ -180,8 +183,7 @@ class SimulationStreamingReaderBaseImpl
             VisusReleaseAssert(dataset->executeBoxQuery(access,query));
 
 //temporary placement for code to output a .png dataset
-            #include <string> 
-            #include <pngwriter.h>
+
 
             //variables set in PIConGPUReader.h
             //int data_counter           = 0;
@@ -203,8 +205,10 @@ class SimulationStreamingReaderBaseImpl
 
             //create the folder where this iteration of simulation data is to be posted
 
-            const std::string& stringFolderNumber = std::to_string(data_counter); //c++11 usual method for converting int to string, see: https://stackoverflow.com/questions/5590381/how-to-convert-int-to-string-in-c
-            stringDir="home_"+"/scratch/runs/Iteration"+stringFolderNumber;
+            std :: string iteration_count = std::to_string(data_counter); //c++11 usual method for converting int to string, see: https://stackoverflow.com/questions/5590381/how-to-convert-int-to-string-in-c
+            const std::string& stringFolderNumber = iteration_count;
+            //stringDir=home_+"/scratch/runs/Iteration"+stringFolderNumber;
+            stringDir=home_+"/scratch/runs/Iteration"+iteration_count;
             stringDirCreate="mkdir "+stringDir;
             const char *command_Dir=stringDirCreate.c_str();
             system(command_Dir);
@@ -219,11 +223,11 @@ class SimulationStreamingReaderBaseImpl
 
             //create a full set of image slices from the iteration output data
 
-            for (z_png=1; z_png<=(sFD_2; z_png++)
+            for (z_png=1; z_png<=sFD_2; z_png++)
                 {
                 const std::string& stringPngNumber = std::to_string(z_png);
                 const std::string& pngOut = stringDir+"/slice"+stringPngNumber+".png"; //path and filename example: home/scratch/runs/Iteration1/slice1.png
-                pngwriter png(sFD_0,sFD_1,0,pngOut);                                   //if you get an error about wrong variable type here, this step can be written as pngwriter png(sFD_0,sFD_1,0,pngOut.c_str());
+                pngwriter png(sFD_0,sFD_1,0,pngOut.c_str());                                   //if you get an error about wrong variable type here, this step can be written as pngwriter png(sFD_0,sFD_1,0,pngOut.c_str());
                 
                 for (x_png=1; x_png<=sFD_0; x_png++) for (y_png=1; y_png<=sFD_1; y_png++)
                     {
