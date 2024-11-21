@@ -32,6 +32,7 @@ SET(OPENVISUS_DIR /home/kj/OpenVisus/build/Release/OpenVisus/)
 
 SET(Modules_ParticleInCell_SRCS
   ElectroStatic.cc
+  GodotVR.cc
   GravitySimulation.cc
   PIConGPU.cc
   PIConGPUReader.cc
@@ -43,6 +44,7 @@ SET(Modules_ParticleInCell_SRCS
 SET(Modules_ParticleInCell_HEADERS
   share.h
   ElectroStatic.h
+  GodotVR.h
   GravitySimulation.h
   PIConGPU.h
   PIConGPUReader.h

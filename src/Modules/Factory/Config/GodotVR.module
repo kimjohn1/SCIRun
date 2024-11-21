@@ -1,0 +1,21 @@
+{
+"module":
+    {
+    "name": "GodotVR",
+    "namespace": "ParticleInCell",
+    "status": "new module",
+    "description": "Godot launcher module",
+    "header": "Modules/ParticleInCell/GodotVR.h"
+    },
+"algorithm":
+    {
+    "name": "N/A",
+    "namespace": "N/A",
+    "header": "N/A"
+    },
+"UI":
+    {
+    "name": "N/A",
+    "header": "N/A"
+    }
+}
