@@ -65,11 +65,11 @@ const std::string& rawdataout_dir = home_+"/scratch/runs/SST/simOutput/raw_data_
 const std::string& idxdataout_dir = "/dev/shm/idx_data.idx";                                  //the idx data output task 9 Nov
 const std::string& VisFile = home_+"/launch_visus.sh";
 
-//std::string stringDir;                                           //the godot task 16 Nov 2024
-//std::string stringDirRemove;                                     //
-//std::string stringDirCreate;                                     //
-//std::string stringDirZip;                                        //
-//double node_value;                                               //to here
+std::string stringDirCreate;
+std::string stringDir;
+std::string stringDirRemove;
+std::string stringDirRemoveZip;                                  //the SF2PNG task 23 Nov 2024
+std::string stringDirZip;                                        //
 
 bool        DataSet1;
 bool        DataSet2;

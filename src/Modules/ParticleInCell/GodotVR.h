@@ -41,10 +41,13 @@ namespace SCIRun         {
 namespace Modules        {
 namespace ParticleInCell {
 
-int vr_data_count                 = 0;
-const std::string& vr_home_       = std::getenv("HOME");
-const std::string& vr_out_dir     = vr_home_+"/scratch/runs/iteration/image.00000.png";  // This might need to be changed to eliminate the file name -kj 20 Nov 2024
-const std::string& vr_GodotLaunch  = vr_home_+"godot --path ~/Documents/Godot/Projects/simple_wave -e";
+int vr_data_count                  = 0;
+const std::string& vr_home_        = std::getenv("HOME");
+const std::string& vr_out_dir      = vr_home_+"/scratch/runs/SST/iteration/00000.png";  // This was changed to include the file name -kj 21 Nov 2024
+const std::string& vr_GodotLaunch_dir  = "godot --path "+ vr_home_ + "/Documents/Godot/Projects/simple_wave -r & exit";
+const std::string& vr_GodotLaunch  = vr_home_+"/launch_godot.sh";
+const std::string& vr_Run_Godot    = vr_home_+"/launch_run_godot.sh";
+const std::string& vr_SST_dir      = vr_home_+"/scratch/runs/SST/simOutput/openPMD/simData.sst";
 
 class SCISHARE GodotVR : public SCIRun::Dataflow::Networks::Module,
     public HasNoInputPorts,

@@ -59,15 +59,34 @@ void GodotVR::setStateDefaults() {}
 
 void GodotVR::execute()
     {
-    while (!std::filesystem::exists(vr_out_dir)) std::this_thread::sleep_for(std::chrono::seconds(1));
+    //while (!std::filesystem::exists(vr_out_dir)) std::this_thread::sleep_for(std::chrono::seconds(1));
+    while (!std::filesystem::exists(vr_SST_dir)) std::this_thread::sleep_for(std::chrono::seconds(1));
 
-    string VR_file;
-    VR_file = vr_GodotLaunch;
     if(vr_data_count < 1)
         {
-        const char *command_vr = V_file.c_str();
+
+        //Direct execution
+        //const char *command_dr_vr = vr_GodotLaunch_dir.c_str();
+        const char *command_dr_vr = vr_Run_Godot.c_str();
+        system(command_dr_vr);
+/*
+        Script launch exeecution
+        const char *command_vr = vr_GodotLaunch.c_str();
         system(command_vr);
         vr_data_count++;
+*/
+        cout <<"Debug 01"<< "\n";
+
         }
+
+/*
+    else
+        {
+        const char *command_run = vr_Run_Godot.c_str();
+        system(command_run);
+        }
+
+        cout <<"Debug 02"<< "\n";
+*/
     } //end of GodotVR::execute()
 
