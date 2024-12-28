@@ -146,8 +146,6 @@ class SimulationStreamingReaderBaseImpl
             values[c_m_index] = scalarFieldData_buffer.get()[flat_index];//values is used here: 6 March - kj
             }
 
-
-/**/
         int scalar_field_size = extent_sFD[0]*extent_sFD[1]*extent_sFD[2];                        //the raw data output task 1 Nov
         if(DataSet2==1)
             {
@@ -155,8 +153,7 @@ class SimulationStreamingReaderBaseImpl
             for(int i=0; i < scalar_field_size; i++) rawdata_out.write((char *) &(scalarFieldData_buffer.get()[i]), (int)sizeof(float));
             rawdata_out.close();                                                                  //the raw data output task 1 Nov
 
-            //get the output vector dimensions and convert them to string for the godot_run program call
-            //get the output vector dimensions and convert them to string for the SF2PNG program call      //from here: the SF2PNG task 23 Nov 2024
+            //get the output vector dimensions and convert them to string                                  //from here: the SF2PNG task 23 Nov 2024
             int dim_x = extent_sFD[0];                                                                     //
             int dim_y = extent_sFD[1];                                                                     //
             int dim_z = extent_sFD[2];                                                                     //
@@ -166,49 +163,38 @@ class SimulationStreamingReaderBaseImpl
             std :: string dim_z_str  = std::to_string(dim_z);                                              //
             std :: string data_c_str = std::to_string(data_counter);
 /*
-            //Call the godot_run program
+            //Run the launch_godot.sh script
             string runGodot;                                                                               //
-            runGodot = home_+"/Documents/tmp/a.out "+dim_x_str+" "+dim_y_str+" "+dim_z_str+" "+data_c_str; //
+            runGodot = home_+"/launch_godot.sh";
             const char *command_Godot=runGodot.c_str();                                                    //
             system(command_Godot);                                                                         //to here
 */
-
-/**/
-            //Remove an existing simSet directory at the beginning of a simulation run                     //from here: the SF2PNG task 27 Nov 2024
-            //and create a new simSet directory at the beginning of a simulation run
             if(data_counter==1)
                 {
-                stringDir=home_+"/scratch/runs/SST/simSet/";
+                //Create new directories at the beginning of a simulation run                              //from here: the SF2PNG task 27 Nov 2024
 
-                stringDirRemove ="rm -rf "+stringDir;
-                const char *command_Rem=stringDirRemove.c_str();
-                system(command_Rem);
-
+                stringDir=home_+"/scratch/runs/SST/simOutput/savedPNG/simSet/";
                 stringDirCreate ="mkdir -p "+stringDir;
                 const char *command_Create=stringDirCreate.c_str();
                 system(command_Create);
+
+                stringDir=home_+"/scratch/runs/SST/simOutput/savedNPY/";
+                stringDirCreate2 ="mkdir -p "+stringDir;
+                const char *command_Create2=stringDirCreate2.c_str();
+                system(command_Create2);
                 }                                                                                          //to here
-
-
-            //Remove an existing iteration folder and iteration.zip folder if it exists                    //from here: the SF2PNG task 23 Nov 2024
-/*
-            //stringDir=home_+"/scratch/runs/SST/iteration";
-            stringDirRemove ="rm -rf "+stringDir;
-            const char *command_Rem=stringDirRemove.c_str();
-            system(command_Rem);
-
-            stringDirZip       =home_+"/scratch/runs/SST/iteration.zip";
-            stringDirRemoveZip ="rm -rf "+stringDirZip;
-            const char *command_RemZip=stringDirRemoveZip.c_str();
-            system(command_RemZip);
-*/
+                                                                                                           //from here: the SF2PNG task 23 Nov 2024
             //Call the SF2PNG program
             string run_SF2PNG;                                         
-            //run_SF2PNG = home_+"/ScalarField2PNGSlice/ScalarField2PNGSlice -inp ~/scratch/runs/SST/simOutput/raw_data_out.bin -dim "+dim_x_str+","+dim_y_str+","+dim_z_str+" -out "+home_+"/Documents/Godot/Projects/simple_wave/addons/volume_layered_shader/art/iteration.zip -inv -log 2 -perm 213";
-
-            run_SF2PNG = home_+"/ScalarField2PNGSlice/ScalarField2PNGSlice -inp ~/scratch/runs/SST/simOutput/raw_data_out.bin -dim "+dim_x_str+","+dim_y_str+","+dim_z_str+" -out "+home_+"/scratch/runs/SST/simSet/iteration"+data_c_str+".zip -inv -log 2 -perm 213";
-            const char *command_SF2PNG=run_SF2PNG.c_str();                                                 //
+            run_SF2PNG = home_+"/ScalarField2PNGSlice/ScalarField2PNGSlice -inp ~/scratch/runs/SST/simOutput/raw_data_out.bin -dim "+dim_x_str+","+dim_y_str+","+dim_z_str+" -out "+home_+"/scratch/runs/SST/simOutput/savedPNG/simSet/iteration"+data_c_str+".zip -inv -log 2 -perm 213";
+            const char *command_SF2PNG=run_SF2PNG.c_str();
             system(command_SF2PNG);                                                                        //to here
+
+            //Call the example1 cpny program                                                                      //added 17 Dec 2024
+            string run_SF2NPY;
+            run_SF2NPY = home_+"/src/cnpy-build/example1 "+dim_x_str+" "+dim_y_str+" "+dim_z_str;
+            const char *command_SF2NPY=run_SF2NPY.c_str();
+            system(command_SF2NPY);
             }
 
         if(DataSet3==1)
@@ -237,8 +223,6 @@ class SimulationStreamingReaderBaseImpl
           //Write the datset to the .idx data file
             VisusReleaseAssert(dataset->executeBoxQuery(access,query));
             }
-
-
 
         VField* ofield = ofh->vfield();
         ofield->set_values(values);

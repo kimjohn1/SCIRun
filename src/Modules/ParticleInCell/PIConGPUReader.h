@@ -66,6 +66,7 @@ const std::string& idxdataout_dir = "/dev/shm/idx_data.idx";                    
 const std::string& VisFile = home_+"/launch_visus.sh";
 
 std::string stringDirCreate;
+std::string stringDirCreate2;
 std::string stringDir;
 std::string stringDirRemove;
 std::string stringDirRemoveZip;                                  //the SF2PNG task 23 Nov 2024
