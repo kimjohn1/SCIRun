@@ -173,7 +173,7 @@ class SimulationStreamingReaderBaseImpl
             if(data_counter==1)
                 {
                 //Delete a saved large 4D numpy file     5 Feb change
-                stringDirRemove = home_+"/Documents/Godot/Projects/anime_wave/art/arr1_1.npy";
+                stringDirRemove = "rm "+home_+"/Documents/Godot/Projects/anime_wave/art/arr1_1.npy";
                 const char *command_Remove=stringDirRemove.c_str();
                 system(command_Remove);
 
