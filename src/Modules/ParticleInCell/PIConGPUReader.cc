@@ -162,6 +162,7 @@ class SimulationStreamingReaderBaseImpl
             std :: string dim_y_str  = std::to_string(dim_y);                                              //
             std :: string dim_z_str  = std::to_string(dim_z);                                              //
             std :: string data_c_str = std::to_string(data_counter);
+            std :: string append_str = std::to_string(append);
 /*
             //Run the launch_godot.sh script
             string runGodot;                                                                               //
@@ -172,12 +173,12 @@ class SimulationStreamingReaderBaseImpl
             if(data_counter==1)
                 {
                 //Delete a saved large 4D numpy file     5 Feb change
-                stringDirRemove = home_+"/Documents/Godot/Projects/anime_wave/art/arr1_1.npy"
+                stringDirRemove = home_+"/Documents/Godot/Projects/anime_wave/art/arr1_1.npy";
                 const char *command_Remove=stringDirRemove.c_str();
                 system(command_Remove);
 
-                //If the append trigger is set, set append = 1       5 Feb change
-                if(DataSet1==1) append = 1;
+                //If the append trigger is set, set append_str = 1       5 Feb change
+                if(DataSet1==1) append_str = "1";
 
                 //Create new directories at the beginning of a simulation run                              //from here: the SF2PNG task 27 Nov 2024
                 stringDir=home_+"/scratch/runs/SST/simOutput/savedPNG/simSet/";
@@ -200,7 +201,7 @@ class SimulationStreamingReaderBaseImpl
 
             //Call the example1 cpny program                                                                      //added 17 Dec 2024
             string run_SF2NPY;
-            run_SF2NPY = home_+"/src/cnpy-build/example1 "+dim_x_str+" "+dim_y_str+" "+dim_z_str;
+            run_SF2NPY = home_+"/src/cnpy-build/example1 "+dim_x_str+" "+dim_y_str+" "+dim_z_str+" "+append_str;
             const char *command_SF2NPY=run_SF2NPY.c_str();
             system(command_SF2NPY);
             }
