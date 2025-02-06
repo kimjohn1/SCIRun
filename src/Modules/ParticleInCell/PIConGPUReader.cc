@@ -74,7 +74,7 @@ PIConGPUReader::PIConGPUReader() : Module(staticInfo_)
 void PIConGPUReader::setStateDefaults()
     {
     auto state = get_state();
-    state->setValue(Variables::Method1, true);
+    state->setValue(Variables::Method1, false);
     state->setValue(Variables::Method2, false);
     state->setValue(Variables::Method3, true);
     state->setValue(Variables::Dim_i_max, 0);
@@ -171,13 +171,21 @@ class SimulationStreamingReaderBaseImpl
 */
             if(data_counter==1)
                 {
-                //Create new directories at the beginning of a simulation run                              //from here: the SF2PNG task 27 Nov 2024
+                //Delete a saved large 4D numpy file     5 Feb change
+                stringDirRemove = home_+"/Documents/Godot/Projects/anime_wave/art/arr1_1.npy"
+                const char *command_Remove=stringDirRemove.c_str();
+                system(command_Remove);
 
+                //If the append trigger is set, set append = 1       5 Feb change
+                if(DataSet1==1) append = 1;
+
+                //Create new directories at the beginning of a simulation run                              //from here: the SF2PNG task 27 Nov 2024
                 stringDir=home_+"/scratch/runs/SST/simOutput/savedPNG/simSet/";
                 stringDirCreate ="mkdir -p "+stringDir;
                 const char *command_Create=stringDirCreate.c_str();
                 system(command_Create);
 
+                //I believe this step is no longer needed because the npy files are being saved to the project files 5 Feb change
                 stringDir=home_+"/scratch/runs/SST/simOutput/savedNPY/";
                 stringDirCreate2 ="mkdir -p "+stringDir;
                 const char *command_Create2=stringDirCreate2.c_str();
@@ -432,7 +440,7 @@ void PIConGPUReader::setupStream()
             if(pm.first == VectorFieldType) vectorFieldPresent = true;
             }
 
-    if(DataSet1==1) showDataSet();
+    //if(DataSet1==1) showDataSet();
 #endif
     }
 

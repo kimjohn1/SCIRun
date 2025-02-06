@@ -70,12 +70,12 @@ void GodotVR::execute()
         const char *command_dr_vr = vr_Run_Godot.c_str();
         system(command_dr_vr);
 /*
-        Script launch exeecution
+        Script launch execution
         const char *command_vr = vr_GodotLaunch.c_str();
         system(command_vr);
         vr_data_count++;
 */
-        cout <<"Debug 01"<< "\n";
+        //cout <<"Debug 01"<< "\n";
 
         }
 

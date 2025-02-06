@@ -51,6 +51,7 @@ SeriesIterator it, end;
 #endif
 
 int data_counter           = 0;                                  //here
+int append                 = 0;
 int iteration_filter_i     = 1;
 int iteration_filter_j     = 1;
 int iteration_filter_k     = 1;
