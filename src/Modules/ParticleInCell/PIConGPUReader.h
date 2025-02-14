@@ -84,14 +84,7 @@ std::string ParticleType;
 std::string ScalarFieldComp;
 std::string VectorFieldType;
 
-
 std::ofstream vis_out;                                           //here, out
-//std::ofstream v_out;
-
-
-auto t1       = std::chrono::high_resolution_clock::now();       //here
-auto t2       = std::chrono::high_resolution_clock::now();       //here
-auto big_time = std::chrono::high_resolution_clock::now();       //here
 
 
 class SCISHARE PIConGPUReader : public SCIRun::Dataflow::Networks::Module,

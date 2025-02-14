@@ -163,46 +163,18 @@ class SimulationStreamingReaderBaseImpl
             std :: string dim_z_str  = std::to_string(dim_z);                                              //
             std :: string data_c_str = std::to_string(data_counter);
             std :: string append_str = std::to_string(append);
-/*
-            //Run the launch_godot.sh script
-            string runGodot;                                                                               //
-            runGodot = home_+"/launch_godot.sh";
-            const char *command_Godot=runGodot.c_str();                                                    //
-            system(command_Godot);                                                                         //to here
-*/
+
+            //If the append trigger is set, set append_str = 1       14 Feb change
+            if(DataSet1==1) append_str = "1";
+
             if(data_counter==1)
                 {
                 //Delete a saved large 4D numpy file     5 Feb change
-                stringDirRemove = "rm "+home_+"/Documents/Godot/Projects/anime_wave/art/arr1_1.npy";
+                stringDirRemove = "rm -f "+home_+"/Documents/Godot/Projects/anime_wave/art/arr1_1.npy";
                 const char *command_Remove=stringDirRemove.c_str();
                 system(command_Remove);
-
-                //If the append trigger is set, set append_str = 1       5 Feb change
-                if(DataSet1==1) append_str = "1";
-
-                //Create new directories at the beginning of a simulation run                              //from here: the SF2PNG task 27 Nov 2024
-/*  Three changes made 13 Feb 2025
-                stringDir=home_+"/scratch/runs/SST/simOutput/savedPNG/simSet/";
-                stringDirCreate ="mkdir -p "+stringDir;
-                const char *command_Create=stringDirCreate.c_str();
-                system(command_Create);
-*/
-                //I believe this step is no longer needed because the npy files are being saved to the project files 5 Feb change
-/*  Three changes made 13 Feb 2025
-                stringDir=home_+"/scratch/runs/SST/simOutput/savedNPY/";
-                stringDirCreate2 ="mkdir -p "+stringDir;
-                const char *command_Create2=stringDirCreate2.c_str();
-                system(command_Create2);
-*/
                 }                                                                                          //to here
                                                                                                            //from here: the SF2PNG task 23 Nov 2024
-            //Call the SF2PNG program
-/*  Three changes made 13 Feb 2025
-            string run_SF2PNG;                                         
-            run_SF2PNG = home_+"/ScalarField2PNGSlice/ScalarField2PNGSlice -inp ~/scratch/runs/SST/simOutput/raw_data_out.bin -dim "+dim_x_str+","+dim_y_str+","+dim_z_str+" -out "+home_+"/scratch/runs/SST/simOutput/savedPNG/simSet/iteration"+data_c_str+".zip -inv -log 2 -perm 213";
-            const char *command_SF2PNG=run_SF2PNG.c_str();
-            system(command_SF2PNG);                                                                        //to here
-*/
             //Call the example1 cpny program                                                                      //added 17 Dec 2024
             string run_SF2NPY;
             run_SF2NPY = home_+"/src/cnpy-build/example1 "+dim_x_str+" "+dim_y_str+" "+dim_z_str+" "+append_str;
@@ -375,20 +347,7 @@ void PIConGPUReader::execute()
     SimulationStreamingReaderBaseImpl P;
     if (!setup_) setupStream();
 
-    t2 = std::chrono::high_resolution_clock::now();                                                      //here
-    float duration     = std::chrono::duration_cast<std::chrono::milliseconds>( t2 - t1 ).count();       //here
-    float big_duration = std::chrono::duration_cast<std::chrono::milliseconds>( t2 - big_time ).count(); //here
-    std::cout << "Visualization time for iteration " << data_counter << " is ";                          //here
-    std::cout << "\t" << duration/1000.0 << " seconds\n";                                                //here
-    std::cout << "Total visualization time is\t\t" << big_duration/1000.0 << " seconds\n\n";             //here
-
-    vis_out.open(visout_dir, ios::app);                                                                  //here, out
-    vis_out << "\nVisualization time for iteration " << data_counter << " is " << "\t" << duration/1000.0 << " seconds\n";
-    vis_out << "Total visualization time is\t\t" << big_duration/1000.0 << " seconds\n";                 //here, out
-    vis_out.close();                                                                                     //here, out
-
     data_counter++;                                                                                      //here
-    t1 = t2;
 
 #if openPMDIsAvailable
     IndexedIteration iteration = *it;
@@ -423,8 +382,8 @@ void PIConGPUReader::setupStream()
 
     while (!std::filesystem::exists(SST_dir)) std::this_thread::sleep_for(std::chrono::seconds(1));
 
-    t1       = std::chrono::high_resolution_clock::now();        //here
-    big_time = t1;                                               //here
+    //t1       = std::chrono::high_resolution_clock::now();        //here
+    //big_time = t1;                                               //here
 
 
 #if openPMDIsAvailable
