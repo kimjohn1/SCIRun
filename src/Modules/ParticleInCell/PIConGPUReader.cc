@@ -181,24 +181,28 @@ class SimulationStreamingReaderBaseImpl
                 if(DataSet1==1) append_str = "1";
 
                 //Create new directories at the beginning of a simulation run                              //from here: the SF2PNG task 27 Nov 2024
+/*  Three changes made 13 Feb 2025
                 stringDir=home_+"/scratch/runs/SST/simOutput/savedPNG/simSet/";
                 stringDirCreate ="mkdir -p "+stringDir;
                 const char *command_Create=stringDirCreate.c_str();
                 system(command_Create);
-
+*/
                 //I believe this step is no longer needed because the npy files are being saved to the project files 5 Feb change
+/*  Three changes made 13 Feb 2025
                 stringDir=home_+"/scratch/runs/SST/simOutput/savedNPY/";
                 stringDirCreate2 ="mkdir -p "+stringDir;
                 const char *command_Create2=stringDirCreate2.c_str();
                 system(command_Create2);
+*/
                 }                                                                                          //to here
                                                                                                            //from here: the SF2PNG task 23 Nov 2024
             //Call the SF2PNG program
+/*  Three changes made 13 Feb 2025
             string run_SF2PNG;                                         
             run_SF2PNG = home_+"/ScalarField2PNGSlice/ScalarField2PNGSlice -inp ~/scratch/runs/SST/simOutput/raw_data_out.bin -dim "+dim_x_str+","+dim_y_str+","+dim_z_str+" -out "+home_+"/scratch/runs/SST/simOutput/savedPNG/simSet/iteration"+data_c_str+".zip -inv -log 2 -perm 213";
             const char *command_SF2PNG=run_SF2PNG.c_str();
             system(command_SF2PNG);                                                                        //to here
-
+*/
             //Call the example1 cpny program                                                                      //added 17 Dec 2024
             string run_SF2NPY;
             run_SF2NPY = home_+"/src/cnpy-build/example1 "+dim_x_str+" "+dim_y_str+" "+dim_z_str+" "+append_str;
