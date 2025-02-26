@@ -63,33 +63,10 @@ void OpenVisusViewer::setStateDefaults() {}
 
 void OpenVisusViewer::execute()
     {
-
     while (!std::filesystem::exists(v_idxdataout_dir)) std::this_thread::sleep_for(std::chrono::seconds(1));
-
     string V_file;
-    //V_file = "PYTHONPATH=~/OpenVisus/build/Release python3 -m OpenVisus viewer /dev/shm/idx_data.idx &";
     V_file = v_VisFile;
     const char *command_v = V_file.c_str();
     system(command_v);
-    //std::cout << "\n\t" << "Debug 1 First Pass\n";
-
-/*
-    //Track run time required to execute using the OpenVisus Viewer
-    v_t2 = std::chrono::high_resolution_clock::now();
-    float v_duration     = std::chrono::duration_cast<std::chrono::milliseconds>( v_t2 - v_t1 ).count();
-    float v_big_duration = std::chrono::duration_cast<std::chrono::milliseconds>( v_t2 - v_big_time ).count();
-    //std::cout << "\n\t" << "Debug 3, v_duration is " << v_duration << "\n";
-    std::cout << "Viewer visualization time for iteration " << v_data_counter << " is ";
-    std::cout << "\t" << v_duration/1000.0 << " seconds\n";
-    std::cout << "Total Viewer visualization time is\t\t" << v_big_duration/1000.0 << " seconds\n\n";
-
-    v_out.open(v_out_dir, ios::app);
-    v_out << "\nViewer visualization time for iteration " << v_data_counter << " is " << "\t" << v_duration/1000.0 << " seconds\n";
-    v_out << "Total Viewer visualization time is\t\t" << v_big_duration/1000.0 << " seconds\n";
-    v_out.close();
-
-    v_data_counter++;
-    v_t1 = v_t2;
-*/
     } //end of OpenVisusViewer::execute()
 
